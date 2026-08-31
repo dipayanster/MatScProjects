@@ -17,10 +17,18 @@ ecutwfc CONVERGED at 125 Ry (ΔE < 0.01 meV/atom)
 K-points CONVERGED at (10, 10, 5) (ΔE < 0.01 meV/atom)
 
 
-1. Cell relaxation
+2. Cell relaxation
 ===========================================================
 
 Constrained relaxation - relax lattice parameters, keep cell angles fixed
 
 Minor changes 
 a and b 2.71100 --> 2.71121, c 4.39400 --> 4.40132
+
+
+3. DOS
+===========================================================
+
+Characteristic 7.5 eV gap is replicated. 
+
+Note: aligning Fermi level to 0 put it in the middle of the gap and not on the top of valence band. However this is minor issue as alignment can be fixed manually/ also we can crosscheck with other pseudos 
