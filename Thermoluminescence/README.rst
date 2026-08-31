@@ -1,5 +1,5 @@
 ~~~~~~~~~~~~
-Materials Modeling
+Example calculations for Thermoluminescence characteristics
 ~~~~~~~~~~~~
 
-Example calculations
+E. Tsoutsoumanos et al., Physica B: Condensed Matter 697 (2025) 416700
