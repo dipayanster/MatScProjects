@@ -1,5 +1,4 @@
 ~~~~~~~~~~~~
 Materials Modeling
 ~~~~~~~~~~~~
-
 Example calculations
