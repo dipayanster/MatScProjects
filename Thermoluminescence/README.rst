@@ -21,5 +21,4 @@ K-points CONVERGED at (10, 10, 5) (ΔE < 0.01 meV/atom)
 Constrained relaxation - relax lattice parameters, keep cell angles fixed
 
 Minor changes 
-a and b 2.71100 --> 2.71121
-c 4.39400 --> 4.40132
+a and b 2.71100 --> 2.71121, c 4.39400 --> 4.40132
