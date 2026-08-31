@@ -13,3 +13,13 @@ NC SR (ONCVPSP 0.5) PBE stringent
 ecutwfc CONVERGED at 125 Ry (ΔE < 0.01 meV/atom)
 
 K-points CONVERGED at (10, 10, 5) (ΔE < 0.01 meV/atom)
+
+
+1. Cell relaxation
+===========================================================
+
+Constrained relaxation - relax lattice parameters, keep cell angles fixed
+
+Minor changes 
+a and b 2.71100 --> 2.71121
+c 4.39400 --> 4.40132

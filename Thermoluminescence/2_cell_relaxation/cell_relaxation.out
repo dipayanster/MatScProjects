@@ -1,0 +1,13 @@
+Successfully read 4 atoms from 1739328.vasp
+
+Starting cell relaxation by ASE
+
+Final results
+  Total Energy                  : -1678.391693 eV
+  ASE-style max force (norm)    : 0.005871 eV/Å
+  QE-style max force            : 0.002324 eV/Å
+  Pressure                      : -0.934608 kbar
+
+Final relaxed structure saved to: final_relaxed_structure.vasp
+
+Relaxation complete
