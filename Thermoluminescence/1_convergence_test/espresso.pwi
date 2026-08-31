@@ -1,0 +1,51 @@
+&CONTROL
+   verbosity        = 'low'
+   outdir           = './tmp'
+   prefix           = 'BeO'
+   disk_io          = 'minimal'
+   pseudo_dir       = './'
+/
+&SYSTEM
+   ibrav            = 0
+   nat              = 4
+   ntyp             = 2
+   ecutwfc          = 125
+   occupations      = 'smearing'
+   degauss          = 0.01
+   smearing         = 'gauss'
+/
+&ELECTRONS
+   electron_maxstep = 100
+   conv_thr         = 1e-10
+   mixing_beta      = 0.2
+   diagonalization  = 'david'
+   diago_full_acc   = .true.
+   startingpot      = 'atomic'
+   startingwfc      = 'atomic+random'
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+Be 9.0121831 Be.upf
+O 15.999 O.upf
+
+K_POINTS automatic
+10 10 5  0 0 0
+
+CELL_PARAMETERS angstrom
+2.71099996570000 0.00000000000000 0.00000000000000
+-1.35549998280000 2.34779483990000 0.00000000000000
+0.00000000000000 0.00000000000000 4.39400005340000
+
+ATOMIC_POSITIONS angstrom
+Be 0.0000000000 1.5651966070 0.0000000000  
+Be 1.3554999020 0.7825982330 2.1970000270  
+O 0.0000000000 1.5651966070 1.6609319810  
+O 1.3554999020 0.7825982330 3.8579321390  
+
