@@ -1,0 +1,11 @@
+&PROJWFC
+    prefix = 'BeO_Electronic',
+    outdir = './tmp',
+    ngauss = 0,
+    degauss = 0.01,
+    DeltaE = 0.01,
+    Emin = -20.0,
+    Emax = 20.0,
+    filpdos = 'scf_pdos',
+    filproj = 'scf_projections'
+/

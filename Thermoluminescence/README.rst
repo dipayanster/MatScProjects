@@ -8,6 +8,8 @@ https://www.ccdc.cam.ac.uk/structures/Search?Doi=https%3A%2F%2Fdoi.org%2F10.1016
 Potentials form https://www.pseudo-dojo.org/
 NC SR (ONCVPSP 0.5) PBE stringent
 
+Dispersion corrections not included in this example
+
 1. Convergence test
 ===========================================================
 ecutwfc CONVERGED at 125 Ry (ΔE < 0.01 meV/atom)

@@ -1,0 +1,11 @@
+&INPUTPP
+    prefix = 'BeO_Electronic',
+    outdir = './tmp',
+    filplot = 'charge_density',
+    plot_num = 0
+/
+&PLOT
+    iflag = 3,
+    output_format = 6,
+    fileout = 'charge_density.cube'
+/
