@@ -1,2 +1,0 @@
-# MatScProjects
-Example calculations
