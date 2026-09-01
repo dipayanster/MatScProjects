@@ -39,3 +39,12 @@ Note: Minor changes, a and b 2.71100 --> 2.71121, c 4.39400 --> 4.40132
 Characteristic 7.5 eV gap is replicated. 
 
 Note: Aligning Fermi level to 0 puts it in the middle of the gap and not on the top of valence band. However, as per convention, 0 can be set on top of valence band manually while plotting.
+
+
+3. Band structure
+===========================================================
+Use seekpath https://seekpath.materialscloud.io/ to symmetrize the structure, to identify paths and to generate strings of K-points for band structure calculation.
+
+in this example we used the complete, generated path: Γ—M—K—Γ—A—L—H—A|L—M|H—K|Γ—M'—K'—Γ—A'—L'—H'—A'|L'—M'|H'—K'
+
+The second half of the path is required only if the system does not have time-reversal symmetry. the paper only shows the first half. 

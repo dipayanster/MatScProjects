@@ -1,0 +1,5 @@
+&BANDS
+    prefix = 'BeO_band',
+    outdir = './tmp',
+    filband = 'bands.dat',
+/
