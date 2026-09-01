@@ -6,12 +6,12 @@ Example calculations for Thermoluminescence characteristics
 
 Resources
 ===========================================================
-1. Python, numpy, ASE, Gnuplot, Quantum Espresso
+Python, numpy, ASE, Gnuplot, Quantum Espresso
 
-2. Initial structure from P.J. Baldock, W.E. Spindler, T.W. Baker, Journal of Nuclear Materials, 1966, 19, 169, DOI: 10.1016/0022-3115(66)90107-3, ICSD 601160
+Initial structure from P.J. Baldock, W.E. Spindler, T.W. Baker, Journal of Nuclear Materials, 1966, 19, 169, DOI: 10.1016/0022-3115(66)90107-3, ICSD 601160
 https://www.ccdc.cam.ac.uk/structures/Search?Doi=https%3A%2F%2Fdoi.org%2F10.1016%2F0022-3115(66)90107-3&DatabaseToSearch=Published
 
-3. Pseudo potentials form https://www.pseudo-dojo.org/
+Pseudo potentials form https://www.pseudo-dojo.org/
 Norm Conserving (NC) Scalar Relativistic (SR) (ONCVPSP 0.5) PBE stringent
 
 Note: Dispersion corrections not included in this example
