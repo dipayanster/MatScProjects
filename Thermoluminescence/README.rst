@@ -38,4 +38,4 @@ Note: Minor changes, a and b 2.71100 --> 2.71121, c 4.39400 --> 4.40132
 
 Characteristic 7.5 eV gap is replicated. 
 
-Note: aligning Fermi level to 0 put it in the middle of the gap and not on the top of valence band. However this is minor issue as alignment can be fixed manually/ also we can crosscheck with other pseudos 
+Note: Aligning Fermi level to 0 puts it in the middle of the gap and not on the top of valence band. However, as per convention, 0 can be set on top of valence band manually while plotting.
