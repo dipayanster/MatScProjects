@@ -1,0 +1,51 @@
+&CONTROL
+   verbosity        = 'low'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './tmp'
+   prefix           = 'vibO'
+   disk_io          = 'minimal'
+   pseudo_dir       = './'
+/
+&SYSTEM
+   ibrav            = 0
+   nat              = 2
+   ntyp             = 1
+   ecutwfc          = 80
+   ecutrho          = 640
+   occupations      = 'smearing'
+   degauss          = 0.01
+   smearing         = 'gauss'
+/
+&ELECTRONS
+   electron_maxstep = 100
+   conv_thr         = 1e-09
+   mixing_beta      = 0.2
+   diagonalization  = 'david'
+   diago_full_acc   = .true.
+   startingpot      = 'atomic'
+   startingwfc      = 'atomic+random'
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+O 15.999 O.pbe-n-kjpaw_psl.1.0.0.UPF
+
+K_POINTS automatic
+1 1 1  0 0 0
+
+CELL_PARAMETERS angstrom
+10.00000000000000 0.00000000000000 0.00000000000000
+0.00000000000000 10.00000000000000 0.00000000000000
+0.00000000000000 0.00000000000000 10.00000000000000
+
+ATOMIC_POSITIONS angstrom
+O -0.0000000000 -0.0000000000 -0.0100404483  
+O 0.0000000000 0.0000000000 1.2200404483  
+
