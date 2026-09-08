@@ -17,7 +17,7 @@ Au on Hg
 ===========================================================
 Computation level PBE+SOC+DFT-D4
 
-Hg atom Total Energy (QE+D4): -4540.261001 eV
+Hg atom Total Energy (QE, no D4 for single atom): -4540.261001 eV
 
 Au slab Total Energy (QE + D4):  -192938.444217 eV
 
