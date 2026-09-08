@@ -6,7 +6,7 @@ Updated script for vibration and thermodynamics calculations
 
 **3) Use vib_atom_index = None or vib_atom_index = [atom number (0 based index)] to vibrate all or specific atoms**
 
-**4) Forces for each vibrations are saved sunder vib directory in json format**
+**4) Forces for each vibrations are saved under vib directory in json format**
 
 N2
 ===========================================================
