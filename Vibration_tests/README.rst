@@ -1,14 +1,16 @@
 Updated script for vibration and thermodynamics calculations
 ===========================================================
-1) Uses ASE vibrations and HarmonicThermo and prints frequencies, ZPE, F, U, S
+1) Uses ASE vibrations and HarmonicThermo, outputs frequencies, ZPE, F, U, S
 
-2) NO manual calculation. All calculations and unite conversions handled by ASE
+2) Noo manual calculation. All calculations and unite conversions handled by ASE
 
 3) Use vib_atom_index = None or vib_atom_index = [atom number (0 based index)] to vibrate all or specific atoms
 
+4) Forces for each vibrations are saved sunder vib directory in json format
+
 N2
 ===========================================================
-Note: NO translational or rotational degrees of freedom
+Note: No translational or rotational degrees of freedom in HarmonicThermo
 
 
 Au on Hg
