@@ -24,3 +24,17 @@ Au slab Total Energy (QE + D4):  -192938.444217 eV
 Hg+Au Total Energy (QE + D4):  -197479.471488 eV
 
 DFT adsorption energy = -197479.471488 - (-192938.444217) - (-4540.261001) = -0.766 eV
+
+
+Temperature: 298.15 K
+ 
+F   = -197479.617323 eV
+
+U   = -197479.394176 eV
+
+python -c "from ase.units import kB; print(298.15 * kB)"
+0.025692570400413117
+  
+Delta_G = F - E_slab - E_atom - k_B*T = -197479.617323 - (-192938.444217) - (-4540.261001) - 0.025692570400413117 = -0.938 eV
+
+Delta_H = U - E_slab - E_atom - k_B*T = -197479.394176 - (-192938.444217) - (-4540.261001) - 0.025692570400413117 = -0.715 eV
