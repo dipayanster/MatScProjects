@@ -1,0 +1,646 @@
+environment: line 80: conda: command not found
+/cvmfs/hlit.jinr.ru/alma9/miniconda/condabin
+
+loaded modules:
+
+Currently Loaded Modules:
+  1) Python/v3.12.13   2) intel/v2026.1.0
+
+ 
+
+
+Python ? :/lustre/projects/m/milias/work/software/myvenv/bin/python
+Python 3.12.13
+WARNING: The directory '/zfs/store5.hydra.local/user/d/dsen/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Package         Version
+--------------- -----------
+ase             3.28.0
+cffi            2.0.0
+contourpy       1.3.3
+cycler          0.12.1
+dftd4           4.1.0
+fonttools       4.62.1
+kiwisolver      1.5.0
+matplotlib      3.10.8
+numpy           2.4.4
+packaging       26.0
+pillow          12.2.0
+pip             26.0.1
+pycparser       3.0
+pyparsing       3.3.2
+python-dateutil 2.9.0.post0
+scipy           1.17.1
+six             1.17.0
+tomli           2.4.1
+
+QE:
+	linux-vdso.so.1 (0x00007fffa5f8c000)
+	libhdf5_fortran.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5_fortran.so.320 (0x0000149e9b443000)
+	libhdf5_f90cstub.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5_f90cstub.so.320 (0x0000149e9b425000)
+	libhdf5.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5.so.320 (0x0000149e9aec1000)
+	libmkl_scalapack_lp64.so.2 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_scalapack_lp64.so.2 (0x0000149e9a600000)
+	libmkl_blacs_intelmpi_lp64.so.2 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_blacs_intelmpi_lp64.so.2 (0x0000149e9ae80000)
+	libmkl_intel_lp64.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_intel_lp64.so.3 (0x0000149e99400000)
+	libmkl_sequential.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_sequential.so.3 (0x0000149e97c00000)
+	libmkl_core.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_core.so.3 (0x0000149e93400000)
+	libimf.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libimf.so (0x0000149e92e00000)
+	libm.so.6 => /lib64/libm.so.6 (0x0000149e9ad99000)
+	libirng.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libirng.so (0x0000149e9a507000)
+	libmpifort.so.12 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mpi/latest/lib/libmpifort.so.12 (0x0000149e92800000)
+	libmpi.so.12 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mpi/latest/lib/libmpi.so.12 (0x0000149e88200000)
+	libc.so.6 => /lib64/libc.so.6 (0x0000149e87e00000)
+	libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x0000149e9ad7d000)
+	libifport.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libifport.so.5 (0x0000149e9ad53000)
+	libifcoremt.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libifcoremt.so.5 (0x0000149e97a8d000)
+	libsvml.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libsvml.so (0x0000149e86600000)
+	libintlc.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libintlc.so.5 (0x0000149e9acf0000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x0000149e9ace9000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x0000149e9ace4000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000149e9b491000)
+	librt.so.1 => /lib64/librt.so.1 (0x0000149e9acdf000)
+
+Running on host n05p028.gvr.local at Mon Sep  7 13:40:19 MSK 2026
+
+ The total memory at the main node (in GB)
+               total        used        free      shared  buff/cache   available
+Mem:            1991          14        1972           0          13        1977
+Swap:              3           0           3
+Total:          1995          14        1976
+
+ srun --mpi=list :
+MPI plugin types are...
+	none
+	pmix
+	cray_shasta
+	pmi2
+specific pmix plugin versions available: pmix_v6
+
+Job user is SLURM_JOB_USER= dsen
+User job SLURM_JOB_NAME=vib1nHgPBE has assigned ID SLURM_JOBID=1636595
+This job was submitted from the computer SLURM_SUBMIT_HOST=space03.hydra.local
+and from the home directory SLURM_SUBMIT_DIR:
+/lustre/projects/d/dsen/2026_calcs/au/PBE/5_vibrational_properties/111/hg_111
+Job is running on the cluster compute node: SLURM_CLUSTER_NAME=gvr
+and is employing SLURM_JOB_NUM_NODES=2 node/nodes:
+SLURM_JOB_NODELIST = n05p[028-029]
+Job partition is SLURM_JOB_PARTITION=bltp 
+
+Number of allocated CPUs on each single node, SLURM_CPUS_ON_NODE=128 .
+Number of all reserved threads over ALL nodes, SLURM_NTASKS=128 .
+Job has reserved memory per node, SLURM_MEM_PER_NODE= MB of memory
+
+
+ List of MPI servers :
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p028.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+n05p029.gvr.local
+
+
+The node's CPU model name	: Intel(R) Xeon(R) Platinum 8368Q CPU @ 2.60GHz
+BTW, this node has total 152 CPUs available for an EXCLUSIVE job.
+Based on reserved memory, this node got 128 CPUs allocated for SLURM calculations.
+This job wants in total SLURM_NTASKS=128 threads . 
+cpuinfo :
+Intel(R) processor family information utility, Version 2021.18.0 Build 20260327 (id: 821f207)
+Copyright (C) 2005-2026 Intel Corporation.  All rights reserved.
+
+=====  Processor composition  =====
+Processor name    : Intel(R) Xeon(R) Platinum 8368Q  
+Packages(sockets) : 2
+Cores             : 64
+Processors(CPUs)  : 128
+Cores per package : 32
+Threads per core  : 2
+
+=====  Processor identification  =====
+Processor	Thread Id.	Core Id.	Package Id.
+0       	0   		0   		0   
+1       	0   		1   		0   
+2       	0   		2   		0   
+3       	0   		3   		0   
+4       	0   		4   		0   
+5       	0   		5   		0   
+6       	0   		6   		0   
+7       	0   		7   		0   
+8       	0   		8   		0   
+9       	0   		9   		0   
+10      	0   		10  		0   
+11      	0   		11  		0   
+12      	0   		12  		0   
+13      	0   		13  		0   
+14      	0   		14  		0   
+15      	0   		15  		0   
+16      	0   		16  		0   
+17      	0   		17  		0   
+18      	0   		18  		0   
+19      	0   		19  		0   
+20      	0   		20  		0   
+21      	0   		21  		0   
+22      	0   		22  		0   
+23      	0   		23  		0   
+24      	0   		24  		0   
+25      	0   		25  		0   
+26      	0   		26  		0   
+27      	0   		27  		0   
+28      	0   		28  		0   
+29      	0   		29  		0   
+30      	0   		30  		0   
+31      	0   		31  		0   
+32      	0   		32  		0   
+33      	0   		33  		0   
+34      	0   		34  		0   
+35      	0   		35  		0   
+36      	0   		36  		0   
+37      	0   		37  		0   
+38      	0   		0   		1   
+39      	0   		1   		1   
+40      	0   		2   		1   
+41      	0   		3   		1   
+42      	0   		4   		1   
+43      	0   		5   		1   
+44      	0   		6   		1   
+45      	0   		7   		1   
+46      	0   		8   		1   
+47      	0   		9   		1   
+48      	0   		10  		1   
+49      	0   		11  		1   
+50      	0   		12  		1   
+51      	0   		13  		1   
+52      	0   		14  		1   
+53      	0   		15  		1   
+54      	0   		16  		1   
+55      	0   		17  		1   
+56      	0   		18  		1   
+57      	0   		19  		1   
+58      	0   		20  		1   
+59      	0   		21  		1   
+60      	0   		22  		1   
+61      	0   		23  		1   
+62      	0   		24  		1   
+63      	0   		25  		1   
+76      	1   		0   		0   
+77      	1   		1   		0   
+78      	1   		2   		0   
+79      	1   		3   		0   
+80      	1   		4   		0   
+81      	1   		5   		0   
+82      	1   		6   		0   
+83      	1   		7   		0   
+84      	1   		8   		0   
+85      	1   		9   		0   
+86      	1   		10  		0   
+87      	1   		11  		0   
+88      	1   		12  		0   
+89      	1   		13  		0   
+90      	1   		14  		0   
+91      	1   		15  		0   
+92      	1   		16  		0   
+93      	1   		17  		0   
+94      	1   		18  		0   
+95      	1   		19  		0   
+96      	1   		20  		0   
+97      	1   		21  		0   
+98      	1   		22  		0   
+99      	1   		23  		0   
+100     	1   		24  		0   
+101     	1   		25  		0   
+102     	1   		26  		0   
+103     	1   		27  		0   
+104     	1   		28  		0   
+105     	1   		29  		0   
+106     	1   		30  		0   
+107     	1   		31  		0   
+108     	1   		32  		0   
+109     	1   		33  		0   
+110     	1   		34  		0   
+111     	1   		35  		0   
+112     	1   		36  		0   
+113     	1   		37  		0   
+114     	1   		0   		1   
+115     	1   		1   		1   
+116     	1   		2   		1   
+117     	1   		3   		1   
+118     	1   		4   		1   
+119     	1   		5   		1   
+120     	1   		6   		1   
+121     	1   		7   		1   
+122     	1   		8   		1   
+123     	1   		9   		1   
+124     	1   		10  		1   
+125     	1   		11  		1   
+126     	1   		12  		1   
+127     	1   		13  		1   
+128     	1   		14  		1   
+129     	1   		15  		1   
+130     	1   		16  		1   
+131     	1   		17  		1   
+132     	1   		18  		1   
+133     	1   		19  		1   
+134     	1   		20  		1   
+135     	1   		21  		1   
+136     	1   		22  		1   
+137     	1   		23  		1   
+138     	1   		24  		1   
+139     	1   		25  		1   
+=====  Placement on packages  =====
+Package Id.	Core Id.	Processors
+0   		0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37		(0,76)(1,77)(2,78)(3,79)(4,80)(5,81)(6,82)(7,83)(8,84)(9,85)(10,86)(11,87)(12,88)(13,89)(14,90)(15,91)(16,92)(17,93)(18,94)(19,95)(20,96)(21,97)(22,98)(23,99)(24,100)(25,101)(26,102)(27,103)(28,104)(29,105)(30,106)(31,107)(32,108)(33,109)(34,110)(35,111)(36,112)(37,113)
+1   		0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25		(38,114)(39,115)(40,116)(41,117)(42,118)(43,119)(44,120)(45,121)(46,122)(47,123)(48,124)(49,125)(50,126)(51,127)(52,128)(53,129)(54,130)(55,131)(56,132)(57,133)(58,134)(59,135)(60,136)(61,137)(62,138)(63,139)
+
+=====  Cache sharing  =====
+Cache	Size		Processors
+L1	48  KB		(0,76)(1,77)(2,78)(3,79)(4,80)(5,81)(6,82)(7,83)(8,84)(9,85)(10,86)(11,87)(12,88)(13,89)(14,90)(15,91)(16,92)(17,93)(18,94)(19,95)(20,96)(21,97)(22,98)(23,99)(24,100)(25,101)(26,102)(27,103)(28,104)(29,105)(30,106)(31,107)(32,108)(33,109)(34,110)(35,111)(36,112)(37,113)(38,114)(39,115)(40,116)(41,117)(42,118)(43,119)(44,120)(45,121)(46,122)(47,123)(48,124)(49,125)(50,126)(51,127)(52,128)(53,129)(54,130)(55,131)(56,132)(57,133)(58,134)(59,135)(60,136)(61,137)(62,138)(63,139)
+L2	1   MB		(0,76)(1,77)(2,78)(3,79)(4,80)(5,81)(6,82)(7,83)(8,84)(9,85)(10,86)(11,87)(12,88)(13,89)(14,90)(15,91)(16,92)(17,93)(18,94)(19,95)(20,96)(21,97)(22,98)(23,99)(24,100)(25,101)(26,102)(27,103)(28,104)(29,105)(30,106)(31,107)(32,108)(33,109)(34,110)(35,111)(36,112)(37,113)(38,114)(39,115)(40,116)(41,117)(42,118)(43,119)(44,120)(45,121)(46,122)(47,123)(48,124)(49,125)(50,126)(51,127)(52,128)(53,129)(54,130)(55,131)(56,132)(57,133)(58,134)(59,135)(60,136)(61,137)(62,138)(63,139)
+L3	57  MB		(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113)(38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139)
+impi_info :
+ | NAME                                                         | DEFAULT VALUE  | DATA TYPE   |
+ ===============================================================================================
+ | I_MPI_JOB_STARTUP_TIMEOUT                                    | -1             | MPI_CHAR    |
+ | I_MPI_HYDRA_GDB_ARGS                                         | not defined    | MPI_CHAR    |
+ | I_MPI_HYDRA_HOST_FILE                                        | not defined    | MPI_CHAR    |
+ | I_MPI_HYDRA_HOSTS_GROUP                                      | not defined    | MPI_CHAR    |
+ | I_MPI_PERHOST                                                | not defined    | MPI_CHAR    |
+ | I_MPI_GTOOL                                                  | not defined    | MPI_CHAR    |
+ | I_MPI_GTOOL_ATTACH_ARGS                                      | not defined    | MPI_CHAR    |
+ | I_MPI_HYDRA_BRANCH_COUNT                                     | not defined    | MPI_CHAR    |
+ | I_MPI_HYDRA_BOOTSTRAP                                        | not defined    | MPI_CHAR    |
+ | I_MPI_HYDRA_PROXY_WAIT                                       | not defined    | MPI_INT     |
+ | I_MPI_PRINT_PROT                                             | not defined    | MPI_INT     |
+ | I_MPI_OFFLOAD_DOMAIN_SIZE                                    | not defined    | MPI_INT     |
+ | I_MPI_OFFLOAD_CELL                                           | not defined    | MPI_CHAR    |
+ | I_MPI_OFFLOAD_DEVICES                                        | not defined    | MPI_CHAR    |
+ | I_MPI_OFFLOAD_DEVICE_LIST                                    | not defined    | MPI_CHAR    |
+ | I_MPI_OFFLOAD_DOMAIN                                         | not defined    | MPI_CHAR    |
+ | I_MPI_MPCP_LOG_LEVEL                                         | OFF            | MPI_CHAR    |
+ | I_MPI_ADJUST_BARRIER                                         | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_BARRIER_LIST                                    | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_BCAST                                           | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_BCAST_LIST                                      | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_REDUCE                                          | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_REDUCE_LIST                                     | -1             | MPI_CHAR    |
+ | I_MPI_PIN                                                    | on             | MPI_INT     |
+ | I_MPI_PIN_SHOW_REAL_MASK                                     | on             | MPI_INT     |
+ | I_MPI_PIN_UNFOLD_MASK                                        | on             | MPI_INT     |
+ | I_MPI_PIN_PROCESSOR_LIST                                     | not defined    | MPI_CHAR    |
+ | I_MPI_PIN_PROCESSOR_EXCLUDE_LIST                             | not defined    | MPI_CHAR    |
+ | I_MPI_PIN_CELL                                               | unit           | MPI_CHAR    |
+ | I_MPI_PIN_RESPECT_CPUSET                                     | on             | MPI_CHAR    |
+ | I_MPI_PIN_RESPECT_HCA                                        | on             | MPI_CHAR    |
+ | I_MPI_PIN_DOMAIN                                             | auto:compact   | MPI_CHAR    |
+ | I_MPI_PIN_ORDER                                              | compact        | MPI_CHAR    |
+ | I_MPI_OFFLOAD                                                | 0              | MPI_INT     |
+ | I_MPI_OFFLOAD_MODE                                           | not defined    | MPI_CHAR    |
+ | I_MPI_OFFLOAD_PIN                                            | 0              | MPI_INT     |
+ | I_MPI_OFFLOAD_COLL_PIPELINE                                  | on             | MPI_INT     |
+ | I_MPI_OFFLOAD_LEVEL_ZERO_LIBRARY                             | not defined    | MPI_CHAR    |
+ | I_MPI_OFFLOAD_CUDA_LIBRARY                                   | not defined    | MPI_CHAR    |
+ | I_MPI_OFFLOAD_GDR_LIBRARY                                    | not defined    | MPI_CHAR    |
+ | I_MPI_EXTRA_FILESYSTEM                                       | off            | MPI_INT     |
+ | I_MPI_EXTRA_FILESYSTEM_FORCE                                 | not defined    | MPI_CHAR    |
+ | I_MPI_EXTRA_FILESYSTEM_NFS_DIRECT                            | on             | MPI_INT     |
+ | I_MPI_FILESYSTEM                                             | off            | MPI_INT     |
+ | I_MPI_FILESYSTEM_FORCE                                       | not defined    | MPI_CHAR    |
+ | I_MPI_FILESYSTEM_NFS_DIRECT                                  | on             | MPI_INT     |
+ | I_MPI_FILESYSTEM_GPFS_DIRECT                                 | off            | MPI_INT     |
+ | I_MPI_FILESYSTEM_CB_NODES                                    | -1             | MPI_INT     |
+ | I_MPI_FILESYSTEM_CB_CONFIG_LIST                              | ""             | MPI_CHAR    |
+ | I_MPI_FABRICS                                                | shm:ofi        | MPI_CHAR    |
+ | I_MPI_MALLOC                                                 | 1              | MPI_INT     |
+ | I_MPI_SHM_HEAP                                               | -1             | MPI_INT     |
+ | I_MPI_SHM_HEAP_OPT                                           | -1             | MPI_CHAR    |
+ | I_MPI_SHM_HEAP_VSIZE                                         | -1             | MPI_INT     |
+ | I_MPI_SHM_HEAP_CSIZE                                         | -1             | MPI_INT     |
+ | I_MPI_SHM                                                    | auto           | MPI_CHAR    |
+ | I_MPI_SHM_CELL_FWD_SIZE                                      | -1             | MPI_INT     |
+ | I_MPI_SHM_CELL_BWD_SIZE                                      | -1             | MPI_INT     |
+ | I_MPI_SHM_CELL_EXT_SIZE                                      | -1             | MPI_INT     |
+ | I_MPI_SHM_CELL_FWD_NUM                                       | -1             | MPI_INT     |
+ | I_MPI_SHM_CELL_FWD_HOLD_NUM                                  | -1             | MPI_INT     |
+ | I_MPI_SHM_CELL_BWD_NUM                                       | -1             | MPI_INT     |
+ | I_MPI_SHM_CELL_EXT_NUM_TOTAL                                 | -1             | MPI_INT     |
+ | I_MPI_SHM_MCDRAM_LIMIT                                       | -1             | MPI_INT     |
+ | I_MPI_SHM_FILE_PREFIX_4K                                     | ""             | MPI_CHAR    |
+ | I_MPI_SHM_FILE_PREFIX_2M                                     | ""             | MPI_CHAR    |
+ | I_MPI_SHM_FILE_PREFIX_1G                                     | ""             | MPI_CHAR    |
+ | I_MPI_SHM_PAUSE                                              | not defined    | MPI_INT     |
+ | I_MPI_SHM_CMA                                                | not defined    | MPI_INT     |
+ | I_MPI_SHM_CMA_THRESHOLD                                      | not defined    | MPI_INT     |
+ | I_MPI_SHM_THREAD_NUM                                         | not defined    | MPI_INT     |
+ | I_MPI_OFI_LIBRARY                                            | not defined    | MPI_CHAR    |
+ | I_MPI_OFI_PROVIDER                                           | not defined    | MPI_CHAR    |
+ | I_MPI_OFI_TAG_DYNAMIC                                        | false          | MPI_INT     |
+ | I_MPI_ADJUST_ALLGATHER                                       | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_ALLGATHERV                                      | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_ALLREDUCE                                       | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_ALLTOALL                                        | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_ALLTOALLV                                       | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_ALLTOALLW                                       | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_EXSCAN                                          | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_GATHER                                          | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_GATHERV                                         | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_REDUCE_SCATTER                                  | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_REDUCE_SCATTER_BLOCK                            | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_SCAN                                            | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_SCATTER                                         | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_SCATTERV                                        | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IALLREDUCE                                      | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IBCAST                                          | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IREDUCE                                         | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IGATHER                                         | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IALLGATHER                                      | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IALLTOALL                                       | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IALLTOALLV                                      | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IALLTOALLW                                      | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IGATHERV                                        | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_ISCATTERV                                       | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IBARRIER                                        | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_ISCATTER                                        | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IALLGATHERV                                     | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IEXSCAN                                         | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_ISCAN                                           | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IREDUCE_SCATTER                                 | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_IREDUCE_SCATTER_BLOCK                           | -1             | MPI_CHAR    |
+ | I_MPI_ADJUST_SENDRECV_REPLACE                                | -1             | MPI_INT     |
+ | I_MPI_THREAD_SPLIT                                           | false          | MPI_INT     |
+ | I_MPI_THREAD_SPLIT_MODE                                      | explicit       | MPI_CHAR    |
+ | I_MPI_THREAD_RUNTIME                                         | generic        | MPI_CHAR    |
+ | I_MPI_THREAD_ID_KEY                                          | -1             | MPI_CHAR    |
+ | I_MPI_THREAD_MAX                                             | -1             | MPI_INT     |
+ | I_MPI_ASYNC_PROGRESS                                         | false          | MPI_INT     |
+ | I_MPI_ASYNC_PROGRESS_THREADS                                 | 1              | MPI_INT     |
+ | I_MPI_ASYNC_PROGRESS_PIN                                     | not defined    | MPI_CHAR    |
+ | I_MPI_ASYNC_PROGRESS_ID_KEY                                  | thread_id      | MPI_CHAR    |
+ | I_MPI_ASYNC_PROGRESS_COLL_SPLIT                              | 0              | MPI_INT     |
+ | I_MPI_ASYNC_PROGRESS_COLL_SPLIT_MSG_SIZE                     | 8192           | MPI_INT     |
+ | I_MPI_DEBUG                                                  | 0              | MPI_CHAR    |
+ | I_MPI_PRINT_VERSION                                          | 0              | MPI_INT     |
+ | I_MPI_REMOVED_VAR_WARNING                                    | 1              | MPI_INT     |
+ | I_MPI_VAR_CHECK_SPELLING                                     | 1              | MPI_INT     |
+ | I_MPI_COMPATIBILITY                                          | 5              | MPI_CHAR    |
+ | I_MPI_SILENT_ABORT                                           | not defined    | MPI_INT     |
+ | I_MPI_JOB_IDLE_TIMEOUT                                       | not defined    | MPI_DOUBLE  |
+ | I_MPI_PMI_VALUE_LENGTH_MAX                                   | not defined    | MPI_INT     |
+ | I_MPI_PMI_LIBRARY                                            | not defined    | MPI_CHAR    |
+ | I_MPI_PMI                                                    | not defined    | MPI_CHAR    |
+ | I_MPI_MPCP                                                   | not defined    | MPI_INT     |
+ | I_MPI_MPCP_SERVER_NAME                                       | not defined    | MPI_CHAR    |
+ | I_MPI_MPCP_SERVER_PORT                                       | not defined    | MPI_INT     |
+ | I_MPI_MPCP_RANK                                              | not defined    | MPI_INT     |
+ | I_MPI_MPCP_SIZE                                              | not defined    | MPI_INT     |
+
+Current directory where this SLURM job is running /lustre/projects/d/dsen/2026_calcs/au/PBE/5_vibrational_properties/111/hg_111
+It has the disk space of (df -h) :
+Filesystem                                                                         Size  Used Avail Use% Mounted on
+10.220.25.75@o2ib,10.220.25.76@o2ib:10.220.25.79@o2ib,10.220.25.80@o2ib:/projects  2.2P  1.2P  950T  56% /lustre/projects
+
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) unlimited
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) unlimited
+pending signals                     (-i) 8156299
+max locked memory           (kbytes, -l) unlimited
+max memory size             (kbytes, -m) 805306368
+open files                          (-n) 131072
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) unlimited
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 8156299
+virtual memory              (kbytes, -v) unlimited
+file locks                          (-x) unlimited
+
+
+
+
+============================================================
+
+
+
+Starting ASE parallel job on Mon Sep  7 13:40:20 MSK 2026
+
+Successfully read 49 atoms from final_relaxed_structure_12072026.vasp
+
+Vibrating atoms (0 based): 48 (Hg)
+
+PBE default DFT-D4 parameters : {'s6': 1.0, 's9': 1.0, 'alp': 16.0, 's8': 0.95948085, 'a1': 0.38574991, 'a2': 4.80688534}
+Custom DFT-D4 parameters      : {'s6': 1.0, 's9': 1.0, 'alp': 16.0, 's8': 0.95948085, 'a1': 0.38574991, 'a2': 4.80688534}
+
+[Phase A.] Running SCF calculation...
+
+ 1. SCF Energy Results
+  QE Electronic Energy:    -197454.653771 eV
+  DFT-D4 Dispersion:         -24.817718 eV
+  Total Energy (QE + D4):  -197479.471488 eV
+    Energy check: consistent
+
+ 2. SCF forces and stress
+  Max force (norm): 0.009969 eV/Å
+  Pressure: 0.195061 kbar
+
+[Phase B.] Starting vibrational analysis...
+
+======================================================================
+Vibrational Analysis Summary:
+----------------------------------------------------------------------
+---------------------
+  #    meV     cm^-1
+---------------------
+  0    2.7      21.9
+  1    2.8      22.7
+  2    7.5      60.9
+---------------------
+Zero-point energy: 0.007 eV
+======================================================================
+
+[Phase C.] Starting thermodynamic analysis...
+
+===============================================================================================
+Temp(K)    ZPE(eV)            F(eV)            U(eV)        S(eV/K)
+-----------------------------------------------------------------------------------------------
+   50   0.006544   -197479.472199   -197479.457218   2.996142e-04
+   60   0.006544   -197479.475417   -197479.454844   3.428851e-04
+   70   0.006544   -197479.479037   -197479.452413   3.803401e-04
+   80   0.006544   -197479.483009   -197479.449946   4.132773e-04
+   90   0.006544   -197479.487291   -197479.447454   4.426278e-04
+  100   0.006544   -197479.491851   -197479.444944   4.690730e-04
+  110   0.006544   -197479.496664   -197479.442421   4.931225e-04
+  120   0.006544   -197479.501707   -197479.439887   5.151657e-04
+  130   0.006544   -197479.506962   -197479.437346   5.355062e-04
+  140   0.006544   -197479.512413   -197479.434799   5.543843e-04
+  150   0.006544   -197479.518045   -197479.432246   5.719937e-04
+  160   0.006544   -197479.523849   -197479.429690   5.884924e-04
+  170   0.006544   -197479.529812   -197479.427130   6.040109e-04
+  180   0.006544   -197479.535926   -197479.424568   6.186581e-04
+  190   0.006544   -197479.542183   -197479.422003   6.325259e-04
+  200   0.006544   -197479.548574   -197479.419436   6.456925e-04
+  210   0.006544   -197479.555094   -197479.416867   6.582251e-04
+  220   0.006544   -197479.561737   -197479.414297   6.701814e-04
+  230   0.006544   -197479.568496   -197479.411725   6.816120e-04
+  240   0.006544   -197479.575367   -197479.409153   6.925609e-04
+  250   0.006544   -197479.582346   -197479.406579   7.030668e-04
+  260   0.006544   -197479.589427   -197479.404005   7.131641e-04
+  270   0.006544   -197479.596608   -197479.401429   7.228833e-04
+  280   0.006544   -197479.603884   -197479.398853   7.322515e-04
+  290   0.006544   -197479.611252   -197479.396277   7.412932e-04
+  300   0.006544   -197479.618709   -197479.393700   7.500303e-04
+  310   0.006544   -197479.626252   -197479.391122   7.584825e-04
+  320   0.006544   -197479.633877   -197479.388544   7.666679e-04
+  330   0.006544   -197479.641584   -197479.385965   7.746026e-04
+  340   0.006544   -197479.649369   -197479.383386   7.823017e-04
+  350   0.006544   -197479.657229   -197479.380807   7.897785e-04
+  360   0.006544   -197479.665164   -197479.378227   7.970457e-04
+  370   0.006544   -197479.673170   -197479.375647   8.041145e-04
+  380   0.006544   -197479.681245   -197479.373067   8.109955e-04
+  390   0.006544   -197479.689389   -197479.370486   8.176985e-04
+  400   0.006544   -197479.697599   -197479.367906   8.242323e-04
+  410   0.006544   -197479.705873   -197479.365325   8.306053e-04
+  420   0.006544   -197479.714210   -197479.362744   8.368252e-04
+  430   0.006544   -197479.722609   -197479.360162   8.428992e-04
+  440   0.006544   -197479.731068   -197479.357581   8.488340e-04
+  450   0.006544   -197479.739585   -197479.354999   8.546357e-04
+  460   0.006544   -197479.748160   -197479.352417   8.603103e-04
+  470   0.006544   -197479.756791   -197479.349835   8.658631e-04
+  480   0.006544   -197479.765477   -197479.347253   8.712993e-04
+  490   0.006544   -197479.774217   -197479.344671   8.766237e-04
+  500   0.006544   -197479.783009   -197479.342089   8.818408e-04
+===============================================================================================
+
+-----------------------------------------------------------------------------------------------
+Temperature: 298.15 K
+-----------------------------------------------------------------------------------------------
+  ZPE =   0.006544 eV
+  F   = -197479.617323 eV
+  U   = -197479.394176 eV
+  S   = 7.484360e-04 eV/K
+-----------------------------------------------------------------------------------------------
+
+=== Thermodynamic Analysis Complete ===
+
+ASE finished on : Tue Sep  8 17:34:10 MSK 2026

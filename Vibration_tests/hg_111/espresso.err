@@ -1,0 +1,27 @@
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : n05p[028-029]
+srun: distribution        : block:block,nopack
+srun: jobid               : 1636595
+srun: job-name            : vib1nHgPBE
+srun: mem-per-cpu         : 6G
+srun: mpi                 : pmi2
+srun: nodes               : 2
+srun: ntasks              : 128
+srun: ntasks-per-core     : 1
+srun: ntasks-per-node     : 64
+srun: oom-kill-step       : 0
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 1636595: nodes(2):`n05p[028-029]', cpu counts: 128(x2)
+srun: CpuBindType=cores
+srun: launching StepId=1636595.7 on host n05p028, 64 tasks: [0-63]
+srun: launching StepId=1636595.7 on host n05p029, 64 tasks: [64-127]
+srun: Node n05p028, 64 tasks started
+srun: Node n05p029, 64 tasks started
+srun: Received task exit notification for 64 tasks of StepId=1636595.7 (status=0x0000).
+srun: n05p029: tasks 64-127: Completed
+srun: First task exited. Terminating job in 150s
+srun: Received task exit notification for 64 tasks of StepId=1636595.7 (status=0x0000).
+srun: n05p028: tasks 0-63: Completed
