@@ -2,7 +2,7 @@
 Raman and IR Spectroscopy
 ~~~~~~~~~~~~
 
-Raman spectroscopy measures the inelastic scattering of light by phonons to characterize vibrational modes in materials. This workflow calculates the Raman spectrum of bulk silicon using Density Functional Perturbation Theory (DFPT), beginning with an SCF ground state calculation, followed by a DFPT phonon calculation at the Gamma point to obtain vibrational frequencies and Raman intensities, and concluding with dynmat.x to process and output the Raman-active modes. As with the previous tasks, ASE automates the entire execution sequence.
+Raman spectroscopy measures the inelastic scattering of light by phonons to characterize vibrational modes in materials. This workflow calculates the Raman spectrum of bulk silicon using Density Functional Perturbation Theory (DFPT), beginning with an SCF ground state calculation, followed by a DFPT phonon calculation at the Gamma point to obtain vibrational frequencies and Raman intensities, and concluding with dynmat.x to process and output the Raman-active modes.
 
 python3 raman_si.py > raman_si.out
 (Update the Quantum ESPRESSO executable paths to your local pw.x and ph.x locations.)
