@@ -1,4 +1,4 @@
-Updated script for vibration and thermodynamics calculations
+Script for calculating vibrational frequencies and thermodynamic properties
 ===========================================================
 **1) Uses ASE vibrations and HarmonicThermo, outputs frequencies, ZPE, F, U, S**
 
