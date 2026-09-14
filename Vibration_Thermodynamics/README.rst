@@ -38,33 +38,33 @@ python -c "from ase.units import kB; print(298.15 * kB)"
 ΔH (rotation ignored for single adatom)
 ===========================================================
 
-**ΔH = H(S+A) - H(S) - H(A_gas)**
+ΔH = H(S+A) - H(S) - H(A)
 
-**S+A (solid):**
-  
-H(S+A) = U(S+A) + PV  -> ignore PV because solid -> H(S+A) = U(S+A)
-  
-U(S+A) = U_harm(S+A)  -> no translation, atom bound to site
-  
-H(S+A) = U_harm(S+A)
+S = substrate, A = adsorbate
 
-**S (solid):**
-  
-H(S) = U(S) + PV  -> ignore PV because solid -> H(S) = U(S)
-  
-U(S) = E_SCF(S)  -> frozen
- 
-H(S) = E_SCF(S)
+S+A (solid):
 
-**A (gas):**
+  H(S+A) = U(S+A) + PV  -> ignore PV because solid  
   
-H(A) = U(A) + PV
-  
-U(A) = E_SCF(A) + (3/2)k_BT  -> translational KE
-  
-PV = k_BT  -> ideal gas, 1 atom
-  
-H(A) = E_SCF(A) + (5/2)k_BT
+  H(S+A) = U(S+A) -> directly from ASE
 
-**ΔH = U_harm(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT** = (-197479.394176) - (-192938.444217) - (-4540.261001) - (5/2)*0.025692570400413117 = -0.753 eV
+S (solid):
+  
+  H(S) = U(S) + PV  -> ignore PV because solid -> 
+  
+  H(S) = U(S) = E_SCF(S)  -> because slab is frozen
+
+A (gas):
+  
+  H(A) = U(A) + PV
+  
+  U(A) = E_SCF(A) + (3/2)k_BT  -> translational KE
+  
+  PV = k_BT  -> ideal gas, 1 atom
+  
+ H(A) = E_SCF(A) + (5/2)k_BT
+
+**ΔH = U(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT**
+
+ΔH = (-197479.394176) - (-192938.444217) - (-4540.261001) - (5/2)*0.025692570400413117 = -0.753 eV
 
