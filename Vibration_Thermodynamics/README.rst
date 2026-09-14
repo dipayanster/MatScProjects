@@ -34,9 +34,9 @@ Computation level PBE+SOC+DFT-D4
 
 	python -c "from ase.units import kB; print(298.15 * kB)" : 0.025692570400413117
 
-**ΔH = H(S+A) - H(S) - H(A)
+**ΔH = H(S+A) - H(S) - H(A)**
 
-S = substrate, A = adsorbate**
+**S = substrate, A = adsorbate**
 
 S+A (solid):
 
