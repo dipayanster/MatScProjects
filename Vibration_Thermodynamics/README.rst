@@ -35,7 +35,7 @@ U   = -197479.394176 eV
 python -c "from ase.units import kB; print(298.15 * kB)"
 0.025692570400413117
 
-ΔH (including translation, rotation ignored for single adatom)
+ΔH (rotation ignored for single adatom)
 ===========================================================
 
 ΔH = H(S+A) - H(S) - H(A_gas)
@@ -55,5 +55,5 @@ For A (gas):         H(A) = U(A) + PV
                      → H(A) = E_SCF(A) + (5/2)k_BT
 
 
-ΔH = U_harm(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT
+ΔH = U_harm(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT = (-197479.394176) - (-192938.444217) - (-4540.261001) - (5/2)*0.025692570400413117 = -0.753 eV
 
