@@ -17,26 +17,26 @@ Au on Hg
 ===========================================================
 Computation level PBE+SOC+DFT-D4
 
-Hg atom Total Energy (QE, no D4 for single atom): -4540.261001 eV
+	Hg atom Total Energy (QE, no D4 for single atom): -4540.261001 eV
 
-Au slab Total Energy (QE + D4):  -192938.444217 eV
+	Au slab Total Energy (QE + D4):  -192938.444217 eV
 
-Hg+Au Total Energy (QE + D4):  -197479.471488 eV
+	Hg+Au Total Energy (QE + D4):  -197479.471488 eV
 
-DFT adsorption energy = -197479.471488 - (-192938.444217) - (-4540.261001) = -0.766 eV
+	DFT adsorption energy = -197479.471488 - (-192938.444217) - (-4540.261001) = -0.766 eV
 
 
-Temperature: 298.15 K
+@ Temperature: 298.15 K
  
-F   = -197479.617323 eV
+	F   = -197479.617323 eV
 
-U   = -197479.394176 eV
+	U   = -197479.394176 eV
 
-python -c "from ase.units import kB; print(298.15 * kB)" : 0.025692570400413117
+	python -c "from ase.units import kB; print(298.15 * kB)" : 0.025692570400413117
 
-ΔH = H(S+A) - H(S) - H(A)
+**ΔH = H(S+A) - H(S) - H(A)
 
-S = substrate, A = adsorbate
+S = substrate, A = adsorbate**
 
 S+A (solid):
 
