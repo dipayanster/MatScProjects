@@ -62,7 +62,7 @@ A (gas):
   
   PV = k_BT  -> ideal gas, 1 atom
   
- H(A) = E_SCF(A) + (5/2)k_BT
+  H(A) = E_SCF(A) + (5/2)k_BT
 
 **ΔH = U(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT**
 
