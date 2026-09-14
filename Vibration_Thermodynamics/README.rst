@@ -44,21 +44,21 @@ S = substrate, A = adsorbate
 
 S+A (solid):
 
-  H(S+A) = U(S+A) + PV  -> ignore PV because solid  
+  H(S+A) = U(S+A) + PV  [ignore PV because solid]  
   
-  H(S+A) = U(S+A) -> directly from ASE
+  H(S+A) = U(S+A) [directly from ASE]
 
 S (solid):
   
-  H(S) = U(S) + PV  -> ignore PV because solid -> 
+  H(S) = U(S) + PV  [ignore PV because solid]
   
-  H(S) = U(S) = E_SCF(S)  -> because slab is frozen
+  H(S) = U(S) = E_SCF(S)  [slab is frozen]
 
 A (gas):
   
   H(A) = U(A) + PV
   
-  U(A) = E_SCF(A) + (3/2)k_BT  -> translational KE
+  U(A) = E_SCF(A) + (3/2)k_BT  [translational KE term]
   
   PV = k_BT  -> ideal gas, 1 atom
   
