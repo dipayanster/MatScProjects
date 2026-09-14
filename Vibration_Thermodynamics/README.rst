@@ -34,6 +34,29 @@ U   = -197479.394176 eV
 
 python -c "from ase.units import kB; print(298.15 * kB)"
 0.025692570400413117
+
+Start: ΔH = H(S+A) - H(S) - H(A_gas)
+
+For S+A (solid):     H(S+A) = U(S+A) + PV ≈ U(S+A)
+                     U(S+A) = U_harm(S+A)
+                     [no translation — atom is bound to the site]
+                     → H(S+A) = U_harm(S+A)
+
+For S (solid):       H(S) = U(S) + PV ≈ U(S)
+                     U(S) = E_SCF(S)  [frozen]
+                     → H(S) = E_SCF(S)
+
+For A (gas):         H(A) = U(A) + PV
+                     U(A) = E_SCF(A) + (3/2)k_BT  [translational KE]
+                     PV = k_BT  [ideal gas, 1 atom]
+                     → H(A) = E_SCF(A) + (5/2)k_BT
+
+Substitute:
+ΔH = U_harm(S+A) - E_SCF(S) - [E_SCF(A) + (5/2)k_BT]
+
+Group:
+ΔH = U_harm(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT
+
   
 Delta_G = F - E_slab - E_atom - k_B*T = -197479.617323 - (-192938.444217) - (-4540.261001) - 0.025692570400413117 = -0.938 eV
 
