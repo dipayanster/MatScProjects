@@ -15,7 +15,7 @@ Note: No translational or rotational degrees of freedom in HarmonicThermo
 
 Au on Hg
 ===========================================================
-Computation level PBE+SOC+DFT-D4
+Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops)
 
 	Hg atom Total Energy (QE, no D4 for single atom): -4540.261001 eV
 
