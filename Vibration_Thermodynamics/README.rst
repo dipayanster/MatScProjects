@@ -13,7 +13,7 @@ N2
 Note: No translational or rotational degrees of freedom in HarmonicThermo
 
 
-Au on Hg
+Hg adatom adsorption on Au (111) surface
 ===========================================================
 Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops)
 
