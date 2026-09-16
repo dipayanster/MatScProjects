@@ -13,13 +13,13 @@ N2
 Note: No translational or rotational degrees of freedom in HarmonicThermo
 
 
-Hg adatom adsorption on Au (111) surface (/Hg_on_Au)
+ΔH for Hg adatom adsorption on Au (111) surface (/Hg_on_Au)
 ===========================================================
 Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops)
 
-	Hg atom Total Energy (QE, no D4 for single atom): -4540.261001 eV (pre-calculated results in /Hg_on_Au/hg_ideal)
+	Hg atom Total Energy (QE, no D4 for single atom): -4540.261001 eV (pre-calculated results in /Hg_on_Au/slab_atom)
 
-	Au slab Total Energy (QE + D4):  -192938.444217 eV (pre-calculated results in /Hg_on_Au/hg_ideal)
+	Au slab Total Energy (QE + D4):  -192938.444217 eV (pre-calculated results in /Hg_on_Au/slab_atom)
 
 	Hg+Au Total Energy (QE + D4):  -197479.471488 eV
 
