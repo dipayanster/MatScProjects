@@ -1,6 +1,6 @@
 Script for calculating vibrational frequencies and thermodynamic properties
 ===========================================================
-**1) Uses ASE vibrations and HarmonicThermo, outputs frequencies, ZPE, F, U, S**
+**1) Uses ASE vibrations, HarmonicThermo, IdealGasThermo, outputs (1) frequencies, (2) HarmonicThermo: ZPE , F, U, S, (3) IdealGasThermo: ZPE , H, S, G**
 
 **2) No manual calculation. All calculations and unit conversions handled by ASE**
 
@@ -38,19 +38,21 @@ Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable fo
 
 **S = substrate, A = adsorbate**
 
-S+A (solid):
+**S+A (solid):**
 
   H(S+A) = U(S+A) + PV  [ignore PV because solid]  
   
   H(S+A) = U(S+A) [directly from ASE]
 
-S (solid):
+**S (solid):**
   
   H(S) = U(S) + PV  [ignore PV because solid]
   
   H(S) = U(S) = E_SCF(S)  [slab is frozen]
 
-A (gas):
+**A (gas):** 
+
+(1) We can calculate it manually easily for mono-atomic systems
   
   H(A) = U(A) + PV
   
@@ -64,3 +66,6 @@ A (gas):
 
 ΔH @ 298.15 K = (-197479.394176) - (-192938.444217) - (-4540.261001) - (5/2)*0.025692570400413117 = -0.753 eV
 
+(2) We can use ASE IdealGasThermo to get H of Hg directly (/hg_ideal) 
+
+ΔH @ 298.15 K = (-197479.394176) - (-192938.444217) - (-4540.196769) = -0.753 eV
