@@ -52,7 +52,7 @@ Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable fo
 
 **A (gas):** 
 
-(1) We can calculate it manually easily for mono-atomic systems
+**(1) We can calculate it manually easily for mono-atomic systems**
   
   H(A) = U(A) + PV
   
@@ -66,6 +66,8 @@ Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable fo
 
 ΔH @ 298.15 K = (-197479.394176) - (-192938.444217) - (-4540.261001) - (5/2)*0.025692570400413117 = -0.753 eV
 
-(2) We can use ASE IdealGasThermo to get H of Hg directly (/Hg_on_Au/hg_ideal). This time don't need to do the algebra manually.
+**(2) We can use ASE IdealGasThermo to get H of Hg directly (/Hg_on_Au/hg_ideal). This time don't need to do the algebra manually.**
+
+For single atom we have turned off the DFT-D4 calculator as it adds very small amount of noise in energy
 
 ΔH @ 298.15 K = U(S+A) - E_SCF(S) - H(A) = (-197479.394176) - (-192938.444217) - (-4540.196769) = -0.753 eV
