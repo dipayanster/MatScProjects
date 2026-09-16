@@ -1,5 +1,5 @@
 
-     Program PWSCF v.7.6-dev starts on 16Sep2026 at 13:29:17 
+     Program PWSCF v.7.6-dev starts on 16Sep2026 at 14:11:22 
         Git branch: develop
         Last git commit: 82450953109050842193ce6b00a42d97d6eef26e
         Last git commit date: Tue Jun 23 08:01:32 2026 +0000
@@ -17,7 +17,7 @@
      Parallel version (MPI), running on     2 processors
 
      MPI processes distributed on     1 nodes
-     1969636 MiB available memory on the printing compute node when the environment starts
+     1969368 MiB available memory on the printing compute node when the environment starts
  
      Reading input from espresso.pwi
 Warning: card &CELL ignored
@@ -126,7 +126,7 @@ Warning: card &RISM ignored
      negative rho (up, down):  9.541E-05 0.000E+00
      Starting wfcs are   20 randomized atomic wfcs
 
-     total cpu time spent up to now is       26.5 secs
+     total cpu time spent up to now is       25.9 secs
 
      per-process dynamical memory:  4068.2 Mb
 
@@ -144,7 +144,7 @@ Warning: card &RISM ignored
 
      negative rho (up, down):  7.159E-05 0.000E+00
 
-     total cpu time spent up to now is      176.6 secs
+     total cpu time spent up to now is      175.7 secs
 
      total energy              =    -333.70305756 Ry
      estimated scf accuracy    <       0.00000016 Ry
@@ -155,7 +155,7 @@ Warning: card &RISM ignored
 
      negative rho (up, down):  5.692E-05 0.000E+00
 
-     total cpu time spent up to now is      262.7 secs
+     total cpu time spent up to now is      261.1 secs
 
      total energy              =    -333.70305788 Ry
      estimated scf accuracy    <       0.00000003 Ry
@@ -166,7 +166,7 @@ Warning: card &RISM ignored
 
      negative rho (up, down):  6.154E-06 0.000E+00
 
-     total cpu time spent up to now is      326.4 secs
+     total cpu time spent up to now is      324.9 secs
 
      total energy              =    -333.70305779 Ry
      estimated scf accuracy    <       0.00000002 Ry
@@ -177,7 +177,7 @@ Warning: card &RISM ignored
 
      negative rho (up, down):  5.813E-07 0.000E+00
 
-     total cpu time spent up to now is      396.0 secs
+     total cpu time spent up to now is      395.1 secs
 
      total energy              =    -333.70305776 Ry
      estimated scf accuracy    <          3.1E-09 Ry
@@ -188,7 +188,7 @@ Warning: card &RISM ignored
 
      negative rho (up, down):  5.520E-08 0.000E+00
 
-     total cpu time spent up to now is      456.5 secs
+     total cpu time spent up to now is      455.7 secs
 
      total energy              =    -333.70305774 Ry
      estimated scf accuracy    <          2.5E-09 Ry
@@ -197,7 +197,7 @@ Warning: card &RISM ignored
      Davidson diagonalization with overlap
      ethr =  1.24E-11,  avg # of iterations =  2.0
 
-     total cpu time spent up to now is      519.3 secs
+     total cpu time spent up to now is      519.4 secs
 
      End of self-consistent calculation
 
@@ -222,46 +222,46 @@ Warning: card &RISM ignored
 
      Writing all to output data dir ./pwscf.save/ :
      XML data file
-     init_run     :     23.86s CPU     26.34s WALL (       1 calls)
-     electrons    :    457.34s CPU    492.85s WALL (       1 calls)
+     init_run     :     23.36s CPU     25.81s WALL (       1 calls)
+     electrons    :    458.51s CPU    493.51s WALL (       1 calls)
 
      Called by init_run:
-     wfcinit      :     12.35s CPU     13.40s WALL (       1 calls)
-     potinit      :      4.92s CPU      5.89s WALL (       1 calls)
-     hinit0       :      2.16s CPU      2.49s WALL (       1 calls)
+     wfcinit      :     12.32s CPU     13.37s WALL (       1 calls)
+     potinit      :      4.91s CPU      5.90s WALL (       1 calls)
+     hinit0       :      2.18s CPU      2.49s WALL (       1 calls)
 
      Called by electrons:
-     c_bands      :    354.96s CPU    374.39s WALL (       7 calls)
-     sum_band     :     60.50s CPU     65.11s WALL (       7 calls)
-     v_of_rho     :     24.32s CPU     28.99s WALL (       7 calls)
-     mix_rho      :     18.87s CPU     26.10s WALL (       7 calls)
+     c_bands      :    355.94s CPU    375.34s WALL (       7 calls)
+     sum_band     :     61.24s CPU     65.91s WALL (       7 calls)
+     v_of_rho     :     23.68s CPU     28.17s WALL (       7 calls)
+     mix_rho      :     19.08s CPU     25.97s WALL (       7 calls)
 
      Called by c_bands:
-     init_us_2    :      5.96s CPU      6.89s WALL (      15 calls)
-     cegterg      :    256.38s CPU    274.81s WALL (       7 calls)
+     init_us_2    :      6.00s CPU      6.93s WALL (      15 calls)
+     cegterg      :    257.14s CPU    275.54s WALL (       7 calls)
 
      Called by *egterg:
      cdiaghg      :      0.02s CPU      0.02s WALL (      27 calls)
-     h_psi        :    241.75s CPU    259.99s WALL (      29 calls)
-     g_psi        :      0.66s CPU      0.67s WALL (      21 calls)
+     h_psi        :    242.35s CPU    260.54s WALL (      29 calls)
+     g_psi        :      0.76s CPU      0.76s WALL (      21 calls)
 
      Called by h_psi:
      h_psi:calbec :      5.55s CPU      5.59s WALL (      29 calls)
-     vloc_psi     :    227.80s CPU    244.94s WALL (      29 calls)
-     add_vuspsi   :      7.16s CPU      7.20s WALL (      29 calls)
+     vloc_psi     :    228.09s CPU    245.33s WALL (      29 calls)
+     add_vuspsi   :      7.42s CPU      7.47s WALL (      29 calls)
 
      General routines
      calbec       :      5.55s CPU      5.59s WALL (      29 calls)
-     fft          :     22.72s CPU     25.84s WALL (     111 calls)
-     ffts         :      5.79s CPU      6.52s WALL (      28 calls)
-     fftw         :    209.27s CPU    226.71s WALL (    2100 calls)
+     fft          :     22.58s CPU     25.64s WALL (     111 calls)
+     ffts         :      5.84s CPU      6.60s WALL (      28 calls)
+     fftw         :    209.11s CPU    226.63s WALL (    2100 calls)
  
      Parallel routines
  
-     PWSCF        :   8m 1.29s CPU   8m39.36s WALL
+     PWSCF        :   8m 1.95s CPU   8m39.50s WALL
 
  
-   This run was terminated on:  13:37:57  16Sep2026            
+   This run was terminated on:  14:20: 2  16Sep2026            
 
 =------------------------------------------------------------------------------=
    JOB DONE.

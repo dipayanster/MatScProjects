@@ -34,32 +34,32 @@ six             1.17.0
 tomli           2.4.1
 
 QE:
-	linux-vdso.so.1 (0x00007ffc20361000)
-	libhdf5_fortran.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5_fortran.so.320 (0x000015003c7fb000)
-	libhdf5_f90cstub.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5_f90cstub.so.320 (0x000015003c7dd000)
-	libhdf5.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5.so.320 (0x000015003c279000)
-	libmkl_scalapack_lp64.so.2 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_scalapack_lp64.so.2 (0x000015003ba00000)
-	libmkl_blacs_intelmpi_lp64.so.2 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_blacs_intelmpi_lp64.so.2 (0x000015003c238000)
-	libmkl_intel_lp64.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_intel_lp64.so.3 (0x000015003a800000)
-	libmkl_sequential.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_sequential.so.3 (0x0000150039000000)
-	libmkl_core.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_core.so.3 (0x0000150034800000)
-	libimf.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libimf.so (0x0000150034200000)
-	libm.so.6 => /lib64/libm.so.6 (0x000015003c151000)
-	libirng.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libirng.so (0x000015003b907000)
-	libmpifort.so.12 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mpi/latest/lib/libmpifort.so.12 (0x0000150033c00000)
-	libmpi.so.12 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mpi/latest/lib/libmpi.so.12 (0x0000150029600000)
-	libc.so.6 => /lib64/libc.so.6 (0x0000150029200000)
-	libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x000015003c135000)
-	libifport.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libifport.so.5 (0x000015003c10b000)
-	libifcoremt.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libifcoremt.so.5 (0x0000150038e8d000)
-	libsvml.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libsvml.so (0x0000150027a00000)
-	libintlc.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libintlc.so.5 (0x000015003b8a4000)
-	libdl.so.2 => /lib64/libdl.so.2 (0x000015003c104000)
-	libpthread.so.0 => /lib64/libpthread.so.0 (0x000015003c0ff000)
-	/lib64/ld-linux-x86-64.so.2 (0x000015003c849000)
-	librt.so.1 => /lib64/librt.so.1 (0x000015003c0fa000)
+	linux-vdso.so.1 (0x00007ffe409c6000)
+	libhdf5_fortran.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5_fortran.so.320 (0x000014962dce6000)
+	libhdf5_f90cstub.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5_f90cstub.so.320 (0x000014962dcc8000)
+	libhdf5.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5.so.320 (0x000014962d764000)
+	libmkl_scalapack_lp64.so.2 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_scalapack_lp64.so.2 (0x000014962d000000)
+	libmkl_blacs_intelmpi_lp64.so.2 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_blacs_intelmpi_lp64.so.2 (0x000014962d723000)
+	libmkl_intel_lp64.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_intel_lp64.so.3 (0x000014962be00000)
+	libmkl_sequential.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_sequential.so.3 (0x000014962a600000)
+	libmkl_core.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_core.so.3 (0x0000149625e00000)
+	libimf.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libimf.so (0x0000149625800000)
+	libm.so.6 => /lib64/libm.so.6 (0x000014962cf25000)
+	libirng.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libirng.so (0x000014962ce2c000)
+	libmpifort.so.12 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mpi/latest/lib/libmpifort.so.12 (0x0000149625200000)
+	libmpi.so.12 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mpi/latest/lib/libmpi.so.12 (0x000014961ac00000)
+	libc.so.6 => /lib64/libc.so.6 (0x000014961a800000)
+	libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x000014962d6fb000)
+	libifport.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libifport.so.5 (0x000014962bdd6000)
+	libifcoremt.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libifcoremt.so.5 (0x000014962a48d000)
+	libsvml.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libsvml.so (0x0000149619000000)
+	libintlc.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libintlc.so.5 (0x000014962bd73000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x000014962d6f4000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x000014962d6ef000)
+	/lib64/ld-linux-x86-64.so.2 (0x000014962dd34000)
+	librt.so.1 => /lib64/librt.so.1 (0x000014962d6ea000)
 
-Running on host n05p027.gvr.local at Wed Sep 16 13:29:12 MSK 2026
+Running on host n05p027.gvr.local at Wed Sep 16 14:11:16 MSK 2026
 
  The total memory at the main node (in GB)
                total        used        free      shared  buff/cache   available
@@ -76,7 +76,7 @@ MPI plugin types are...
 specific pmix plugin versions available: pmix_v6
 
 Job user is SLURM_JOB_USER= dsen
-User job SLURM_JOB_NAME=ideal has assigned ID SLURM_JOBID=1997795
+User job SLURM_JOB_NAME=ideal has assigned ID SLURM_JOBID=2000019
 This job was submitted from the computer SLURM_SUBMIT_HOST=space03.hydra.local
 and from the home directory SLURM_SUBMIT_DIR:
 /lustre/projects/d/dsen/2026_calcs/test/idealhg
@@ -292,14 +292,14 @@ file locks                          (-x) unlimited
 
 
 
-Starting ASE parallel job on Wed Sep 16 13:29:13 MSK 2026
+Starting ASE parallel job on Wed Sep 16 14:11:17 MSK 2026
 
 Successfully read 1 atoms from Hg.vasp
 
 [Phase A.] Running SCF calculation...
 
  1. SCF Energy Results
-  Total Energy (D4):  -4540.261001 eV
+  Total Energy :  -4540.261001 eV
 
 [Phase B.] Skipping vibrational analysis (single atom: 3N-3 = 0 modes)
 
@@ -375,4 +375,4 @@ Additional Thermodynamic Relations Check (298.15 K):
 
 === Thermodynamic Analysis Complete ===
 
-ASE finished on : Wed Sep 16 13:37:57 MSK 2026
+ASE finished on : Wed Sep 16 14:20:02 MSK 2026

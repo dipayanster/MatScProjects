@@ -2,7 +2,7 @@ srun: defined options
 srun: -------------------- --------------------
 srun: (null)              : n05p027
 srun: distribution        : block:block,nopack
-srun: jobid               : 1997795
+srun: jobid               : 2000019
 srun: job-name            : ideal
 srun: mem-per-cpu         : 8G
 srun: mpi                 : pmi2
@@ -14,10 +14,10 @@ srun: oom-kill-step       : 0
 srun: verbose             : 1
 srun: -------------------- --------------------
 srun: end of defined options
-srun: jobid 1997795: nodes(1):`n05p027', cpu counts: 4(x1)
+srun: jobid 2000019: nodes(1):`n05p027', cpu counts: 4(x1)
 srun: CpuBindType=cores
-srun: launching StepId=1997795.1 on host n05p027, 2 tasks: [0-1]
+srun: launching StepId=2000019.1 on host n05p027, 2 tasks: [0-1]
 srun: Node n05p027, 2 tasks started
-srun: Received task exit notification for 2 tasks of StepId=1997795.1 (status=0x0000).
+srun: Received task exit notification for 2 tasks of StepId=2000019.1 (status=0x0000).
 srun: n05p027: tasks 0-1: Completed
 srun: First task exited. Terminating job in 150s

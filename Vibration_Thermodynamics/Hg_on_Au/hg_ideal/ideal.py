@@ -139,7 +139,7 @@ initial_energy = total_energy
 print("\n 1. SCF Energy Results", flush=True)
 #print(f"  QE Electronic Energy:    {qe_energy:>12.6f} eV", flush=True)
 #print(f"  DFT-D4 Dispersion:       {d4_energy:>12.6f} eV", flush=True)
-print(f"  Total Energy (D4):  {total_energy:>12.6f} eV", flush=True)
+print(f"  Total Energy :  {total_energy:>12.6f} eV", flush=True)
 
 #energy_diff = abs(total_energy - (qe_energy + d4_energy))
 #if energy_diff <= 0.001:
