@@ -66,15 +66,21 @@ PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops
   
   H(A) = E_SCF(A) + (5/2)k_BT
 
-**ΔH = U(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT**
+**ΔH @ 298.15 K :** 
 
-ΔH @ 298.15 K = (-197479.394176) - (-192938.444217) - (-4540.261001) - (5/2)*0.025692570400413117 = -0.753 eV
+  = U(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT
+  
+  = (-197479.394176) - (-192938.444217) - (-4540.261001) - (5/2)*0.025692570400413117 = -0.753 eV
 
 **(2) We can use ASE IdealGasThermo to get H of Hg atom directly (/Hg_on_Au/hg_ideal). This time we don't need to do the algebra manually.**
 
 (For single atom we have turned off the DFT-D4 calculator as it adds very small amount of noise in total energy)
 
-ΔH @ 298.15 K = U(S+A) - E_SCF(S) - H(A) = (-197479.394176) - (-192938.444217) - (-4540.196769) = -0.753 eV
+**ΔH @ 298.15 K :** 
+
+  = U(S+A) - E_SCF(S) - H(A) 
+
+  = (-197479.394176) - (-192938.444217) - (-4540.196769) = -0.753 eV
 
 
 ΔG for Hg adatom adsorption on Au (111) surface (/Hg_on_Au)
@@ -93,12 +99,32 @@ PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops
   
 **S (solid):**
 
-	G(S) = F(S) + PV [ignore PV because solid]
+  G(S) = F(S) + PV [ignore PV because solid]
 
-	G(S) = F(S) = E_SCF(S) [slab is frozen]
+  G(S) = F(S) = E_SCF(S) [slab is frozen]
 
 **A (gas):** 
 
 **(1) Manual calculation:**
 
+  G(A) = H(A) - TS(A)
+	 
+  But we derived above H(A) = E_SCF(A) + (5/2)k_BT
+	 
+  G(A) = E_SCF(A) + (5/2)k_BT  - TS(A)
+  
+**ΔG @ 298.15 K:* 
+  
+  = F(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT  + TS(A) 
+  
+  = -197479.617323 - (-192938.444217) - (-4540.261001) - (5/2)*0.025692570400413117 + (298.15*0.001812313)
+				
+  = -0.436 eV
+
 **(2) We can use ASE IdealGasThermo to get G of Hg atom directly (/Hg_on_Au/hg_ideal). This time we don't need to do the algebra manually.**
+
+**ΔH @ 298.15 K**
+ 
+  = F(S+A) - E_SCF(S) - G(A)
+  
+  = -197479.617323 - (-192938.444217) - (-4540.737110) 
