@@ -10,7 +10,7 @@ Script for calculating vibrational frequencies and thermodynamic properties
 
 N2 (/N2_ideal)
 ===========================================================
-(can run in personal laptops)
+PAW-PBE+DFT-D4(can run in personal laptops)
  
 IdealGasThermo includes translational and rotational contributions rigorously
 
@@ -19,7 +19,7 @@ Atom relaxation and IdealGasThermo (ZPE , H, S, G) calculation example
 
 ΔH for Hg adatom adsorption on Au (111) surface (/Hg_on_Au)
 ===========================================================
-Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops)
+PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops)
 
 	Hg atom Total Energy (QE, no D4 for single atom): -4540.261001 eV (pre-calculated results in /Hg_on_Au/slab_atom)
 
@@ -77,9 +77,9 @@ Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable fo
 ΔH @ 298.15 K = U(S+A) - E_SCF(S) - H(A) = (-197479.394176) - (-192938.444217) - (-4540.196769) = -0.753 eV
 
 
-ΔH for Hg adatom adsorption on Au (111) surface (/Hg_on_Au)
+ΔG for Hg adatom adsorption on Au (111) surface (/Hg_on_Au)
 ===========================================================
-Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops)
+PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops)
 
 **ΔG = G(S+A) - G(S) - G(A)**
 
