@@ -16,7 +16,7 @@ IdealGasThermo includes translational and rotational contributions rigorously
 
 Atom relaxation (/N2_ideal/n2_atom_relax) followed by IdealGasThermo (ZPE , H, S, G) calculation 
 
-Note: For a 2-atom system with geometry = 'linear', symmetrynumber = 2, and spin = 0.0, there are 3N = 6 total degrees of freedom, of which 3 are translations and 2 are rotations (a linear molecule has only 2 rotational axes, not 3), leaving 3N − 3 − 2 = 1 true vibrational mode. ASE discards 5 lowest frequencies as translations and rotations, and only keeps the single real mode at 291.5 meV, giving ZPE = 0.5*291.5 meV in thermodynamics calculations. 
+Note: For a 2-atom system with geometry = 'linear', symmetrynumber = 2, and spin = 0.0, there are 3N = 6 total degrees of freedom, of which 3 are translations and 2 are rotations, leaving 3N − 3 − 2 = 1 true vibrational mode. ASE discards 5 lowest frequencies as translations and rotations, and only keeps the single real mode at 291.5 meV, giving ZPE = 0.5*291.5 meV in thermodynamics calculations. Hence vib.summary() and thermo.get_ZPE_correction() return different values of ZPE.
 
 ΔH for Hg adatom adsorption on Au (111) surface (/Hg_on_Au)
 ===========================================================
