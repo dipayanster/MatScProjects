@@ -128,3 +128,5 @@ PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops
   = F(S+A) - E_SCF(S) - G(A)
   
   = -197479.617323 - (-192938.444217) - (-4540.737110) 
+  
+  = -0.436 eV
