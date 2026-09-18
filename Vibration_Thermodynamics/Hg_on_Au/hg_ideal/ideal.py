@@ -154,11 +154,11 @@ print(f"  Total Energy :  {total_energy:>12.6f} eV", flush=True)
 # Anything with >=2 atoms does have modes and must be run.
 if len(atoms) < 2:
     print("\n[Phase B.] Skipping vibrational analysis "
-          "(single atom: 3N-3 = 0 modes)", flush=True)
+          "Single atom: no vibrational modes", flush=True)
     vib_energies = np.array([])
 else:
-    print(f"\n[Phase B.] Running vibrational analysis "
-          f"({len(atoms)} atoms, {3*len(atoms)-3} modes expected)...", flush=True)
+    print(f"\n[Phase B.] Calculating vibrations for "
+          f"{len(atoms)} atoms...", flush=True)    
 
     vib = Vibrations(atoms, indices=None, name='vib', delta=0.01)
     vib.run()
@@ -183,7 +183,7 @@ print(f"  Number of atoms:   {len(atoms)}", flush=True)
 print(f"  Vibrational modes: {len(vib_energies)}", flush=True)
 
 thermo_atoms = atoms.copy()
-thermo_atoms.pbc = False #ASE 3.28 includes PBC check, used to work with periodic atom objects in 3.26
+thermo_atoms.pbc = False #ASE 3.28+ includes PBC check, used to work with periodic atom objects in 3.26
 
 thermo = IdealGasThermo(
     vib_energies=vib_energies,

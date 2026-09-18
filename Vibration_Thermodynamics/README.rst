@@ -10,7 +10,9 @@ Script for calculating vibrational frequencies and thermodynamic properties
 
 N2
 ===========================================================
-Note: No translational or rotational degrees of freedom in HarmonicThermo
+IdealGasThermo includes translational and rotational contributions rigorously
+
+Atom relaxation and IdealGasThermo (ZPE , H, S, G) calculation example 
 
 
 ΔH for Hg adatom adsorption on Au (111) surface (/Hg_on_Au)
@@ -40,15 +42,15 @@ Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable fo
 
 **S+A (solid):**
 
-  H(S+A) = U(S+A) + PV  [ignore PV because solid]  
+  H(S+A) = U(S+A) + PV [ignore PV because solid]  
   
   H(S+A) = U(S+A) [directly from ASE]
 
 **S (solid):**
   
-  H(S) = U(S) + PV  [ignore PV because solid]
+  H(S) = U(S) + PV [ignore PV because solid]
   
-  H(S) = U(S) = E_SCF(S)  [slab is frozen]
+  H(S) = U(S) = E_SCF(S) [slab is frozen]
 
 **A (gas):** 
 
@@ -56,9 +58,9 @@ Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable fo
   
   H(A) = U(A) + PV
   
-  U(A) = E_SCF(A) + (3/2)k_BT  [translational KE term]
+  U(A) = E_SCF(A) + (3/2)k_BT [translational KE term]
   
-  PV = k_BT  -> ideal gas, 1 atom
+  PV = k_BT  [ideal gas, 1 atom]
   
   H(A) = E_SCF(A) + (5/2)k_BT
 
@@ -71,3 +73,29 @@ Computation level PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable fo
 (For single atom we have turned off the DFT-D4 calculator as it adds very small amount of noise in total energy)
 
 ΔH @ 298.15 K = U(S+A) - E_SCF(S) - H(A) = (-197479.394176) - (-192938.444217) - (-4540.196769) = -0.753 eV
+
+
+ΔH for Hg adatom adsorption on Au (111) surface (/Hg_on_Au)
+===========================================================
+
+**ΔG = G(S+A) - G(S) - G(A)**
+
+**S = substrate, A = adsorbate**
+
+**S+A (solid):**
+
+  G(S+A) = F(S+A) + PV  [ignore PV because solid] 
+  
+  G(S+A) = F(S+A) [directly from ASE]
+  
+**S (solid):**
+
+	G(S) = F(S) + PV [ignore PV because solid]
+
+	G(S) = F(S) = E_SCF(S) [slab is frozen]
+
+**A (gas):** 
+
+**(1) Manual calculation:**
+
+**(2) We can use ASE IdealGasThermo to get G of Hg atom directly (/Hg_on_Au/hg_ideal). This time we don't need to do the algebra manually.**

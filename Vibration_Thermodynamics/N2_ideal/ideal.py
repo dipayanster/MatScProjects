@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 import os
 import sys
-# ==============================================
+
 # Cache fix for compute nodes (AlmaLinux + ZFS home)
-# ==============================================
 cache_dir = os.path.join(os.getcwd(), 'cache')
 os.makedirs(cache_dir, exist_ok=True)
 os.environ['XDG_CACHE_HOME'] = cache_dir
@@ -18,7 +17,7 @@ from ase.calculators.mixing import SumCalculator
 from dftd4.interface import DampingParam
 from dftd4.parameters import get_damping_param
 from ase.vibrations import Vibrations
-from ase.thermochemistry import HarmonicThermo
+from ase.thermochemistry import IdealGasThermo
 import numpy as np
 sys.stderr = sys.stdout
 sys.stdout.flush()
@@ -75,6 +74,7 @@ except Exception as e:
     print(f"Error reading {vasp_file}: {e}")
     sys.exit(1)
 
+
 # ==============================================
 # 3. Calculator configuration
 # ==============================================
@@ -90,7 +90,7 @@ qe_calc = Espresso(
     profile=profile,
     pseudopotentials=pseudopotentials,
     input_data=input_data,
-    kpts=(1, 1, 1), 
+    kpts=(1, 1, 1),
 )
 
 custom_params = {
@@ -106,17 +106,25 @@ dftd4_calc = DFTD4(verbose=True, params_tweaks=custom_params)
 combined_calc = SumCalculator([qe_calc, dftd4_calc])
 atoms.calc = combined_calc
 
-vib_atom_index = None
-#vib_atom_index = [1]
+# 3b. Ideal-gas thermo settings
+# geometry: 'monatomic' | 'linear' | 'nonlinear'
+# symmetrynumber: rotational symmetry number (int)
+#   - 1 : no rotational symmetry / heteronuclear diatomic (CO, NO)
+#   - 2 : homonuclear diatomic (N2, O2), H2O
+#   - 3 : NH3 ; 12 : CH4
+# spin: total spin S (NOT multiplicity)
+#   - 0.0 : singlet   (N2, H2O, Hg, CH4)
+#   - 0.5 : doublet   (NO, OH radical)
+#   - 1.0 : triplet   (O2)
 
-if vib_atom_index is None:
-    print("\nVibrating atoms: ALL freely moving atoms (constraints will be respected)", flush=True)
-else:
-    atom_list = [f"{idx} ({atoms.symbols[idx]})" for idx in vib_atom_index]
-    print(f"\nVibrating atoms (0 based): {', '.join(atom_list)}", flush=True)
+geometry       = 'linear'    
+symmetrynumber = 2
+spin           = 0.0
+T_std          = 298.15     # K (standard temperature, 25 °C)
+P_std          = 101325.0   # Pa (standard pressure, 1 bar)
 
 # ==============================================
-# 4. SCF Calculation 
+# 4. SCF Calculation
 # ==============================================
 print("\nPBE default DFT-D4 parameters :", get_damping_param("pbe"), flush=True)
 print("Custom DFT-D4 parameters      :", custom_params, flush=True)
@@ -131,7 +139,7 @@ d4_energy = dftd4_calc.get_potential_energy(atoms)
 print("\n 1. SCF Energy Results", flush=True)
 print(f"  QE Electronic Energy:    {qe_energy:>12.6f} eV", flush=True)
 print(f"  DFT-D4 Dispersion:       {d4_energy:>12.6f} eV", flush=True)
-print(f"  Total Energy (QE + D4):  {total_energy:>12.6f} eV", flush=True)
+print(f"  Total Energy :  {total_energy:>12.6f} eV", flush=True)
 
 energy_diff = abs(total_energy - (qe_energy + d4_energy))
 if energy_diff <= 0.001:
@@ -139,81 +147,99 @@ if energy_diff <= 0.001:
 else:
     print(f"    Energy check: inconsistent (Δ={energy_diff:.6f} eV)", flush=True)
 
-forces = atoms.get_forces()
-stress = atoms.get_stress()
-
-force_norms = np.linalg.norm(forces, axis=1)
-max_force = np.max(force_norms)
-pressure = -np.sum(stress[:3]) * 1602.1766208 / 3
-
-print("\n 2. SCF forces and stress", flush=True)
-print(f"  Max force (norm): {max_force:>8.6f} eV/Å", flush=True)
-print(f"  Pressure: {pressure:>8.6f} kbar", flush=True)
-
 # ==============================================
 # 5. Vibrational Analysis
 # ==============================================
-print("\n[Phase B.] Starting vibrational analysis...", flush=True)
-  
-vib = Vibrations(atoms, indices=vib_atom_index, name='vib', delta=0.01)
-vib.run()
+# A single atom in a box has NO vibrational modes (3N-3 = 0).
+# Anything with >=2 atoms does have modes and must be run.
+if len(atoms) < 2:
+    print("\n[Phase B.] Skipping vibrational analysis "
+          "Single atom: no vibrational modes", flush=True)
+    vib_energies = np.array([])
+else:
+    print(f"\n[Phase B.] Calculating vibrations for "
+          f"{len(atoms)} atoms...", flush=True)    
 
-print("\n" + "="*70, flush=True)
-print("Vibrational Analysis Summary:", flush=True)
-print("-"*70, flush=True)
-vib.summary()
-print("="*70, flush=True)
+    vib = Vibrations(atoms, indices=None, name='vib', delta=0.01)
+    vib.run()
 
-vib_energies = vib.get_energies()
+    print("\n" + "="*70, flush=True)
+    print("Vibrational Analysis Summary:", flush=True)
+    print("-"*70, flush=True)
+    vib.summary()
+    print("="*70, flush=True)
+
+    vib_energies = vib.get_energies()
+    print(f"  Collected {len(vib_energies)} vibrational energies", flush=True)
 
 # ==============================================
-# 6. Thermodynamic Analysis
+# 6. Thermodynamic Analysis (Ideal Gas)
 # ==============================================
-thermo = HarmonicThermo(
+print(f"\n[Phase C.] Ideal Gas Thermodynamic Analysis", flush=True)
+print(f"  Geometry:          {geometry}", flush=True)
+print(f"  Symmetry number:   {symmetrynumber}", flush=True)
+print(f"  Spin:              {spin}", flush=True)
+print(f"  Number of atoms:   {len(atoms)}", flush=True)
+print(f"  Vibrational modes: {len(vib_energies)}", flush=True)
+
+thermo_atoms = atoms.copy()
+thermo_atoms.pbc = False #ASE 3.28+ includes PBC check, used to work with periodic atom objects in 3.26
+
+thermo = IdealGasThermo(
     vib_energies=vib_energies,
     potentialenergy=initial_energy,
+    atoms=thermo_atoms,
+    geometry=geometry,
+    symmetrynumber=symmetrynumber,
+    spin=spin,
     ignore_imag_modes=True
 )
 
 temperatures = np.arange(50, 501, 10)
 
-print("\n[Phase C.] Starting thermodynamic analysis...")
-print("\n" + "="*95, flush=True)
-print(f"{'Temp(K)':>5}   {'ZPE(eV)':>8}   {'F(eV)':>14}   {'U(eV)':>14}   {'S(eV/K)':>12}", flush=True)
-print("-"*95, flush=True)
+print("\n" + "="*100, flush=True)
+print(f"{'Temp(K)':>7}   {'ZPE(eV)':>10}   {'H(eV)':>14}   {'S(eV/K)':>14}   {'G(eV)':>14}", flush=True)
+print("-"*100, flush=True)
+
+results = {}
 
 for T in temperatures:
     zpe = thermo.get_ZPE_correction()
-    
-    if T == 0:
-        F = zpe
-        U = zpe
-        S = 0.0
-    else:
-        with np.errstate(divide='ignore', invalid='ignore'):
-            F = thermo.get_helmholtz_energy(T, verbose=False)
-            U = thermo.get_internal_energy(T, verbose=False)
-            S = thermo.get_entropy(T, verbose=False)
-    
-    print(f"{T:5.0f}   {zpe:8.6f}   {F:14.6f}   {U:14.6f}   {S:12.6e}", flush=True)
 
-print("="*95, flush=True)
+    H = thermo.get_enthalpy(T, verbose=False)
+    S = thermo.get_entropy(T, P_std, verbose=False)
+    G = thermo.get_gibbs_energy(T, P_std, verbose=False)
+
+    results[T] = {
+        'ZPE': zpe,
+        'H': H,
+        'S': S,
+        'G': G,
+    }
+
+    print(f"{T:7.0f}   {zpe:10.6f}   {H:14.6f}   {S:14.6e}   {G:14.6f}", flush=True)
+
+print("="*100, flush=True)
 
 # Separate section for 298.15 K
-print("\n" + "-"*95, flush=True)
-print("Temperature: 298.15 K", flush=True)
-print("-"*95, flush=True)
+print("\n" + "-"*100, flush=True)
+print("Temperature: 298.15 K (Standard Conditions)", flush=True)
+print("-"*100, flush=True)
 
-zpe_298 = thermo.get_ZPE_correction()
-F_298 = thermo.get_helmholtz_energy(298.15, verbose=False)
-U_298 = thermo.get_internal_energy(298.15, verbose=False)
-S_298 = thermo.get_entropy(298.15, verbose=False)
+zpe_std = thermo.get_ZPE_correction()
+H_std = thermo.get_enthalpy(T_std, verbose=False)
+S_std = thermo.get_entropy(T_std, P_std, verbose=False)
+G_std = thermo.get_gibbs_energy(T_std, P_std, verbose=False)
 
-print(f"  ZPE = {zpe_298:10.6f} eV", flush=True)
-print(f"  F   = {F_298:10.6f} eV", flush=True)
-print(f"  U   = {U_298:10.6f} eV", flush=True)
-print(f"  S   = {S_298:10.6e} eV/K", flush=True)
-print("-"*95, flush=True)
+print(f"  ZPE = {zpe_std:12.6f} eV", flush=True)
+print(f"  H   = {H_std:12.6f} eV  (Enthalpy)", flush=True)
+print(f"  S   = {S_std:12.6e} eV/K  (Entropy)", flush=True)
+print(f"  G   = {G_std:12.6f} eV  (Gibbs Free Energy)", flush=True)
+print("-"*100, flush=True)
+
+# Consistency check
+print("\nAdditional Thermodynamic Relations Check (298.15 K):", flush=True)
+print(f"  G = H - T*S  =>  {G_std:.6f} = {H_std:.6f} - {T_std:.2f}*{S_std:.6e} = {H_std - T_std*S_std:.6f} eV", flush=True)
 
 print("\n=== Thermodynamic Analysis Complete ===", flush=True)
 sys.stdout.flush()
