@@ -8,7 +8,7 @@ Script for calculating vibrational frequencies and thermodynamic properties
 
 **4) Forces for each vibrations are saved under vib directory in json format**
 
-N2
+N2 (/N2_ideal)
 ===========================================================
 IdealGasThermo includes translational and rotational contributions rigorously
 
