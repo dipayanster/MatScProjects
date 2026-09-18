@@ -112,7 +112,7 @@ PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops
   But we derived above H(A) = E_SCF(A) + (5/2)k_BT
 	 
   G(A) = E_SCF(A) + (5/2)k_BT  - TS(A)
-  
+
 **ΔG @ 298.15 K:* 
   
   = F(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT  + TS(A) 
@@ -123,7 +123,7 @@ PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops
 
 **(2) We can use ASE IdealGasThermo to get G of Hg atom directly (/Hg_on_Au/hg_ideal). This time we don't need to do the algebra manually.**
 
-**ΔH @ 298.15 K**
+**ΔG @ 298.15 K**
  
   = F(S+A) - E_SCF(S) - G(A)
   
