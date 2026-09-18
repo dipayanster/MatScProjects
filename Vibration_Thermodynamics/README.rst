@@ -113,7 +113,7 @@ PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops
 	 
   G(A) = E_SCF(A) + (5/2)k_BT  - TS(A)
 
-**ΔG @ 298.15 K:* 
+**ΔG @ 298.15 K:** 
   
   = F(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT  + TS(A) 
   
