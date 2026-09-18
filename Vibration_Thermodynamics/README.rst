@@ -10,11 +10,11 @@ Script for calculating vibrational frequencies and thermodynamic properties
 
 N2 (/N2_ideal)
 ===========================================================
-PAW-PBE+DFT-D4(can run in personal laptops)
+PAW-PBE+DFT-D4 (Suitable for running in personal laptops)
  
 IdealGasThermo includes translational and rotational contributions rigorously
 
-Atom relaxation and IdealGasThermo (ZPE , H, S, G) calculation example 
+Atom relaxation (/N2_ideal/n2_atom_relax) followed by IdealGasThermo (ZPE , H, S, G) calculation 
 
 
 ΔH for Hg adatom adsorption on Au (111) surface (/Hg_on_Au)
