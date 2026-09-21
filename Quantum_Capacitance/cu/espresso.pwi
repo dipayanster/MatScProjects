@@ -1,0 +1,46 @@
+&CONTROL
+   calculation      = 'nscf'
+   verbosity        = 'low'
+   wf_collect       = .true.
+   outdir           = './tmp'
+   prefix           = 'copper'
+   disk_io          = 'high'
+   pseudo_dir       = './'
+/
+&SYSTEM
+   ibrav            = 0
+   nat              = 4
+   ntyp             = 1
+   ecutwfc          = 100
+   occupations      = 'smearing'
+   degauss          = 0.01
+   smearing         = 'gauss'
+/
+&ELECTRONS
+   conv_thr         = 1e-10
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+Cu 63.546 Cu.upf
+
+K_POINTS automatic
+16 16 16  0 0 0
+
+CELL_PARAMETERS angstrom
+3.61000000000000 0.00000000000000 0.00000000000000
+0.00000000000000 3.61000000000000 0.00000000000000
+0.00000000000000 0.00000000000000 3.61000000000000
+
+ATOMIC_POSITIONS angstrom
+Cu 0.0000000000 0.0000000000 0.0000000000  
+Cu 0.0000000000 1.8050000000 1.8050000000  
+Cu 1.8050000000 0.0000000000 1.8050000000  
+Cu 1.8050000000 1.8050000000 0.0000000000  
+

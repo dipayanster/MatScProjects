@@ -1,0 +1,45 @@
+&CONTROL
+   calculation      = 'nscf'
+   verbosity        = 'low'
+   wf_collect       = .true.
+   outdir           = './tmp'
+   prefix           = 'graphene'
+   disk_io          = 'high'
+   pseudo_dir       = './'
+/
+&SYSTEM
+   ibrav            = 0
+   nat              = 2
+   ntyp             = 1
+   ecutwfc          = 100
+   occupations      = 'smearing'
+   degauss          = 0.01
+   smearing         = 'gauss'
+   assume_isolated  = '2D'
+/
+&ELECTRONS
+   conv_thr         = 1e-10
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+C 12.011 C.upf
+
+K_POINTS automatic
+66 66 1  0 0 0
+
+CELL_PARAMETERS angstrom
+2.46632150966519 0.00000000000000 0.00000000000000
+-1.23316075483259 2.13589708127962 0.00000000000000
+0.00000000000000 0.00000000000000 15.00000000000000
+
+ATOMIC_POSITIONS angstrom
+C 0.0000000000 0.0000000000 7.5000000000  
+C 1.2331606817 0.7119656511 7.5000000000  
+

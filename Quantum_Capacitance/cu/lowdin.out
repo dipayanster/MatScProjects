@@ -1,0 +1,18 @@
+Löwdin Charges from SCF calculation (projwfc.out):
+================================================
+Lowdin Charges: 
+
+     Atom #   1: total charge =  18.8436, s =  3.0520, 
+     Atom #   1: total charge =  18.8436, p =  5.9993, pz=  1.9998, px=  1.9998, py=  1.9998, 
+     Atom #   1: total charge =  18.8436, d =  9.7923, dz2=  1.9715, dxz=  1.9497, dyz=  1.9497, dx2-y2=  1.9715, dxy=  1.9497, 
+     Atom #   2: total charge =  18.8436, s =  3.0520, 
+     Atom #   2: total charge =  18.8436, p =  5.9993, pz=  1.9998, px=  1.9998, py=  1.9998, 
+     Atom #   2: total charge =  18.8436, d =  9.7923, dz2=  1.9715, dxz=  1.9497, dyz=  1.9497, dx2-y2=  1.9715, dxy=  1.9497, 
+     Atom #   3: total charge =  18.8436, s =  3.0520, 
+     Atom #   3: total charge =  18.8436, p =  5.9993, pz=  1.9998, px=  1.9998, py=  1.9998, 
+     Atom #   3: total charge =  18.8436, d =  9.7923, dz2=  1.9715, dxz=  1.9497, dyz=  1.9497, dx2-y2=  1.9715, dxy=  1.9497, 
+     Atom #   4: total charge =  18.8436, s =  3.0520, 
+     Atom #   4: total charge =  18.8436, p =  5.9993, pz=  1.9998, px=  1.9998, py=  1.9998, 
+     Atom #   4: total charge =  18.8436, d =  9.7923, dz2=  1.9715, dxz=  1.9497, dyz=  1.9497, dx2-y2=  1.9715, dxy=  1.9497, 
+
+Spilling Parameter: 0.008200

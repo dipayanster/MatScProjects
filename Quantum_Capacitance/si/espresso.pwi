@@ -1,0 +1,44 @@
+&CONTROL
+   calculation      = 'nscf'
+   verbosity        = 'low'
+   wf_collect       = .true.
+   outdir           = './tmp'
+   prefix           = 'silicon'
+   disk_io          = 'high'
+   pseudo_dir       = './'
+/
+&SYSTEM
+   ibrav            = 0
+   nat              = 2
+   ntyp             = 1
+   ecutwfc          = 100
+   occupations      = 'smearing'
+   degauss          = 0.01
+   smearing         = 'gauss'
+/
+&ELECTRONS
+   conv_thr         = 1e-10
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+Si 28.085 Si.upf
+
+K_POINTS automatic
+16 16 16  0 0 0
+
+CELL_PARAMETERS angstrom
+-0.00000000000000 2.73396813311352 2.73396813311352
+2.73396813311352 0.00000000000000 2.73396813311352
+2.73396813311352 2.73396813311352 0.00000000000000
+
+ATOMIC_POSITIONS angstrom
+Si 1.3669840666 4.1009521997 4.1009521997  
+Si 0.0000000000 0.0000000000 0.0000000000  
+
