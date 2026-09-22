@@ -3,7 +3,7 @@ ASE tutorial
 =============
 **python slab.py**
 
-Generates a 4×4×4 Au slab with a Pd adatom adsorbed at the FCC hollow site and 10 Å of vacuum, using only default ASE commands.
+Generates a 4×4×4 Au slab with a Pd adatom adsorbed at the fcc hollow site and 10 Å of vacuum, using only default ASE commands.
 
 Install VESTA software (https://jp-minerals.org/vesta/en/) to open the generated file (in POSCAR format) and inspect it
 
@@ -16,3 +16,11 @@ Open it in VESTA and compare with the starting structure.
 **ase gui relax.traj**
 
 Opens the saved ASE trajectory file relax.traj in the ASE GUI viewer so you can inspect each ionic relaxation frame.
+
+
+TASK
+============
+
+1) Calculate adsorption energy: E_total - E_slab - E_atom
+
+2) Repeat the same for top, bridge and hcp hollow site adsorption
