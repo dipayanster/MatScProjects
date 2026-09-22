@@ -11,7 +11,7 @@ Install vesta (https://jp-minerals.org/vesta/en/) to open the generated file (in
 
 Runs an atomic relaxation using the ASE default EMT calculator with an fmax tolerance of 0.01 eV/Å, saves the relaxed structure. 
 
-Opens it in VESTA to compare with the starting structure.
+Open it in VESTA and compare with the starting structure.
 
 **ase gui relax.traj**
 
