@@ -3,9 +3,9 @@ ASE tutorial
 =============
 **python slab.py**
 
-Generates a 4×4×4 Au slab with a Pd adatom adsorbed at the fcc hollow site and 10 Å of vacuum, using only default ASE commands.
+Generates a 4×4×4 Au slab with a Pd adatom adsorbed at the FCC hollow site and 10 Å of vacuum, using only default ASE commands.
 
-Install vesta (https://jp-minerals.org/vesta/en/) to open the generated file (in POSCAR format) and inspect it
+Install VESTA software (https://jp-minerals.org/vesta/en/) to open the generated file (in POSCAR format) and inspect it
 
 **python relax_emt.py**
 
