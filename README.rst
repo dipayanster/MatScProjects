@@ -1,6 +1,6 @@
 ~~~~~~~~~~~~
 Materials Modeling
 ~~~~~~~~~~~~
-Example calculations
+Teaching materials and example calculations
 
 ase_qe_np_pdos.py and ase_qe_np_tdos.py : Gnuplot scripts for plotting DOS
