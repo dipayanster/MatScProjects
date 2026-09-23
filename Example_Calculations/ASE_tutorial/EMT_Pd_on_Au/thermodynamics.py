@@ -19,7 +19,7 @@ vib_atom_index = [64]
 #vib_atom_index = None
 
 # Run vibrations
-vib = Vibrations(atoms, indices=vib_atom_index, name='vib')
+vib = Vibrations(atoms, indices=vib_atom_index, name='vib', delta=0.01)
 vib.run()
 vib.summary()
 
