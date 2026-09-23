@@ -15,13 +15,8 @@ energy = atoms.get_potential_energy()
 print('Total energy (eV):', energy)
 
 # Vibrating atom index (None or 0 based)
-vib_atom_index = [64]
-#vib_atom_index = None
-if vib_atom_index is None:
-    print("\nVibrating atoms: All atoms", flush=True)
-else:
-    atom_list = [f"{idx} ({atoms.symbols[idx]})" for idx in vib_atom_index]
-    print(f"\nVibrating atoms (0 based): {', '.join(atom_list)}", flush=True)
+#vib_atom_index = [64]
+vib_atom_index = None
 
 # Run vibrations
 vib = Vibrations(atoms, indices=vib_atom_index, name='vib')
