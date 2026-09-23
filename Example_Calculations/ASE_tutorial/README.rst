@@ -17,6 +17,10 @@ Open it in VESTA and compare with the starting structure.
 
 Opens the saved ASE trajectory file relax.traj in the ASE GUI viewer so you can inspect each ionic relaxation frame.
 
+**python thermodynamics.py**
+
+Calculate vibrational modes and Thermodynamics at 298.15 K
+
 
 TASK
 ============
