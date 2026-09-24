@@ -111,7 +111,7 @@ atoms.calc = combined_calc
 # symmetrynumber: rotational symmetry number (int)
 #   - 1 : no rotational symmetry / heteronuclear diatomic (CO, NO)
 #   - 2 : homonuclear diatomic (N2, O2), H2O
-#   - 3 : NH3 ; 12 : CH4
+#   - 3 : NH3 ; CH4
 # spin: total spin S (NOT multiplicity)
 #   - 0.0 : singlet   (N2, H2O, Hg, CH4)
 #   - 0.5 : doublet   (NO, OH radical)
@@ -121,7 +121,7 @@ geometry       = 'monatomic'
 symmetrynumber = 1
 spin           = 0.0
 T_std          = 298.15     # K (standard temperature, 25 °C)
-P_std          = 101325.0   # Pa (standard pressure, 1 bar)
+P_std          = 100000.0   # Pa (standard pressure, 1 bar)
 
 # ==============================================
 # 4. SCF Calculation
@@ -153,8 +153,8 @@ print(f"  Total Energy :  {total_energy:>12.6f} eV", flush=True)
 # A single atom in a box has NO vibrational modes (3N-3 = 0).
 # Anything with >=2 atoms does have modes and must be run.
 if len(atoms) < 2:
-    print("\n[Phase B.] Skipping vibrational analysis "
-          "Single atom: no vibrational modes", flush=True)
+    print("\n[Phase B.] Skipping vibrational analysis\n"
+      "Single atom: no vibrational modes", flush=True)
     vib_energies = np.array([])
 else:
     print(f"\n[Phase B.] Calculating vibrations for "
@@ -221,9 +221,9 @@ for T in temperatures:
 
 print("="*100, flush=True)
 
-# Separate section for 298.15 K
+# Separate section for STP
 print("\n" + "-"*100, flush=True)
-print("Temperature: 298.15 K (Standard Conditions)", flush=True)
+print("Temperature: 298.15 K, Pressure: 1 bar (Standard Conditions)", flush=True)
 print("-"*100, flush=True)
 
 zpe_std = thermo.get_ZPE_correction()
@@ -238,7 +238,7 @@ print(f"  G   = {G_std:12.6f} eV  (Gibbs Free Energy)", flush=True)
 print("-"*100, flush=True)
 
 # Consistency check
-print("\nAdditional Thermodynamic Relations Check (298.15 K):", flush=True)
+print("\nAdditional Thermodynamic Relations Check (STP):", flush=True)
 print(f"  G = H - T*S  =>  {G_std:.6f} = {H_std:.6f} - {T_std:.2f}*{S_std:.6e} = {H_std - T_std*S_std:.6f} eV", flush=True)
 
 print("\n=== Thermodynamic Analysis Complete ===", flush=True)

@@ -128,7 +128,7 @@ PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops
   
   = F(S+A) - E_SCF(S) - E_SCF(A) - (5/2)k_BT  + TS(A) [S from /Hg_on_Au/hg_ideal]
   
-  = -197479.617323 - (-192938.444217) - (-4540.261001) - (5/2)*0.025692570400413117 + (298.15*0.001812313)
+  = -197479.617323 - (-192938.444217) - (-4540.261001) - (5/2)*0.025692570400413117 + (298.15*0.001813448)
 				
   = -0.436 eV
 
@@ -138,6 +138,6 @@ PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops
  
   = F(S+A) - E_SCF(S) - G(A)
   
-  = -197479.617323 - (-192938.444217) - (-4540.737110) 
+  = -197479.617323 - (-192938.444217) - (-4540.737449) 
   
   = -0.436 eV

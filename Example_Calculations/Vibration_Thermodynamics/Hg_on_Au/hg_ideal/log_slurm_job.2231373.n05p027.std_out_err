@@ -34,38 +34,38 @@ six             1.17.0
 tomli           2.4.1
 
 QE:
-	linux-vdso.so.1 (0x00007ffe3e329000)
-	libhdf5_fortran.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5_fortran.so.320 (0x000014b85f827000)
-	libhdf5_f90cstub.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5_f90cstub.so.320 (0x000014b85f809000)
-	libhdf5.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5.so.320 (0x000014b85f2a5000)
-	libmkl_scalapack_lp64.so.2 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_scalapack_lp64.so.2 (0x000014b85ea00000)
-	libmkl_blacs_intelmpi_lp64.so.2 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_blacs_intelmpi_lp64.so.2 (0x000014b85f264000)
-	libmkl_intel_lp64.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_intel_lp64.so.3 (0x000014b85d800000)
-	libmkl_sequential.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_sequential.so.3 (0x000014b85c000000)
-	libmkl_core.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_core.so.3 (0x000014b857800000)
-	libimf.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libimf.so (0x000014b857200000)
-	libm.so.6 => /lib64/libm.so.6 (0x000014b85f17d000)
-	libirng.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libirng.so (0x000014b85e907000)
-	libmpifort.so.12 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mpi/latest/lib/libmpifort.so.12 (0x000014b856c00000)
-	libmpi.so.12 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mpi/latest/lib/libmpi.so.12 (0x000014b84c600000)
-	libc.so.6 => /lib64/libc.so.6 (0x000014b84c200000)
-	libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x000014b85f161000)
-	libifport.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libifport.so.5 (0x000014b85f137000)
-	libifcoremt.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libifcoremt.so.5 (0x000014b85be8d000)
-	libsvml.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libsvml.so (0x000014b84aa00000)
-	libintlc.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libintlc.so.5 (0x000014b85e8a4000)
-	libdl.so.2 => /lib64/libdl.so.2 (0x000014b85f130000)
-	libpthread.so.0 => /lib64/libpthread.so.0 (0x000014b85f12b000)
-	/lib64/ld-linux-x86-64.so.2 (0x000014b85f875000)
-	librt.so.1 => /lib64/librt.so.1 (0x000014b85f126000)
+	linux-vdso.so.1 (0x000015182fa53000)
+	libhdf5_fortran.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5_fortran.so.320 (0x000015182fa01000)
+	libhdf5_f90cstub.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5_f90cstub.so.320 (0x000015182f9e3000)
+	libhdf5.so.320 => /lustre/projects/m/milias/work/software/hdf5/hdf5-2.1.1/install_build_intelmpi2026.1/lib/libhdf5.so.320 (0x000015182f47f000)
+	libmkl_scalapack_lp64.so.2 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_scalapack_lp64.so.2 (0x000015182ec00000)
+	libmkl_blacs_intelmpi_lp64.so.2 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_blacs_intelmpi_lp64.so.2 (0x000015182f43e000)
+	libmkl_intel_lp64.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_intel_lp64.so.3 (0x000015182da00000)
+	libmkl_sequential.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_sequential.so.3 (0x000015182c200000)
+	libmkl_core.so.3 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mkl/latest/lib/libmkl_core.so.3 (0x0000151827a00000)
+	libimf.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libimf.so (0x0000151827400000)
+	libm.so.6 => /lib64/libm.so.6 (0x000015182f357000)
+	libirng.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libirng.so (0x000015182eb07000)
+	libmpifort.so.12 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mpi/latest/lib/libmpifort.so.12 (0x0000151826e00000)
+	libmpi.so.12 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/mpi/latest/lib/libmpi.so.12 (0x000015181c800000)
+	libc.so.6 => /lib64/libc.so.6 (0x000015181c400000)
+	libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x000015182f33b000)
+	libifport.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libifport.so.5 (0x000015182f311000)
+	libifcoremt.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libifcoremt.so.5 (0x000015182c08d000)
+	libsvml.so => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libsvml.so (0x000015181ac00000)
+	libintlc.so.5 => /cvmfs/hlit.jinr.ru/alma9/intel/v2026.1.0/compiler/latest/lib/libintlc.so.5 (0x000015182eaa4000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x000015182f30a000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x000015182f305000)
+	/lib64/ld-linux-x86-64.so.2 (0x000015182fa55000)
+	librt.so.1 => /lib64/librt.so.1 (0x000015182f300000)
 
-Running on host n05p027.gvr.local at Fri Sep 18 12:31:53 MSK 2026
+Running on host n05p027.gvr.local at Thu Sep 24 11:16:16 MSK 2026
 
  The total memory at the main node (in GB)
                total        used        free      shared  buff/cache   available
-Mem:            1991          63        1920           2          19        1928
+Mem:            1991          22        1960           1          19        1969
 Swap:              3           0           3
-Total:          1995          63        1924
+Total:          1995          22        1964
 
  srun --mpi=list :
 MPI plugin types are...
@@ -76,29 +76,35 @@ MPI plugin types are...
 specific pmix plugin versions available: pmix_v6
 
 Job user is SLURM_JOB_USER= dsen
-User job SLURM_JOB_NAME=ideal has assigned ID SLURM_JOBID=2095115
+User job SLURM_JOB_NAME=ideal has assigned ID SLURM_JOBID=2231373
 This job was submitted from the computer SLURM_SUBMIT_HOST=space03.hydra.local
 and from the home directory SLURM_SUBMIT_DIR:
-/lustre/projects/d/dsen/2026_calcs/test/idealhg2
+/lustre/projects/d/dsen/2026_calcs/test/idealhg3
 Job is running on the cluster compute node: SLURM_CLUSTER_NAME=gvr
 and is employing SLURM_JOB_NUM_NODES=1 node/nodes:
 SLURM_JOB_NODELIST = n05p027
 Job partition is SLURM_JOB_PARTITION=bltp 
 
-Number of allocated CPUs on each single node, SLURM_CPUS_ON_NODE=4 .
-Number of all reserved threads over ALL nodes, SLURM_NTASKS=2 .
+Number of allocated CPUs on each single node, SLURM_CPUS_ON_NODE=16 .
+Number of all reserved threads over ALL nodes, SLURM_NTASKS=8 .
 Job has reserved memory per node, SLURM_MEM_PER_NODE= MB of memory
 
 
  List of MPI servers :
 n05p027.gvr.local
 n05p027.gvr.local
+n05p027.gvr.local
+n05p027.gvr.local
+n05p027.gvr.local
+n05p027.gvr.local
+n05p027.gvr.local
+n05p027.gvr.local
 
 
 The node's CPU model name	: Intel(R) Xeon(R) Platinum 8368Q CPU @ 2.60GHz
 BTW, this node has total 152 CPUs available for an EXCLUSIVE job.
-Based on reserved memory, this node got 4 CPUs allocated for SLURM calculations.
-This job wants in total SLURM_NTASKS=2 threads . 
+Based on reserved memory, this node got 16 CPUs allocated for SLURM calculations.
+This job wants in total SLURM_NTASKS=8 threads . 
 cpuinfo :
 Intel(R) processor family information utility, Version 2021.18.0 Build 20260327 (id: 821f207)
 Copyright (C) 2005-2026 Intel Corporation.  All rights reserved.
@@ -106,26 +112,38 @@ Copyright (C) 2005-2026 Intel Corporation.  All rights reserved.
 =====  Processor composition  =====
 Processor name    : Intel(R) Xeon(R) Platinum 8368Q  
 Packages(sockets) : 1
-Cores             : 2
-Processors(CPUs)  : 4
-Cores per package : 2
+Cores             : 8
+Processors(CPUs)  : 16
+Cores per package : 8
 Threads per core  : 2
 
 =====  Processor identification  =====
 Processor	Thread Id.	Core Id.	Package Id.
-32      	0   		32  		0   
-33      	0   		33  		0   
-108     	1   		32  		0   
-109     	1   		33  		0   
+0       	0   		0   		0   
+1       	0   		1   		0   
+2       	0   		2   		0   
+3       	0   		3   		0   
+4       	0   		4   		0   
+5       	0   		5   		0   
+6       	0   		6   		0   
+7       	0   		7   		0   
+76      	1   		0   		0   
+77      	1   		1   		0   
+78      	1   		2   		0   
+79      	1   		3   		0   
+80      	1   		4   		0   
+81      	1   		5   		0   
+82      	1   		6   		0   
+83      	1   		7   		0   
 =====  Placement on packages  =====
 Package Id.	Core Id.	Processors
-0   		32,33		(32,108)(33,109)
+0   		0,1,2,3,4,5,6,7		(0,76)(1,77)(2,78)(3,79)(4,80)(5,81)(6,82)(7,83)
 
 =====  Cache sharing  =====
 Cache	Size		Processors
-L1	48  KB		(32,108)(33,109)
-L2	1   MB		(32,108)(33,109)
-L3	57  MB		(32,33,108,109)
+L1	48  KB		(0,76)(1,77)(2,78)(3,79)(4,80)(5,81)(6,82)(7,83)
+L2	1   MB		(0,76)(1,77)(2,78)(3,79)(4,80)(5,81)(6,82)(7,83)
+L3	57  MB		(0,1,2,3,4,5,6,7,76,77,78,79,80,81,82,83)
 impi_info :
  | NAME                                                         | DEFAULT VALUE  | DATA TYPE   |
  ===============================================================================================
@@ -262,10 +280,10 @@ impi_info :
  | I_MPI_MPCP_RANK                                              | not defined    | MPI_INT     |
  | I_MPI_MPCP_SIZE                                              | not defined    | MPI_INT     |
 
-Current directory where this SLURM job is running /lustre/projects/d/dsen/2026_calcs/test/idealhg2
+Current directory where this SLURM job is running /lustre/projects/d/dsen/2026_calcs/test/idealhg3
 It has the disk space of (df -h) :
 Filesystem                                                                         Size  Used Avail Use% Mounted on
-10.220.25.75@o2ib,10.220.25.76@o2ib:10.220.25.79@o2ib,10.220.25.80@o2ib:/projects  2.2P  1.2P  929T  57% /lustre/projects
+10.220.25.75@o2ib,10.220.25.76@o2ib:10.220.25.79@o2ib,10.220.25.80@o2ib:/projects  2.2P  1.3P  916T  58% /lustre/projects
 
 real-time non-blocking time  (microseconds, -R) unlimited
 core file size              (blocks, -c) unlimited
@@ -274,7 +292,7 @@ scheduling priority                 (-e) 0
 file size                   (blocks, -f) unlimited
 pending signals                     (-i) 8156299
 max locked memory           (kbytes, -l) unlimited
-max memory size             (kbytes, -m) 33554432
+max memory size             (kbytes, -m) 134217728
 open files                          (-n) 131072
 pipe size                (512 bytes, -p) 8
 POSIX message queues         (bytes, -q) 819200
@@ -292,7 +310,7 @@ file locks                          (-x) unlimited
 
 
 
-Starting ASE parallel job on Fri Sep 18 12:31:54 MSK 2026
+Starting ASE parallel job on Thu Sep 24 11:16:17 MSK 2026
 
 Successfully read 1 atoms from Hg.vasp
 
@@ -301,7 +319,8 @@ Successfully read 1 atoms from Hg.vasp
  1. SCF Energy Results
   Total Energy :  -4540.261001 eV
 
-[Phase B.] Skipping vibrational analysis Single atom: no vibrational modes
+[Phase B.] Skipping vibrational analysis
+Single atom: no vibrational modes
 
 [Phase C.] Ideal Gas Thermodynamic Analysis
   Geometry:          monatomic
@@ -313,66 +332,66 @@ Successfully read 1 atoms from Hg.vasp
 ====================================================================================================
 Temp(K)      ZPE(eV)            H(eV)          S(eV/K)            G(eV)
 ----------------------------------------------------------------------------------------------------
-     50     0.000000     -4540.250229     1.427641e-03     -4540.321611
-     60     0.000000     -4540.248075     1.466919e-03     -4540.336090
-     70     0.000000     -4540.245920     1.500129e-03     -4540.350929
-     80     0.000000     -4540.243766     1.528896e-03     -4540.366078
-     90     0.000000     -4540.241612     1.554270e-03     -4540.381496
-    100     0.000000     -4540.239457     1.576968e-03     -4540.397154
-    110     0.000000     -4540.237303     1.597501e-03     -4540.413028
-    120     0.000000     -4540.235149     1.616246e-03     -4540.429098
-    130     0.000000     -4540.232994     1.633490e-03     -4540.445348
-    140     0.000000     -4540.230840     1.649456e-03     -4540.461764
-    150     0.000000     -4540.228686     1.664319e-03     -4540.478333
-    160     0.000000     -4540.226531     1.678223e-03     -4540.495047
-    170     0.000000     -4540.224377     1.691283e-03     -4540.511895
-    180     0.000000     -4540.222223     1.703597e-03     -4540.528870
-    190     0.000000     -4540.220068     1.715245e-03     -4540.545965
-    200     0.000000     -4540.217914     1.726295e-03     -4540.563173
-    210     0.000000     -4540.215760     1.736806e-03     -4540.580489
-    220     0.000000     -4540.213605     1.746828e-03     -4540.597908
-    230     0.000000     -4540.211451     1.756405e-03     -4540.615424
-    240     0.000000     -4540.209297     1.765573e-03     -4540.633034
-    250     0.000000     -4540.207142     1.774368e-03     -4540.650734
-    260     0.000000     -4540.204988     1.782817e-03     -4540.668520
-    270     0.000000     -4540.202834     1.790948e-03     -4540.686390
-    280     0.000000     -4540.200679     1.798783e-03     -4540.704338
-    290     0.000000     -4540.198525     1.806342e-03     -4540.722364
-    300     0.000000     -4540.196371     1.813646e-03     -4540.740464
-    310     0.000000     -4540.194216     1.820710e-03     -4540.758636
-    320     0.000000     -4540.192062     1.827550e-03     -4540.776878
-    330     0.000000     -4540.189908     1.834179e-03     -4540.795187
-    340     0.000000     -4540.187753     1.840610e-03     -4540.813561
-    350     0.000000     -4540.185599     1.846855e-03     -4540.831998
-    360     0.000000     -4540.183445     1.852924e-03     -4540.850497
-    370     0.000000     -4540.181290     1.858827e-03     -4540.869056
-    380     0.000000     -4540.179136     1.864572e-03     -4540.887673
-    390     0.000000     -4540.176982     1.870168e-03     -4540.906347
-    400     0.000000     -4540.174827     1.875622e-03     -4540.925076
-    410     0.000000     -4540.172673     1.880942e-03     -4540.943859
-    420     0.000000     -4540.170519     1.886133e-03     -4540.962695
-    430     0.000000     -4540.168364     1.891203e-03     -4540.981581
-    440     0.000000     -4540.166210     1.896155e-03     -4541.000518
-    450     0.000000     -4540.164056     1.900997e-03     -4541.019504
-    460     0.000000     -4540.161901     1.905732e-03     -4541.038538
-    470     0.000000     -4540.159747     1.910365e-03     -4541.057618
-    480     0.000000     -4540.157593     1.914900e-03     -4541.076745
-    490     0.000000     -4540.155438     1.919342e-03     -4541.095916
-    500     0.000000     -4540.153284     1.923695e-03     -4541.115131
+     50     0.000000     -4540.250229     1.428776e-03     -4540.321668
+     60     0.000000     -4540.248075     1.468054e-03     -4540.336158
+     70     0.000000     -4540.245920     1.501263e-03     -4540.351009
+     80     0.000000     -4540.243766     1.530030e-03     -4540.366168
+     90     0.000000     -4540.241612     1.555404e-03     -4540.381598
+    100     0.000000     -4540.239457     1.578103e-03     -4540.397268
+    110     0.000000     -4540.237303     1.598636e-03     -4540.413153
+    120     0.000000     -4540.235149     1.617381e-03     -4540.429234
+    130     0.000000     -4540.232994     1.634625e-03     -4540.445496
+    140     0.000000     -4540.230840     1.650590e-03     -4540.461923
+    150     0.000000     -4540.228686     1.665453e-03     -4540.478504
+    160     0.000000     -4540.226531     1.679357e-03     -4540.495228
+    170     0.000000     -4540.224377     1.692418e-03     -4540.512088
+    180     0.000000     -4540.222223     1.704731e-03     -4540.529074
+    190     0.000000     -4540.220068     1.716379e-03     -4540.546180
+    200     0.000000     -4540.217914     1.727430e-03     -4540.563400
+    210     0.000000     -4540.215760     1.737941e-03     -4540.580727
+    220     0.000000     -4540.213605     1.747963e-03     -4540.598157
+    230     0.000000     -4540.211451     1.757539e-03     -4540.615685
+    240     0.000000     -4540.209297     1.766708e-03     -4540.633307
+    250     0.000000     -4540.207142     1.775502e-03     -4540.651018
+    260     0.000000     -4540.204988     1.783952e-03     -4540.668815
+    270     0.000000     -4540.202834     1.792082e-03     -4540.686696
+    280     0.000000     -4540.200679     1.799917e-03     -4540.704656
+    290     0.000000     -4540.198525     1.807477e-03     -4540.722693
+    300     0.000000     -4540.196371     1.814780e-03     -4540.740805
+    310     0.000000     -4540.194216     1.821844e-03     -4540.758988
+    320     0.000000     -4540.192062     1.828684e-03     -4540.777241
+    330     0.000000     -4540.189908     1.835313e-03     -4540.795561
+    340     0.000000     -4540.187753     1.841745e-03     -4540.813946
+    350     0.000000     -4540.185599     1.847989e-03     -4540.832395
+    360     0.000000     -4540.183445     1.854058e-03     -4540.850906
+    370     0.000000     -4540.181290     1.859961e-03     -4540.869476
+    380     0.000000     -4540.179136     1.865706e-03     -4540.888104
+    390     0.000000     -4540.176982     1.871302e-03     -4540.906790
+    400     0.000000     -4540.174827     1.876757e-03     -4540.925530
+    410     0.000000     -4540.172673     1.882076e-03     -4540.944324
+    420     0.000000     -4540.170519     1.887268e-03     -4540.963171
+    430     0.000000     -4540.168364     1.892337e-03     -4540.982069
+    440     0.000000     -4540.166210     1.897290e-03     -4541.001017
+    450     0.000000     -4540.164056     1.902131e-03     -4541.020015
+    460     0.000000     -4540.161901     1.906866e-03     -4541.039060
+    470     0.000000     -4540.159747     1.911499e-03     -4541.058152
+    480     0.000000     -4540.157593     1.916035e-03     -4541.077289
+    490     0.000000     -4540.155438     1.920477e-03     -4541.096472
+    500     0.000000     -4540.153284     1.924829e-03     -4541.115699
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-Temperature: 298.15 K (Standard Conditions)
+Temperature: 298.15 K, Pressure: 1 bar (Standard Conditions)
 ----------------------------------------------------------------------------------------------------
   ZPE =     0.000000 eV
   H   = -4540.196769 eV  (Enthalpy)
-  S   = 1.812313e-03 eV/K  (Entropy)
-  G   = -4540.737110 eV  (Gibbs Free Energy)
+  S   = 1.813448e-03 eV/K  (Entropy)
+  G   = -4540.737449 eV  (Gibbs Free Energy)
 ----------------------------------------------------------------------------------------------------
 
-Additional Thermodynamic Relations Check (298.15 K):
-  G = H - T*S  =>  -4540.737110 = -4540.196769 - 298.15*1.812313e-03 = -4540.737110 eV
+Additional Thermodynamic Relations Check (STP):
+  G = H - T*S  =>  -4540.737449 = -4540.196769 - 298.15*1.813448e-03 = -4540.737449 eV
 
 === Thermodynamic Analysis Complete ===
 
-ASE finished on : Fri Sep 18 12:40:40 MSK 2026
+ASE finished on : Thu Sep 24 11:18:44 MSK 2026
