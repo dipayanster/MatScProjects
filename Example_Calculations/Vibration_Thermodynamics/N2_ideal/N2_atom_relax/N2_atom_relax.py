@@ -38,6 +38,7 @@ input_data = {
     'system': {
         'ecutwfc': 80,
         'ecutrho': 640,
+        'assume_isolated': 'martyna-tuckerman',
         'occupations': 'smearing',
         'smearing': 'gauss',
         'degauss': 0.01,
@@ -52,7 +53,7 @@ input_data = {
         'diago_full_acc': True,
         'startingpot': 'atomic',
         'startingwfc': 'atomic+random',
-        'conv_thr': 1.0e-9,
+        'conv_thr': 1.0e-10,
     }
 }
 

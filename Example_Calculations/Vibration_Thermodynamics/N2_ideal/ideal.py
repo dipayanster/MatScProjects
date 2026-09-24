@@ -41,6 +41,7 @@ input_data = {
     'system': {
         'ecutwfc': 80,
         'ecutrho': 640,
+        'assume_isolated': 'martyna-tuckerman',
         'occupations': 'smearing',
         'smearing': 'gauss',
         'degauss': 0.01,
@@ -55,7 +56,7 @@ input_data = {
         'diago_full_acc': True,
         'startingpot': 'atomic',
         'startingwfc': 'atomic+random',
-        'conv_thr': 1.0e-9,
+        'conv_thr': 1.0e-10,
     }
 }
 
@@ -111,7 +112,7 @@ atoms.calc = combined_calc
 # symmetrynumber: rotational symmetry number (int)
 #   - 1 : no rotational symmetry / heteronuclear diatomic (CO, NO)
 #   - 2 : homonuclear diatomic (N2, O2), H2O
-#   - 3 : NH3 ; 12 : CH4
+#   - 3 : NH3 ; CH4
 # spin: total spin S (NOT multiplicity)
 #   - 0.0 : singlet   (N2, H2O, Hg, CH4)
 #   - 0.5 : doublet   (NO, OH radical)
@@ -121,7 +122,7 @@ geometry       = 'linear'
 symmetrynumber = 2
 spin           = 0.0
 T_std          = 298.15     # K (standard temperature, 25 °C)
-P_std          = 101325.0   # Pa (standard pressure, 1 bar)
+P_std          = 100000.0   # Pa (standard pressure, 1 bar)
 
 # ==============================================
 # 4. SCF Calculation
@@ -153,8 +154,8 @@ else:
 # A single atom in a box has NO vibrational modes (3N-3 = 0).
 # Anything with >=2 atoms does have modes and must be run.
 if len(atoms) < 2:
-    print("\n[Phase B.] Skipping vibrational analysis "
-          "Single atom: no vibrational modes", flush=True)
+    print("\n[Phase B.] Skipping vibrational analysis\n"
+      "Single atom: no vibrational modes", flush=True)
     vib_energies = np.array([])
 else:
     print(f"\n[Phase B.] Calculating vibrations for "
@@ -221,9 +222,9 @@ for T in temperatures:
 
 print("="*100, flush=True)
 
-# Separate section for 298.15 K
+# Separate section for STP
 print("\n" + "-"*100, flush=True)
-print("Temperature: 298.15 K (Standard Conditions)", flush=True)
+print("Temperature: 298.15 K, Pressure: 1 bar (Standard Conditions)", flush=True)
 print("-"*100, flush=True)
 
 zpe_std = thermo.get_ZPE_correction()

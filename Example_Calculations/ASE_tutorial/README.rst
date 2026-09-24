@@ -1,6 +1,16 @@
 
 ASE tutorial
 =============
+**NOTE**
+
+These tutorial is for **quick demonstrations of the workflow with bare bones scripts**.
+
+ASE EMT supports Al, Cu, Ag, Au, Ni, Pd and Pt. The following elements are supported but **NOT well described by EMT, and the parameters are not for any serious use**: H, C, N, O
+
+
+Pd adsorption on Au
+=============
+
 **python slab.py**
 
 Generates a 4×4×4 Au slab with a Pd adatom adsorbed at the fcc hollow site and 10 Å of vacuum, using only default ASE commands.
@@ -22,9 +32,6 @@ Opens the saved ASE trajectory file relax.traj in the ASE GUI viewer so you can 
 Calculate vibrational modes and Thermodynamics at 298.15 K
 
 
-TASK
+N2 molecule relaxation and Thermodynamics 
 ============
 
-1) Calculate adsorption energy: E_total - E_slab - E_atom
-
-2) Repeat the same for top, bridge and hcp hollow site adsorption
