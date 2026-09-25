@@ -18,15 +18,25 @@ Atom relaxation (/N2_ideal/n2_atom_relax) followed by IdealGasThermo (ZPE , H, S
 
 Note: For a 2-atom system with geometry = 'linear', symmetrynumber = 2, and spin = 0.0, there are 3N = 6 total degrees of freedom, of which 3 are translations and 2 are rotations, leaving 3N − 3 − 2 = 1 true vibrational mode. ASE discards 5 lowest frequencies as translations and rotations, and only keeps the single real mode at 291.5 meV, giving ZPE = 0.5*291.5 meV in thermodynamics calculations. Hence vib.summary() (0.147 eV) and thermo.get_ZPE_correction() (0.145743 eV) return different values of ZPE.
 
-**Validation:**
+**Computed data:**
 
-First we convert S at STP from eV/K to J/(mol·K)
+Frequncy: 2351.0 cm-1
+
+We convert S at STP from eV/K to J/(mol·K)
 
 python -c "from ase.units import _e, _Nav; print(f'S = {1.987373e-03 * _e * _Nav:.2f} J/(mol·K)')"
 
 S = 191.75 J/(mol·K)
 
-NIST standard data : 191.609 ± 0.004 (https://webbook.nist.gov/cgi/cbook.cgi?ID=C7727379&Mask=1#Thermo-Gas) 
+**NIST standard data:**
+
+Frequency (harmonic): 2359 cm-1
+
+Entropy (298.15K) 191.609 ± 0.004,  191.61 
+
+https://webbook.nist.gov/cgi/cbook.cgi?ID=C7727379&Mask=1#Thermo-Gas 
+
+https://cccbdb.nist.gov/exp2x.asp?casno=7727379
 
 ΔH for Hg adatom adsorption on Au (111) surface (/Hg_on_Au)
 ===========================================================
