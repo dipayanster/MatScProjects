@@ -38,7 +38,6 @@ input_data = {
     'system': {
         'ecutwfc': 80,
         'ecutrho': 640,
-        'assume_isolated': 'martyna-tuckerman',
         'occupations': 'smearing',
         'smearing': 'gauss',
         'degauss': 0.01,

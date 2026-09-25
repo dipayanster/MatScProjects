@@ -16,15 +16,15 @@ IdealGasThermo includes translational and rotational contributions rigorously
 
 Atom relaxation (/N2_ideal/n2_atom_relax) followed by IdealGasThermo (ZPE , H, S, G) calculation 
 
-Note: For a 2-atom system with geometry = 'linear', symmetrynumber = 2, and spin = 0.0, there are 3N = 6 total degrees of freedom, of which 3 are translations and 2 are rotations, leaving 3N − 3 − 2 = 1 true vibrational mode. ASE discards 5 lowest frequencies as translations and rotations, and only keeps the single real mode at 291.5 meV, giving ZPE = 0.5*291.5 meV in thermodynamics calculations. Hence vib.summary() and thermo.get_ZPE_correction() return different values of ZPE.
+Note: For a 2-atom system with geometry = 'linear', symmetrynumber = 2, and spin = 0.0, there are 3N = 6 total degrees of freedom, of which 3 are translations and 2 are rotations, leaving 3N − 3 − 2 = 1 true vibrational mode. ASE discards 5 lowest frequencies as translations and rotations, and only keeps the single real mode at 291.5 meV, giving ZPE = 0.5*291.5 meV in thermodynamics calculations. Hence vib.summary() (0.147 eV) and thermo.get_ZPE_correction() (0.145743 eV) return different values of ZPE.
 
 **Validation:**
 
 First we convert S at STP from eV/K to J/(mol·K)
 
-python -c "from ase.units import _e, _Nav; print(f'S = {1.986239e-03 * _e * _Nav:.2f} J/(mol·K)')"
+python -c "from ase.units import _e, _Nav; print(f'S = {1.987373e-03 * _e * _Nav:.2f} J/(mol·K)')"
 
-S = 191.64 J/(mol·K)
+S = 191.75 J/(mol·K)
 
 NIST standard data : 191.609 ± 0.004 (https://webbook.nist.gov/cgi/cbook.cgi?ID=C7727379&Mask=1#Thermo-Gas) 
 
