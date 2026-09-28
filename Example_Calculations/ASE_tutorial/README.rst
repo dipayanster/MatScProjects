@@ -35,3 +35,14 @@ Calculate vibrational modes and Thermodynamics at 298.15 K
 N2 molecule relaxation and Thermodynamics 
 ============
 
+EMT for N is not well defined, and it cant replicate the standard data
+
+**NIST standard data:**
+
+Frequency (harmonic): 2359 cm-1
+
+Entropy (298.15K) 191.609 ± 0.004,  191.61 
+
+https://webbook.nist.gov/cgi/cbook.cgi?ID=C7727379&Mask=1#Thermo-Gas 
+
+https://cccbdb.nist.gov/exp2x.asp?casno=7727379
