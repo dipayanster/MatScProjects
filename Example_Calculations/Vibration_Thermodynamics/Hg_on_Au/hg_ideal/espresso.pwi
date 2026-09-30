@@ -10,7 +10,9 @@
    ecutwfc          = 120
    nosym            = .true.
    noinv            = .true.
-   occupations      = 'fixed'
+   occupations      = 'smearing'
+   degauss          = 0.01
+   smearing         = 'gauss'
    noncolin         = .true.
    lspinorb         = .true.
    assume_isolated  = 'martyna-tuckerman'

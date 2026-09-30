@@ -37,7 +37,9 @@ input_data = {
     'system': {
 #       'input_dft': 'XC-000I-000I-116L-133L-000I-000I',
         'ecutwfc': 120,
-        'occupations': 'fixed',
+        'occupations': 'smearing',
+        'smearing': 'gauss',
+        'degauss': 0.01,
         'assume_isolated': 'martyna-tuckerman',
         'nosym': True,
         'noinv': True,
@@ -61,18 +63,18 @@ input_data = {
 # ==============================================
 # 2. Import atomic structure
 # ==============================================
-vasp_file = 'Hg.vasp'  
-
-try:
-    atoms = read(vasp_file, format='vasp')
-    print(f"Successfully read {len(atoms)} atoms from {vasp_file}")
-except FileNotFoundError:
-    print(f"Error: {vasp_file} not found!")
-    sys.exit(1)
-except Exception as e:
-    print(f"Error reading {vasp_file}: {e}")
-    sys.exit(1)
-
+atoms = Atoms(
+    symbols=['Hg'],
+    positions=[ # positions in Angstrom
+        [10.0000000000, 10.0000000000, 10.0000000000],
+    ],
+    cell=[ # positions in Angstrom
+        [20.0000000000, 0.0000000000, 0.0000000000],
+        [0.0000000000, 20.0000000000, 0.0000000000],
+        [0.0000000000, 0.0000000000, 20.0000000000]
+    ],
+    pbc=[True, True, True]
+)
 
 # ==============================================
 # 3. Calculator configuration

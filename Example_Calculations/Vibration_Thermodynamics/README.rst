@@ -42,13 +42,13 @@ https://cccbdb.nist.gov/exp2x.asp?casno=7727379
 ===========================================================
 PBE+SOC+DFT-D4 (This is a 'large' calculation, not suitable for personal laptops)
 
-	Hg atom Total Energy (QE, no D4 for single atom): -4540.261001 eV (pre-calculated results in /Hg_on_Au/slab_atom)
+	Hg atom Total Energy (E_SCF(A), QE, no D4 for single atom): -4540.261001 eV (pre-calculated results in /Hg_on_Au/hg_ideal)
 
-	Au slab Total Energy (QE + D4):  -192938.444217 eV (pre-calculated results in /Hg_on_Au/slab_atom)
+	Au slab Total Energy (E_SCF(S), QE + D4):  -192938.444217 eV (pre-calculated results in /Hg_on_Au/au_slab)
 
-	Hg+Au Total Energy (QE + D4):  -197479.471488 eV
+	Hg+Au Total Energy (E_SCF(S+A), QE + D4):  -197479.471488 eV
 
-	DFT adsorption energy = -197479.471488 - (-192938.444217) - (-4540.261001) = -0.766 eV
+	DFT adsorption energy = E_SCF(S+A) - E_SCF(S) - E_SCF(A) = -197479.471488 - (-192938.444217) - (-4540.261001) = -0.766 eV
 
 
 @ Temperature: 298.15 K
