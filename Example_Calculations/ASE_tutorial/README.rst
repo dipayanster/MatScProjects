@@ -20,11 +20,11 @@ imports the molecule builder, the BFGS optimizer, and the EMT calculator from AS
 
 **h2 = molecule('H2'); h2.calc = EMT()**
 
-builds the H2 molecule and attaches the EMT calculator
+builds the H2 molecule and attaches the EMT calculator 
 
 **BFGS(h2).run(fmax=0.02); print(h2.get_potential_energy())**
 
-optimizes the geometry and outputs the total energy
+optimizes the geometry with a force tolerance of 0.02 eV/Å, and outputs the total energy
 
 
 N2 molecule relaxation and Thermodynamics (/N2_EMT)
@@ -32,7 +32,11 @@ N2 molecule relaxation and Thermodynamics (/N2_EMT)
 
 **python N2_relax.py**
 
-Reads a N2 molecule in a periodic box (POSCAR format, can visualize in VESTA software (https://jp-minerals.org/vesta/en/), relaxes the atoms using the ASE default EMT calculator, and saves it.
+Reads a N2 molecule in a periodic box (POSCAR format, can visualize in VESTA software (https://jp-minerals.org/vesta/en/), relaxes the atoms using the ASE default EMT calculator with a force tolerance of 0.0001 eV/Å, and saves it.
+
+**ase gui relax.traj**
+
+Opens the saved ASE trajectory file relax.traj in the ASE GUI viewer so you can inspect each ionic relaxation frame.
 
 **python Ideal_N2_EMT.py**
 
@@ -62,7 +66,7 @@ Install VESTA software (https://jp-minerals.org/vesta/en/) and open the generate
 
 **python relax_emt.py**
 
-Runs an atomic relaxation using the ASE default EMT calculator with an force tolerance of 0.01 eV/Å, saves the relaxed structure. 
+Runs an atomic relaxation using the ASE default EMT calculator with a force tolerance of 0.01 eV/Å, saves the relaxed structure. 
 
 Open it in VESTA and compare with the starting structure.
 
