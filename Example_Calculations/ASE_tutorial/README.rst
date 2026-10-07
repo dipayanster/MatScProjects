@@ -36,7 +36,7 @@ Reads a N2 molecule in a periodic box (POSCAR format, can visualize in VESTA sof
 
 **python Ideal_N2_EMT.py**
 
-Runs a IdealGasThermo calculation at 298.15 K and 1 bar, and outputs (1) frequencies (2) ZPE , H, S, G
+Runs a IdealGasThermo calculation using the relaxed structure at 298.15 K and 1 bar, and outputs (1) frequencies (2) ZPE , H, S, G
 
 **NOTE: EMT for N is not well defined, and it cant replicate the standard data**
 
@@ -72,7 +72,7 @@ Opens the saved ASE trajectory file relax.traj in the ASE GUI viewer so you can 
 
 **python thermodynamics.py**
 
-Runs a HarmonicThermo calculation at 298.15 K, and outputs (1) frequencies (2) ZPE , F, U, S
+Runs a HarmonicThermo calculation using the relaxed structure at 298.15 K, and outputs (1) frequencies (2) ZPE , F, U, S
 
 
 
