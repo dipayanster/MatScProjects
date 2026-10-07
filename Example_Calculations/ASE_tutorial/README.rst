@@ -7,6 +7,26 @@ These tutorial is for **quick demonstrations of the workflow with bare bones scr
 
 ASE EMT supports Al, Cu, Ag, Au, Ni, Pd and Pt. The following elements are supported but **NOT well described by EMT, and the parameters are not for any serious use**: H, C, N, O
 
+Running ASE directly from a Python shell
+=============
+
+**python**
+
+opens a Python shell (shown by >>>)
+
+**from ase.build import molecule; from ase.optimize import BFGS; from ase.calculators.emt import EMT**
+
+imports the molecule builder, the BFGS optimizer, and the EMT calculator from ASE
+
+**h2 = molecule('H2'); h2.calc = EMT()**
+
+builds the H2 molecule and attaches the EMT calculator
+
+**BFGS(h2).run(fmax=0.02); print(h2.get_potential_energy())**
+
+optimizes the geometry and outputs the total energy
+
+
 N2 molecule relaxation and Thermodynamics (/N2_EMT)
 ============
 
