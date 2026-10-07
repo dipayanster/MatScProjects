@@ -36,7 +36,7 @@ Reads a N2 molecule in a periodic box (POSCAR format, can visualize in VESTA sof
 
 **ase gui relax.traj**
 
-Opens the saved ASE trajectory file relax.traj in the ASE GUI viewer so you can inspect each ionic relaxation frame.
+Opens the saved ASE trajectory file relax.traj in the ASE GUI viewer so each ionic relaxation frame can be inspected.
 
 **python Ideal_N2_EMT.py**
 
@@ -60,19 +60,15 @@ Pd adsorption on Au (/EMT_Pd_on_Au)
 
 **python slab.py**
 
-Generates a 4×4×4 Au slab with a Pd adatom adsorbed at the fcc hollow site and 10 Å of vacuum, using ASE fcc111 and add_adsorbate.
-
-Install VESTA software (https://jp-minerals.org/vesta/en/) and open the generated file (in POSCAR format) to inspect it
+Generates a 4×4×4 Au slab with a Pd adatom adsorbed at the fcc hollow site and 10 Å of vacuum, using ASE fcc111 and add_adsorbate. (POSCAR format, can visualize in VESTA software (https://jp-minerals.org/vesta/en/)
 
 **python relax_emt.py**
 
 Runs an atomic relaxation using the ASE default EMT calculator with a force tolerance of 0.01 eV/Å, saves the relaxed structure. 
 
-Open it in VESTA and compare with the starting structure.
-
 **ase gui relax.traj**
 
-Opens the saved ASE trajectory file relax.traj in the ASE GUI viewer so you can inspect each ionic relaxation frame.
+Opens the saved ASE trajectory file relax.traj in the ASE GUI viewer so each ionic relaxation frame can be inspected.
 
 **python thermodynamics.py**
 
