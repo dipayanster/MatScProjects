@@ -31,7 +31,7 @@ https://webbook.nist.gov/cgi/cbook.cgi?ID=C7727379&Mask=1#Thermo-Gas
 https://cccbdb.nist.gov/exp2x.asp?casno=7727379
 
 
-Pd adsorption on Au
+Pd adsorption on Au (/EMT_Pd_on_Au)
 =============
 
 **python slab.py**
