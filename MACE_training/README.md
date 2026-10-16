@@ -5,9 +5,8 @@ Train a MACE potential on a QE+D4 relaxation trajectory of a 48-atom Au slab wit
 ## Commands
 
 ```bash
+cd ~
 source mace-env/bin/activate
-pip install torch torchvision torchaudio
-pip install mace-torch
 mace_run_train --config=mace_config.yaml
 ```
 
