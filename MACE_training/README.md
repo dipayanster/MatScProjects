@@ -51,7 +51,6 @@ forces_key: "forces"
 
 ### `model`
 - Architecture to train.
-- `MACE` is the standard equivariant message-passing model and the correct choice here.
 
 ### `hidden_irreps`
 - Model width and angular complexity.
