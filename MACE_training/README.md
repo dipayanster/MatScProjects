@@ -5,6 +5,7 @@ To Do: MACE read the stress, but it did not train on it. Include in the loss fun
 ## Commands
 
 ```bash
+python export_traj.py
 source ~/mace-env/bin/activate
 mace_run_train --config=mace_config.yaml
 ```
