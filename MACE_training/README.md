@@ -2,6 +2,8 @@
 
 Train a MACE potential on a QE+D4 relaxation trajectory of a 48-atom Au slab with one Flerovium (Fl) adsorbate.
 
+To Do: MACE read the stress, but it did not train on it. Include in the loss function. 
+
 ## Commands
 
 ```bash
@@ -37,7 +39,7 @@ forces_key: "forces"
 
 ### `train_file`
 - Path to the training dataset.
-- Must end in `.xyz` so ASE can detect the extended-XYZ format; a `.txt` extension will raise `UnknownFileTypeError`.
+- Must end in `.xyz` so ASE can detect the extended-XYZ format
 
 ### `valid_fraction`
 - Fraction of frames held out for validation during training.
