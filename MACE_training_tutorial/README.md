@@ -82,7 +82,7 @@ E_graphene = −4518.682589 eV
 
 ## 4. Training MACE
 
-### 3.1 Preparing the Training Data
+### 4.1 Preparing the Training Data
 
 We will use the ASE QE + DFT-D4 relaxation trajectories as MACE training data. Use the supplied traj2extxyz.py script that uses ASE to export trajectories to extxyz format:
 
@@ -94,7 +94,7 @@ Then copy the generated xyz files into a separate dataset directory under the pa
 
 As per MACE recommended practice, the custom REF_energy, REF_forces, and REF_stress headers are used separately from the ASE default headers, which are redundant and not used in training.
 
-### 3.2 Training Input File
+### 4.2 Training Input File
 
 Parameters for training are given in the input file mace_config.yaml:
 	
@@ -126,13 +126,13 @@ Training is performed for REF_energy and REF_forces. Stress is **ignored** for t
 
 We use forces_weight: 100 and energy_weight: 1 because the energy is already close to convergence.
 
-### 3.3 Running MACE Training
+### 4.3 Running MACE Training
 
 ```bash
 source ~/mace-env/bin/activate
 mace_run_train --config="mace_config.yaml"
 ```
-### 3.4 Early stopping bug in MACE 0.3.16 (CPU, non-distributed)
+### 4.4 Early stopping bug in MACE 0.3.16 (CPU, non-distributed)
 
 We found that patience does not terminate training: the log reaches "Stopping optimization after 30 epochs without improvement" but the loop continues to max_num_epochs. This is why our CPU run went the full 500 epochs despite converging around epoch 389.
 
@@ -142,4 +142,4 @@ Results are unaffected, and we expect this to be fixed in a future MACE release.
 
 ---
 
-## 3. MACE calculations using the generated model 
+## 3. Running MACE calculations using the generated model 
