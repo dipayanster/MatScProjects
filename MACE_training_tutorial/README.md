@@ -152,10 +152,11 @@ Next we calculate the total energy of the pristine graphene sheet and an isolate
 
 E_ads = E_total − E_graphene − E_Hg = (−15470.983323) − (−4518.901832) − (−10952.046782) = −0.035 eV
 
-The calculated adsorption energy of −0.035 eV is significantly higher (less negative) than the DFT value of −0.264 eV at the hollow site from which this data was trained, indicating that the model requires more rigorous training. Suggested improvements if you have read the tutorial this far:
+The calculated adsorption energy of −0.035 eV is significantly higher (less negative) than the DFT value of −0.264 eV at the hollow site from which this data was trained, indicating that the model requires more rigorous training. Some improvements to try if you have followed the tutorial this far:
 
 - Add more pristine graphene frames to better constrain the graphene reference energy.
 
 - Add a few Hg+graphene frames at large separation to teach the model the separated-limit energy.
 
 - Use a separate valid_file with 15–20% of the data to better validate energy offsets.
+
