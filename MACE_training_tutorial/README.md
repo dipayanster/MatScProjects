@@ -32,7 +32,7 @@ For the DFT calculations, place a single Hg atom in highly symmetric sites, e.g.
 
 ---
 
-## 2. DFT Calculations
+## 2. DFT Calculations (In /DFT_calculations directory)
 
 **Level of theory:** QE PBE + DFT-D4, non-spin-polarized, PAW potentials.
 
@@ -142,4 +142,20 @@ Results are unaffected, and we expect this to be fixed in a future MACE release.
 
 ---
 
-## 3. Running MACE calculations using the generated model 
+## 3. Running MACE calculations using the generated model (in /MACE_calculations directory)
+
+We use the generated MACE_GrapheneHg.model for all calculations. 
+
+As a test, we placed the Hg atom at an asymmetric position near the corner of a hexagon (MACE_calculations/asymmetric). Upon relaxation with the newly trained MACE potential, the Hg atom slides toward the hollow site, converging to an equilibrium distance of 3.358 Å — closely matching the DFT value of 3.346 Å for the hollow site calculated above.
+
+Next we calculate the total energy of the pristine graphene sheet and an isolated Hg atom again using the newly trained MACE potential
+
+E_ads = E_total − E_graphene − E_Hg = (−15470.983323) − (−4518.901832) − (−10952.046782) = −0.035 eV
+
+The calculated adsorption energy of −0.035 eV is significantly higher (less negative) than the DFT value of −0.264 eV at the hollow site from which this data was trained, indicating that the model requires more rigorous training. Suggested improvements if you have read the tutorial this far:
+
+- Add more pristine graphene frames to better constrain the graphene reference energy.
+
+- Add a few Hg+graphene frames at large separation to teach the model the separated-limit energy.
+
+- Use a separate valid_file with 15–20% of the data to better validate energy offsets.
