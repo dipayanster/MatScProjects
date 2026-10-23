@@ -142,7 +142,7 @@ Results are unaffected, and we expect this to be fixed in a future MACE release.
 
 ---
 
-## 3. Running MACE calculations using the generated model (in /MACE_calculations directory)
+## 5. Running MACE calculations using the generated model (in /MACE_calculations directory)
 
 We use the generated MACE_GrapheneHg.model for all calculations. 
 
