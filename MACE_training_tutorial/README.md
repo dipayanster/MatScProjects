@@ -1,6 +1,6 @@
-# Tutorial on Training a MACE Potential from DFT Data
+# Training a MACE Potential from DFT Data
 
-## Single Hg Adatom Adsorption on Monolayer Graphene
+**Single Hg Adatom Adsorption on Monolayer Graphene**
 
 This tutorial demonstrates how to train a MACE machine learning potential from DFT data. The workflow can be run on a laptop, but the full procedure may take several hours.
 
@@ -80,7 +80,7 @@ E_graphene = −4518.682589 eV
 
 ---
 
-## 3. Training MACE
+## 4. Training MACE
 
 ### 3.1 Preparing the Training Data
 
@@ -140,3 +140,6 @@ This is a known bug, confirmed in GitHub issue #1384: https://github.com/ACEsuit
 
 Results are unaffected, and we expect this to be fixed in a future MACE release.
 
+---
+
+## 3. MACE calculations using the generated model 
