@@ -1,0 +1,13 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+Successfully read 19 atoms from asymmetric.vasp
+Starting atom relaxation with MACE forces via ASE...
+
+=== Final Relaxation Results ===
+
+Energy Components:
+  MACE Total Energy:       -15470.983323 eV
+
+Final forces
+  ASE-style max force (norm)    : 0.007518 eV/Å
+
+=== Final structure saved to: 'relaxed_mace_asymmetric.vasp' ===

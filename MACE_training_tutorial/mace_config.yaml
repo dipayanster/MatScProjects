@@ -1,0 +1,26 @@
+name: MACE_GrapheneHg
+valid_fraction: 0.1
+E0s: '{6: -241.907386, 80: -10952.046782}'
+
+model: MACE
+hidden_irreps: '32x0e + 32x1o'
+r_max: 4.5
+batch_size: 16
+max_num_epochs: 500
+patience: 30
+scheduler_patience: 10
+
+forces_weight: 100
+energy_weight: 1
+device: cpu
+
+heads:
+  Dataset_details:
+    train_file:
+      - dataset/atop.xyz
+      - dataset/bridge.xyz
+      - dataset/hollow.xyz
+      - dataset/offcenter.xyz
+      - dataset/pristine.xyz
+    energy_key: "REF_energy"
+    forces_key: "REF_forces"

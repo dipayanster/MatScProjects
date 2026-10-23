@@ -1,0 +1,43 @@
+&CONTROL
+   verbosity        = 'low'
+   outdir           = './tmp'
+   prefix           = 'Hg_atom'
+   disk_io          = 'minimal'
+   pseudo_dir       = './'
+/
+&SYSTEM
+   ibrav            = 0
+   nat              = 1
+   ntyp             = 1
+   ecutwfc          = 50
+   ecutrho          = 400
+   occupations      = 'smearing'
+   degauss          = 0.01
+   smearing         = 'gauss'
+   assume_isolated  = 'martyna-tuckerman'
+/
+&ELECTRONS
+   conv_thr         = 1e-10
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+Hg 200.592 Hg.pbe-n-kjpaw_psl.1.0.0.UPF
+
+K_POINTS automatic
+1 1 1  0 0 0
+
+CELL_PARAMETERS angstrom
+7.36800050740000 0.00000000000000 0.00000000000000
+-3.68400025370000 6.38087561450000 0.00000000000000
+0.00000000000000 0.00000000000000 15.00000000000000
+
+ATOMIC_POSITIONS angstrom
+Hg 0.0000000000 0.0000000000 0.0000000000  
+
