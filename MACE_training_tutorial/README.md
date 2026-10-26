@@ -19,7 +19,7 @@ https://www.ccdc.cam.ac.uk/structures/Search?Ccdcid=1702249
 
 ### Reference DFT adsorption energies 
 
-Reference values for DFT adsorption energies are available in Table 1, A S Fenta et al 2020 J. Phys. Mater. 4 015002 (WIEN2k, LAPW method, PBE+DFT-D3)
+Reference values for DFT adsorption energies are available in Table 1, A S Fenta et al 2020 J. Phys. Mater. 4 015002 (θ = 1/18, WIEN2k, LAPW method, PBE+DFT-D3)
 
 
 
@@ -83,7 +83,7 @@ E_graphene = −4518.682589 eV
 | hollow    | −15470.993331   | −4518.682589    | −10952.046782  | −0.264               | −0.186                   | 3.346              | 3.45                   |
 | offcenter | −15470.988640   | −4518.682589    | −10952.046782  | −0.259               | —                        | 3.363              | —                      |
 
-**Note:** *Reference values are from Fenta et al. 2020 (θ = 1/18, WIEN2k PBE+DFT-D3). This work uses QE PBE+DFT-D4, so differences in absolute adsorption energy are expected. Consistently stronger binding in this work is reflected in the more negative adsorption energies and correspondingly shorter equilibrium distances, attributable to the DFT-D4 versus DFT-D3 dispersion correction. The site ordering (hollow most stable) remains consistent.
+**Note:** *Reference values are from Fenta et al. This work uses QE PBE+DFT-D4, so differences in absolute adsorption energy are expected. Consistently stronger binding in this work is reflected in the more negative adsorption energies and correspondingly shorter equilibrium distances, attributable to the DFT-D4 versus DFT-D3 dispersion correction. The site ordering (hollow most stable) remains consistent.
 
 ---
 
@@ -139,7 +139,7 @@ We use forces_weight: 100 and energy_weight: 1 because the energy is already clo
 source ~/mace-env/bin/activate
 mace_run_train --config="mace_config.yaml"
 ```
-### 4.4 Early stopping bug in MACE 0.3.16 (CPU, non-distributed)
+### 4.4 Patience bug in MACE 0.3.16 (CPU, non-distributed)
 
 We found that patience does not terminate training: the log reaches "Stopping optimization after 30 epochs without improvement" but the loop continues to max_num_epochs. This is why our CPU run went the full 500 epochs despite converging around epoch 389.
 
