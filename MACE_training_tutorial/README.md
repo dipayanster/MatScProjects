@@ -6,9 +6,9 @@ This tutorial demonstrates how to train a MACE machine learning potential from D
 
 ---
 
-## 1. Sourcing and Creating Structures
+## 1. References (/references)
 
-### Graphite source
+### Graphite structure
 
 The graphite structure is taken from ICSD 193439:
 
@@ -16,9 +16,22 @@ https://www.ccdc.cam.ac.uk/structures/Search?Ccdcid=1702249
 
 (B. Vadlamani, K. An, M. Jagannathan, K.S. Ravi Chandran, *Journal of the Electrochemical Society*, 2014, **161**, A1731, DOI: 10.1149/2.0951410jes)
 
+
+### Reference DFT adsorption energies 
+
+Reference values for DFT adsorption energies are available in Table 1, A S Fenta et al 2020 J. Phys. Mater. 4 015002 (WIEN2k, LAPW method, PBE+DFT-D3)
+
+
+
+---
+
+## 2. DFT Calculations (In /DFT_calculations directory)
+
+**Level of theory:** QE PBE + DFT-D4, non-spin-polarized, PAW potentials.
+
 ### Preparing the graphene sheet
 
-1. Save the structure as a POSCAR from VESTA.
+1. Save the graphite structure as a POSCAR from VESTA.
 2. Delete one layer to obtain monolayer graphene.
 3. Prepare a **3×3×1 unit cell** containing **18 C atoms** with a large vacuum slab.
 
@@ -29,12 +42,6 @@ https://www.ccdc.cam.ac.uk/structures/Search?Ccdcid=1702249
 For the DFT calculations, place a single Hg atom in highly symmetric sites, e.g. **top**, **bridge**, **hollow**, etc. In addition, include an **off-center position between hollow and bridge**.
 
 (Consult our video tutorials if you need more instructions on constructing adsorbed structures.)
-
----
-
-## 2. DFT Calculations (In /DFT_calculations directory)
-
-**Level of theory:** QE PBE + DFT-D4, non-spin-polarized, PAW potentials.
 
 ### Relaxation runs
 
@@ -146,7 +153,13 @@ Results are unaffected, and we expect this to be fixed in a future MACE release.
 
 We use the generated MACE_GrapheneHg.model for all calculations. 
 
-As a test, we placed the Hg atom at an asymmetric position near the corner of a hexagon (MACE_calculations/asymmetric). Upon relaxation with the newly trained MACE potential, the Hg atom slides toward the hollow site, converging to an equilibrium distance of 3.358 Å — closely matching the DFT value of 3.346 Å for the hollow site calculated above.
+As a test, we placed the Hg atom at an asymmetric position near the corner of a hexagon (MACE_calculations/asymmetric). The MACE calculation scripts can be prepared by adapting the earlier ASE scripts, simply replacing the Quantum ESPRESSO + DFT-D4 calculator with the trained MACE calculator.
+
+```bash
+ python3 mace_relaxation.py > mace_asymmetric.out
+```
+
+Upon relaxation with the newly trained MACE potential, the Hg atom slides toward the hollow site, converging to an equilibrium distance of 3.358 Å — closely matching the DFT value of 3.346 Å for the hollow site calculated above.
 
 Next we calculate the total energy of the pristine graphene sheet and an isolated Hg atom again using the newly trained MACE potential
 
