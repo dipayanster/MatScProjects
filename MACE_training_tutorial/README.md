@@ -83,9 +83,9 @@ We will use the ASE QE + DFT-D4 relaxation trajectories as MACE training data. U
 python traj2extxyz.py DFT_calculations/offcenter/
 ```
 
-Copy the generated xyz files into a separate `training_dataset` directory under the parent directory. Our training dataset contains the relaxation trajectories for all adsorption sites, as well as the the pristine graphene.
+Copy the generated xyz files into a separate `training_dataset` directory under the parent directory. Our training dataset contains the relaxation trajectories for all adsorption sites, as well as the pristine graphene.
 
-In this tutorial we reserve a fixed % of the training data for validation (`valid_fraction`). This split is random and the corresponding frames are not used for training. For reproducibility, MACE writes the indices of the validation frames used in each run to a separate file in the top directory. For a more finely tuned model, you can instead supply separately generated validation frames via `valid_file` (with `valid_fraction: 0.0`), rather than relying on random sampling of the training data.
+In this tutorial we reserve a fixed % of the training data for validation (`valid_fraction`). This split is random and the corresponding frames are not used for training. For reproducibility, MACE writes the indices of the validation frames used in each run to a separate file in the top directory. For a more finely tuned model, you can instead supply carefully generated validation frames via `valid_file` (with `valid_fraction: 0.0`), rather than relying on random sampling of the training data.
 
 As per MACE recommended practice, the custom REF_energy, REF_forces, and REF_stress headers are used separately from the ASE default headers, which are redundant and not used in training.
 
@@ -104,19 +104,18 @@ Parameters for training are given in the input file mace_config.yaml:
 
 **Isolated-atom reference energies (eV)**
 
-- `E0s` — isolated-atom reference energies (eV), keyed by atomic number, must match DFT settings
+- `E0s` — isolated-atom reference energies (eV), with atomic number. must be calculated with same settings as the training data.
 
 **Model settings**
 
 - `r_max` — radial cutoff (Å), larger value used in this example to capture the effects of vdW forces
-- `interaction_first` — explicitly mentioned to avoid silent-rewrite warning
-- `hidden_irreps` — hidden feature channels
-- `num_interactions` — number of message-passing layers
+- `interaction_first` — mention explicitly to avoid silent-rewrite warning
+- `hidden_irreps` — model size
+- `num_interactions` — model size, number of message-passing layers
 
 **Validation settings**
 
-- `valid_fraction` — validation split fraction (random % of training data)
-- `valid_file` — optional explicit validation files (use instead of `valid_fraction`)
+- `valid_fraction` — validation split fraction (random % of training data or use `valid_file`)
 
 **Training schedule**
 
@@ -148,14 +147,14 @@ Parameters for training are given in the input file mace_config.yaml:
 
 ### 4.3 Running MACE Training
 
-Activate the training environment (either CPU or GPU)
+Activate the training environment (either CPU or GPU).
 
 ```
 source ~/mace-env/bin/activate
 source ~/mace_cuda/bin/activate
 ```
 
-If you are using, GPU, you can monitor GPU utilisation during training by:
+If you are using, GPU, you can monitor GPU utilization during training by:
 
 ```
 nvidia-smi
@@ -180,7 +179,7 @@ We expect this to be fixed in a future MACE release.
 
 ## 5. Running MACE calculations using the generated model (in /MACE_calculations directory)
 
-The ASE scripts used for Quantum ESPRESSO can be quickly adapted to run MACE by replacing the `Espresso` calculator with the MACE calculator and removing the QE-specific parameters. We use the newly trained `MACE_GrapheneHg_stagetwo.model` to relax an Hg atom at the **hollow** and **far** positions, analogous to the Quantum ESPRESSO DFT calculations. The Stage One model MACE_GrapheneHg.model is kept only as referenc and not used.
+The ASE scripts used for Quantum ESPRESSO can be quickly adapted to run MACE by replacing the `Espresso` calculator with the MACE calculator and removing the QE-specific parameters. We use the newly trained `MACE_GrapheneHg_stagetwo.model` to relax an Hg atom at the **hollow** and **far** positions, analogous to the Quantum ESPRESSO DFT calculations. The Stage One model MACE_GrapheneHg.model is kept only as reference and not used.
 
 ```bash
 python mace_relaxation.py > mace_hollow.out
