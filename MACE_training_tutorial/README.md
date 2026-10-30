@@ -179,7 +179,7 @@ We expect this to be fixed in a future MACE release.
 
 ## 5. Running MACE calculations using the generated model (in /MACE_calculations directory)
 
-The ASE scripts used for Quantum ESPRESSO can be quickly adapted to run MACE by replacing the `Espresso` calculator with the MACE calculator and removing the QE-specific parameters. We use the newly trained `MACE_GrapheneHg_stagetwo.model` to relax an Hg atom at the **hollow** and **far** positions, analogous to the Quantum ESPRESSO DFT calculations. The Stage One model MACE_GrapheneHg.model is kept only as reference and not used.
+The ASE scripts used for Quantum ESPRESSO can be quickly adapted to run MACE by replacing the `Espresso` calculator with the `MACECalculator` and removing the QE-specific parameters. We use the newly trained `MACE_GrapheneHg_stagetwo.model` to relax an Hg atom at the **hollow** and **far** positions, analogous to the Quantum ESPRESSO DFT calculations. The Stage One model MACE_GrapheneHg.model is kept only as reference and not used.
 
 ```bash
 python mace_relaxation.py > mace_hollow.out
