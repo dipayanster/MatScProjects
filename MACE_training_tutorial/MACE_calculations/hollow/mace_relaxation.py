@@ -42,10 +42,10 @@ atoms.calc = mace_calc
 print("Starting atom relaxation with MACE forces via ASE...", flush=True)
 
 # Create trajectory file
-traj = Trajectory('mace_asymmetric.traj', 'w', atoms)
+traj = Trajectory('mace_hollow.traj', 'w', atoms)
 
 # Define optimization (BFGS)
-opt = BFGS(atoms, logfile='mace_asymmetric.log', trajectory=traj)
+opt = BFGS(atoms, logfile='mace_hollow.log', trajectory=traj)
 
 try:
     # Run optimization
@@ -71,8 +71,8 @@ try:
     print(f"  ASE-style max force (norm)    : {max_force:>8.6f} eV/Å", flush=True)
 
     # Save final structure
-    write('relaxed_mace_asymmetric.vasp', atoms, format='vasp', direct=False)
-    print("\n=== Final structure saved to: 'relaxed_mace_asymmetric.vasp' ===")
+    write('relaxed_mace_hollow.vasp', atoms, format='vasp', direct=False)
+    print("\n=== Final structure saved to: 'relaxed_mace_hollow.vasp' ===")
 
 except Exception as e:
     print(f"\nRelaxation failed: {str(e)}")

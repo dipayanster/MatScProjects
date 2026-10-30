@@ -64,10 +64,10 @@ E_far = -15470.776218 eV
 
 | Site      | E_total (eV)    | E_far (eV)     | E_ads (eV) | E_ads (eV)* | d_eq (Å) | d_eq (Å)* |
 |-----------|-----------------|----------------|----------------------|--------------------------|--------------------|------------------------|
-| atop      | -15470.986356   | -15470.776218  | -0.210               | -0.178                   | 3.376              | 3.46                   |
-| bridge    | -15470.986916   | -15470.776218  | -0.211               | -0.180                   | 3.372              | 3.49                   |
-| hollow    | -15470.993331   | -15470.776218  | -0.217               | -0.186                   | 3.346              | 3.45                   |
-| offcenter | -15470.988640   | -15470.776218  | -0.212               | —                        | 3.363              | —                      |
+| atop      | -15470.986356   | -15470.776218  | -0.210               | -0.178                   | 3.378              | 3.46                   |
+| bridge    | -15470.986916   | -15470.776218  | -0.211               | -0.180                   | 3.369              | 3.49                   |
+| hollow    | -15470.993331   | -15470.776218  | -0.217               | -0.186                   |  3.343   in mace vs 3.348            | 3.45                   |
+| offcenter | -15470.988640   | -15470.776218  | -0.212               | —                        | 3.359              | —                      |
 
 **Note:** *Reference values are from Fenta et al. This work uses QE PBE+DFT-D4, so differences in absolute adsorption energy are expected. Consistently stronger binding in this work is reflected in the more negative adsorption energies and correspondingly shorter equilibrium distances, attributable to the DFT-D4 versus DFT-D3 dispersion correction. The site ordering (hollow most stable) remains consistent.
 
@@ -194,4 +194,4 @@ For the hollow position:
 
 E_ads = −15470.983697 − (−15470.821109) = −0.163 eV
 
-The MACE-predicted adsorption energy is in reasonable agreement with the DFT results, but better agreement could be obtained with more extensive training.
+The MACE-predicted adsorption energy is in reasonable agreement with the DFT results — for example, E_ads is −0.163 eV in MACE vs −0.217 eV in DFT, and the equilibrium height d_eq for the hollow site is 3.343 Å in MACE vs 3.348 Å in DFT — but ever better agreement could be obtained with more extensive training.
