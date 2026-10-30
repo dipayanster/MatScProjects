@@ -1,0 +1,21 @@
+Successfully read 19 atoms from far.vasp
+Starting atom relaxation with QE+D4 forces via ASE...
+
+PBE default DFT-D4 parameters : {'s6': 1.0, 's9': 1.0, 'alp': 16.0, 's8': 0.95948085, 'a1': 0.38574991, 'a2': 4.80688534}
+Custom DFT-D4 parameters      : {'s6': 1.0, 's9': 1.0, 'alp': 16.0, 's8': 0.95948085, 'a1': 0.38574991, 'a2': 4.80688534}
+
+=== Final Relaxation Results ===
+
+Energy Components:
+  QE Electronic Energy:    -15468.785942 eV
+  DFT-D4 Dispersion:          -1.990276 eV
+  Total Energy (QE + D4):  -15470.776218 eV
+
+Energy check: consistent
+
+Final forces and stress
+  ASE-style max force (norm)    : 0.000132 eV/Å
+  QE-style max force            : 0.000132 eV/Å
+  Pressure                      : 5.321084 kbar
+
+=== Final structure saved to: 'relaxed_far.vasp' ===

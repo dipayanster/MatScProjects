@@ -1,6 +1,0 @@
-cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
-Successfully read 1 atoms from atom.vasp
-Calculating energy for isolated atom with MACE...
-
-=== Energy Results ===
-  MACE Total Energy:       -10952.046782 eV
