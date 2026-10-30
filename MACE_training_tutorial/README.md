@@ -167,7 +167,7 @@ Then start training:
 mace_run_train --config="mace_config.yaml"
 ```
 
-### 4.4 Patience bug in MACE 0.3.16 
+### 4.4 Patience bug in MACE 0.3.17 
 
 We found that patience does not terminate training: the log reaches "Stopping optimization after XYZ epochs without improvement" but the loop continues to max_num_epochs. Phase switching behaves correctly, but the termination does not occur as expected.
 
@@ -193,4 +193,4 @@ For the hollow position:
 
 E_ads = −15470.983697 − (−15470.821109) = −0.163 eV
 
-The MACE-predicted adsorption energy is in reasonable agreement with the DFT results — for example, E_ads is −0.163 eV in MACE vs −0.217 eV in DFT, and the equilibrium height d_eq for the hollow site is 3.343 Å in MACE vs 3.348 Å in DFT — but ever better agreement could be obtained with more extensive training.
+The MACE-predicted adsorption energy is in reasonable agreement with the DFT results — for example, E_ads is −0.163 eV in MACE vs −0.217 eV in DFT, and the equilibrium height d_eq for the hollow site is 3.343 Å in MACE vs 3.348 Å in DFT — but even better agreement could be obtained with more extensive training.
