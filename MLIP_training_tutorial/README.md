@@ -153,7 +153,7 @@ The launcher performs three steps. First, it writes `config.json` with inputs. S
 The ASE scripts used for Quantum ESPRESSO can be quickly adapted to run any MLIP by replacing the `Espresso` calculator with the corresponding ASE calculator and removing the QE-specific parameters. Load the newly generated models into the appropriate calculator and rerun the script to relax an Hg atom at the hollow and far positions, analogous to the Quantum ESPRESSO DFT calculations. 
 
 ```bash
-python mace_relaxation.py > mace_hollow.out
+python MACE_relaxation.py > MACE_hollow.out
 ```
 
 Examples are provided in the subdirectories under the training directory, e.g. `/MACE_training/MACE_calculations.` As before, the adsorption energy is calculated as `E_ads = E_total − E_far` For the hollow position:
