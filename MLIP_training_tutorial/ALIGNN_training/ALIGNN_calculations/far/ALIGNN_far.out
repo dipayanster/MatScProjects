@@ -1,0 +1,13 @@
+Successfully read 19 atoms from far.vasp
+Loading ALIGNN model /home/dsen/work/MLIP_training_tutorial/ALIGNN_training/ALIGNN_out/best_model.pt on cuda
+Starting atom relaxation with ALIGNN forces via ASE...
+
+=== Final Relaxation Results ===
+
+Energy Components:
+  ALIGNN Total Energy:      -164.450902 eV
+
+Final forces
+  ASE-style max force (norm)    : 0.000000 eV/Å
+
+=== Final structure saved to: 'relaxed_far_ALIGNN.vasp' ===
