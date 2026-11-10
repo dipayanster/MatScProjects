@@ -78,11 +78,10 @@ E_far = -15470.776218 eV
 
 We will use the ASE QE + DFT-D4 relaxation trajectories as MLIP training data. Convert them with the supplied scripts (e.g. `python traj2xyz.py DFT_calculations/atop/`: extxyz for MACE). Then move the converted files into a `training_dataset` directory under each training directory (e.g. `/MACE_training`). Input files are supplied as config files; if further processing is needed we use a python launcher script, otherwise training is launched directly. In these examples a percentage of the data is reserved for validation and testing — the split is random, held-out frames are not used for training, and a seed value can be set for reproducibility if supported. Activate the required environment(s) (e.g. `source ~/mace_cuda/bin/activate`, `source ~/alignn_cuda/bin/activate`); on a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-smi`. Summary of procedures:
 
-| MLIP   | Conversion script | Launch command/ script                               | Generated Model                  | ASE calculator             |
-| :----- | :---------------- | :------------------------------------------- | :------------------------------- | :------------------------- |
-| MACE   | `traj2xyz.py`     | `mace_run_train --config="mace_config.yaml"` | `MACE_GrapheneHg_stagetwo.model` | `MACECalculator`           |
-| ALIGNN | `traj2json.py`    | `python ALIGNN_launcher.py`                  | `ALIGNN_out` directory           | `AlignnAtomwiseCalculator` |
-
+| MLIP   | Conversion script | Input file            | Launch command/ script                        | Generated Model                  | ASE calculator             |
+| :----- | :---------------- | :-------------------- | :-------------------------------------------- | :------------------------------- | :------------------------- |
+| MACE   | `traj2xyz.py`     | `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` | `MACECalculator`           |
+| ALIGNN | `traj2json.py`    | `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           | `AlignnAtomwiseCalculator` |
 
 ### Notes
 
