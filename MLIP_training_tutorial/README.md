@@ -112,7 +112,7 @@ python MACE_relaxation.py > MACE_hollow.out
 
 Examples are provided in the subdirectories under the training directory, e.g. `/MACE_training/MACE_calculations.` As before, the adsorption energy is calculated as `E_ads = E_total − E_far` For the hollow position:
 
-| Method | hollow (eV) | far (eV) | E_ads (eV) | d_eq, hollow (Å) |
+| Method | E_hollow (eV) | E_far (eV) | E_ads (eV) | d_eq @ hollow (Å) |
 |---|---|---|---|---|
 | DFT | −15470.993331 | −15470.776218 | −0.217 | 3.348 |
 | MACE | −15470.983697 | −15470.821109 | −0.163 | 3.343 |
