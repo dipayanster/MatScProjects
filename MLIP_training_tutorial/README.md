@@ -75,80 +75,24 @@ E_far = -15470.776218 eV
 
 ## 4. Training MACE (/MACE_training)
 
-### 4.1 Preparing the Training Data
 
-We will use the ASE QE + DFT-D4 relaxation trajectories as MACE training data. Use the supplied `traj2xyz.py` script that uses ASE to export trajectories to extxyz format:
+We will use the ASE QE + DFT-D4 relaxation trajectories as MLIP training data. Convert them with the supplied scripts (e.g. `python traj2xyz.py DFT_calculations/atop/`: extxyz for MACE). Then move the converted files into a `training_dataset` directory under each training directory (e.g. `/MACE_training`). Input files are supplied as config files; if further processing is needed we use a python launcher script, otherwise training is launched directly. In these examples a percentage of the data is reserved for validation and testing — the split is random, held-out frames are not used for training, and a seed value can be set for reproducibility if supported. Activate the required environment(s) (e.g. `source ~/mace_cuda/bin/activate`, `source ~/alignn_cuda/bin/activate`); on a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-smi`. Summary of procedures:
 
-```
-python traj2xyz.py DFT_calculations/atop/
-```
+| MLIP   | Conversion script | Launch command/ script                               | Generated Model                  | ASE calculator             |
+| :----- | :---------------- | :------------------------------------------- | :------------------------------- | :------------------------- |
+| MACE   | `traj2xyz.py`     | `mace_run_train --config="mace_config.yaml"` | `MACE_GrapheneHg_stagetwo.model` | `MACECalculator`           |
+| ALIGNN | `traj2json.py`    | `python ALIGNN_launcher.py`                  | `ALIGNN_out` directory           | `AlignnAtomwiseCalculator` |
 
-Move the generated xyz files into a separate `training_dataset` directory under `/MACE_training`. Our training dataset contains the relaxation trajectories for all adsorption sites, as well as the pristine graphene. In this tutorial we reserve a fixed % of the training data for validation (`valid_fraction`). This split is random and the corresponding frames are not used for training. For reproducibility, MACE writes the indices of the validation frames used in each run to a separate file in the top directory. For a more finely tuned model, you can instead supply carefully generated validation frames via `valid_file` (with `valid_fraction: 0.0`), rather than relying on random sampling of the training data.
 
-As per MACE recommended practice, the custom REF_energy, REF_forces, and REF_stress headers are used separately from the ASE default headers, which are redundant and not used in training.
+### Notes
 
-### 4.2 Running MACE Training
-
-Activate the training environment (either CPU or GPU).
-
-```
-source ~/mace_cuda/bin/activate
-```
-
-If you are using, GPU, you can monitor GPU utilization during training by:
-
-```
-nvidia-smi
-watch -n 1 nvidia-smi
-```
-
-Then start training:
-
-```
-mace_run_train --config="mace_config.yaml"
-```
-
-### 4.3 Patience bug in MACE 0.3.17 
-
-We found that patience does not terminate training: the log reaches "Stopping optimization after XYZ epochs without improvement" but the loop continues to max_num_epochs. Phase switching behaves correctly, but the termination does not occur as expected.
-
-This is a known bug, confirmed in GitHub issue #1384: https://github.com/ACEsuit/mace/issues/1384
-
-We expect this to be fixed in a future MACE release.
+- **Custom headers for MACE:** the custom `REF_energy`, `REF_forces`, and `REF_stress` headers are used separately from the ASE default headers, which are redundant and not used in training.
+- **Patience bug in MACE 0.3.17:** patience does not terminate training — the log reaches "Stopping optimization after XYZ epochs without improvement" but the loop continues to `max_num_epochs`. Phase switching works correctly, but termination does not occur as expected (known bug, GitHub issue #1384: https://github.com/ACEsuit/mace/issues/1384; expected to be fixed in a future MACE release).
+- **Launcher script:** some workflows need further processing to prepare the inputs; in that case we use a Python launcher script. For ALIGNN, the provided script merges per-site JSON files into a single `id_prop.json`, subtracts the isolated-atom reference energies (E0), and then invokes `train_alignn.py`. The E0 correction is done explicitly here because ALIGNN, unlike MACE, does not handle it internally.
 
 ---
 
-## 5. Training ALIGNN (/ALIGNN_training)
-
-### 5.1 Preparing the Training Data
-
-ALIGNN reads energies and forces from per-structure JSON files. Use the supplied `traj2json.py` script to export the ASE QE + DFT-D4 trajectories to the JARVIS Atoms format compatible with ALIGNN.
-
-```
-python traj2json.py DFT_calculations/atop/
-```
-
-Move the generated JSON files into a `training_dataset` directory under `/ALIGNN_training` as before. A fixed train/validation/test split is set in the config (`train_ratio`, `val_ratio`, `test_ratio`). Unlike MACE, ALIGNN does not write the validation indices to a separate file.
-
-### 5.2 Running ALIGNN Training
-
-Activate the ALIGNN environment (GPU):
-
-```
-source ~/alignn_cuda/bin/activate
-```
-
-Then launch training with the supplied `ALIGNN_launcher.py` script. 
-
-```
-python ALIGNN_launcher.py
-```
-
-The launcher performs three steps. First, it writes `config.json` with inputs. Second, it merges the per-site JSON files into a single `id_prop.json` and subtracts the isolated-atom reference energies (E0) to produce energy-per-atom targets. This E0 correction is done explicitly here because ALIGNN, unlike MACE, does not handle it internally. Finally, it invokes `train_alignn.py`.
-
----
-
-## 6. Running calculations using the trained MLIPs
+## 5. Running calculations using the trained MLIPs
 
 The ASE scripts used for Quantum ESPRESSO can be quickly adapted to run any MLIP by replacing the `Espresso` calculator with the corresponding ASE calculator and removing the QE-specific parameters. Load the newly generated models into the appropriate calculator and rerun the script to relax an Hg atom at the hollow and far positions, analogous to the Quantum ESPRESSO DFT calculations. 
 
