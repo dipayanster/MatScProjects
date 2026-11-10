@@ -1,7 +1,7 @@
 {
-    "version": "1123",
-    "dataset": "user_data",
-    "target": "energy_per_atom",
+    "version": "NA",
+    "dataset": "dft_3d",
+    "target": "exfoliation_energy",
     "atom_features": "cgcnn",
     "neighbor_strategy": "pure_torch",
     "id_tag": "jid",
