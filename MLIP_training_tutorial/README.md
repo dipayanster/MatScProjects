@@ -80,10 +80,10 @@ We use the ASE QE + DFT-D4 relaxation trajectories as MLIP training data. Conver
 
 Activate the required environment(s) 
 
-````
+```
 source ~/mace_cuda/bin/activate
 source ~/alignn_cuda/bin/activate
-``` 
+```
 
 On a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-smi`. 
 
