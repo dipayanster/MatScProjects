@@ -76,7 +76,7 @@ E_far = -15470.776218 eV
 ## 4. Training MLIPs (in separate directories, e.g. /MACE_training)
 
 
-We use the ASE QE + DFT-D4 relaxation trajectories as MLIP training data. Convert them with the supplied scripts (e.g. `python traj2xyz.py DFT_calculations/atop/` produces extxyz for MACE), then move the converted files into a `training_dataset` directory under each training directory (e.g. `/MACE_training`). Input files are supplied as config files, which are set up to read training data directly from this directory. If further processing is needed, we use a Python launcher script that processes the data from `training_dataset`; otherwise, training is launched directly. In these examples a percentage of the data is reserved for validation and testing — the split is random, held-out frames are not used for training, and a seed value can be set for reproducibility if supported. 
+We use the ASE QE + DFT-D4 relaxation trajectories as MLIP training data. Export them with the supplied conversion scripts (e.g. `python traj2xyz.py DFT_calculations/atop/` produces extxyz files for MACE training), then move the converted files into a `training_dataset` directory under each training directory (e.g. `/MACE_training`). Input files are supplied as config files, which are set up to read training data directly from this directory. If further processing is needed, we use a Python launcher script that processes the data from `training_dataset`; otherwise, training is launched directly. In these examples a percentage of the data is reserved for validation and testing — the split is random, held-out frames are not used for training, and a seed value can be set for reproducibility if supported in a particular MLIP. 
 
 Activate the required environment(s) 
 
