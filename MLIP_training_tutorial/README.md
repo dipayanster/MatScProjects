@@ -73,7 +73,7 @@ E_far = -15470.776218 eV
 
 ---
 
-## 4. Training MACE (/MACE_training)
+## 4. Training MLIPs (in separate directories, e.g. /MACE_training)
 
 
 We will use the ASE QE + DFT-D4 relaxation trajectories as MLIP training data. Convert them with the supplied scripts (e.g. `python traj2xyz.py DFT_calculations/atop/`: extxyz for MACE). Then move the converted files into a `training_dataset` directory under each training directory (e.g. `/MACE_training`). Input files are supplied as config files; if further processing is needed we use a python launcher script, otherwise training is launched directly. In these examples a percentage of the data is reserved for validation and testing — the split is random, held-out frames are not used for training, and a seed value can be set for reproducibility if supported. Activate the required environment(s) (e.g. `source ~/mace_cuda/bin/activate`, `source ~/alignn_cuda/bin/activate`); on a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-smi`. Summary of procedures:
