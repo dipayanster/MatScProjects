@@ -75,8 +75,11 @@ E_far = -15470.776218 eV
 
 ## 4. Training MLIPs (in separate directories, e.g. /MACE_training)
 
-
-We use the ASE QE + DFT-D4 relaxation trajectories as MLIP training data. Export them with the supplied conversion scripts (e.g. `python traj2xyz.py DFT_calculations/atop/` produces extxyz files for MACE training), then move the converted files into a `training_dataset` directory under each training directory (e.g. `/MACE_training`). Training input parameters are specified in config files, which are set up to read training data directly from this directory. If further pre-processing of the training data is needed, we use a Python launcher script that reads from `training_dataset`; otherwise, training can be launched directly (as with MACE). The launcher can also handle post-processing if needed (as with NequIP). Please see the comment lines of the individual launcher for more explanation.. In these examples a percentage of the data is reserved for validation (and testing, if needed) — the split is random, held-out frames are not used for training, and a seed value can be set for reproducibility if supported in a particular MLIP. 
+- We will use ASE-driven Quantum ESPRESSO (QE) relaxation trajectories with DFT-D4 dispersion as MLIP training data. Export them with the supplied conversion scripts — for example, `python traj2xyz.py DFT_calculations/atop/` exports extended XYZ format for MACE.
+- Move the converted files into a `training_dataset` directory under each training directory. The config files read training data directly from that location and also store the input settings for training.
+- Training can be launched immediately for some MLIPs, such as MACE. For others, further **pre-processing** may be required, such as merging individual data files into a single file; in that case we use a Python launcher script.
+- The launcher scripts also handle post-processing, such as compiling a model from the final checkpoint for codes like NequIP that do not do this automatically. See the comment lines of each launcher for details.
+- A percentage of the data is held out for validation (and testing if needed) using a random split, so held-out frames are never used for training. A seed value can be set for reproducibility wherever the MLIP supports it.
 
 Activate the required environment(s) 
 
