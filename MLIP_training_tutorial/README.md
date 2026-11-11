@@ -92,7 +92,7 @@ On a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-sm
 
 Summary of procedures:
 
-| MLIP   | Conversion script | Input file            | Launch command/ script                        | Generated Model                  | ASE calculator             |
+| MLIP   | Conversion script | Input (config) file   | Launch command/ script                        | Generated Model                  | ASE calculator             |
 | :----- | :---------------- | :-------------------- | :-------------------------------------------- | :------------------------------- | :------------------------- |
 | MACE   | `traj2xyz.py`     | `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` | `MACECalculator`           |
 | ALIGNN | `traj2json.py`    | `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           | `AlignnAtomwiseCalculator` |
