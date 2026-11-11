@@ -1,0 +1,64 @@
+run:
+- train
+- val
+data:
+  _target_: nequip.data.datamodule.ASEDataModule
+  seed: 123
+  split_dataset:
+    file_path: training_dataset/merged_for_nequip.xyz
+    train: 0.8
+    val: 0.2
+  key_mapping:
+    REF_energy: total_energy
+    REF_forces: forces
+  transforms:
+  - _target_: nequip.data.transforms.ChemicalSpeciesToAtomTypeMapper
+    model_type_names:
+    - C
+    - Hg
+  - _target_: nequip.data.transforms.NeighborListTransform
+    r_max: 6.0
+  stats_manager:
+    _target_: nequip.data.CommonDataStatisticsManager
+    type_names:
+    - C
+    - Hg
+training_module:
+  _target_: nequip.train.EMALightningModule
+  optimizer:
+    _target_: torch.optim.Adam
+    lr: 0.01
+  model:
+    _target_: nequip.model.NequIPGNNModel
+    seed: 123
+    model_dtype: float32
+    type_names:
+    - C
+    - Hg
+    r_max: 6.0
+    avg_num_neighbors: ${training_data_stats:num_neighbors_mean}
+    per_type_energy_shifts:
+      C: -241.907386
+      Hg: -10952.046782
+    per_type_energy_scales:
+      C: 1.0
+      Hg: 1.0
+  loss:
+    _target_: nequip.train.EnergyForceLoss
+    coeffs:
+      total_energy: 50.0
+      forces: 50.0
+  val_metrics:
+    _target_: nequip.train.EnergyForceMetrics
+    coeffs:
+      total_energy_rmse: 1.0
+      forces_rmse: 1.0
+trainer:
+  _target_: lightning.Trainer
+  accelerator: gpu
+  max_epochs: 2000
+  callbacks:
+  - _target_: lightning.pytorch.callbacks.EarlyStopping
+    monitor: val0_epoch/weighted_sum
+    patience: 100
+    min_delta: 0.001

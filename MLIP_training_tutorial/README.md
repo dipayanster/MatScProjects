@@ -93,10 +93,11 @@ On a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-sm
 
 Summary of procedures:
 
-| MLIP   | Conversion script | Input (config) file   | Launch command/ script                        | Generated Model                  | ASE calculator             |
-| :----- | :---------------- | :-------------------- | :-------------------------------------------- | :------------------------------- | :------------------------- |
-| MACE   | `traj2xyz.py`     | `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` | `MACECalculator`           |
-| ALIGNN | `traj2json.py`    | `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           | `AlignnAtomwiseCalculator` |
+| MLIP   	| Conversion script | Input (config) file   | Launch command/ script                        | Generated Model                  	| ASE calculator             |
+| :---------| :---------------- | :-------------------- | :---------------------------------------------| :---------------------------------| :------------------------- |
+| MACE   	| `traj2xyz.py`     | `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` 	| `MACECalculator`           |
+| ALIGNN 	| `traj2json.py`    | `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           	| `AlignnAtomwiseCalculator` |
+| NequIP 	| `traj2xyz.py`     | `NequIP_config.yaml`  | `python NequIP_launcher.py`					| `compiled_model_cpu.nequip.pt2` 	| `NequIPCalculator`           |
 
 ### Notes
 
@@ -116,9 +117,9 @@ python MACE_relaxation.py > MACE_hollow.out
 
 Examples are provided in the subdirectories under the training directory, e.g. `/MACE_training/MACE_calculations.` As before, the adsorption energy is calculated as `E_ads = E_total − E_far` For the hollow position:
 
-| Method | E_hollow (eV) | E_far (eV) | E_ads (eV) | d_eq @ hollow (Å) |
-|---|---|---|---|---|
-| DFT | −15470.993331 | −15470.776218 | −0.217 | 3.348 |
-| MACE | −15470.983697 | −15470.821109 | −0.163 | 3.343 |
-| ALIGNN | −164.635507 | −164.452497 | −0.183 | 3.416 |
-
+| Method 	| E_hollow (eV) 	| E_far (eV) 	| E_ads (eV)| d_eq @ hollow (Å) |
+|---		|---				|---			|---		|---				|
+| DFT 		| −15470.993331		| −15470.776218 | −0.217 	| 3.348 			|
+| MACE 		| −15470.983697 	| −15470.821109 | −0.163 	| 3.343 			|
+| ALIGNN 	| −164.635507 		| −164.452497 	| −0.183 	| 3.416 			|
+| NequIP	| −15471.678463 	| −15471.427132 | −0.251 	| 3.272 			|
