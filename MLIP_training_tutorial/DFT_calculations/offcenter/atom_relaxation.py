@@ -95,7 +95,7 @@ combined_calc = SumCalculator([qe_calc, dftd4_calc])
 atoms.calc = combined_calc
 
 # ==============================================
-# 4. Cell Relaxation
+# 4. Relaxation
 # ==============================================
 print("Starting atom relaxation with QE+D4 forces via ASE...", flush=True)
 
