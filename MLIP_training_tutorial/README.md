@@ -94,7 +94,7 @@ On a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-sm
 
 Summary of procedures:
 
-| MLIP   	| Conversion script | Input (config) file   | Launch command/ script                        | Generated Model                  	| ASE calculator             |
+| MLIP   	| Conversion Script | Input File		    | Launch Command/ Script                        | Generated Model                  	| ASE Calculator             |
 | :---------| :---------------- | :-------------------- | :---------------------------------------------| :---------------------------------| :------------------------- |
 | MACE   	| `traj2xyz.py`     | `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` 	| `MACECalculator`           |
 | ALIGNN 	| `traj2json.py`    | `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           	| `AlignnAtomwiseCalculator` |
@@ -117,10 +117,10 @@ python MACE_relaxation.py > MACE_hollow.out
 
 Examples are provided in the subdirectories under the training directory, e.g. `/MACE_training/MACE_calculations.` As before, the adsorption energy is calculated as `E_ads = E_total − E_far` For the hollow position:
 
-| Method 				| E_hollow (eV) 	| E_far (eV) 	| E_ads (eV)| d_eq @ hollow (Å) |
-|---					|---				|---			|---		|---				|
-| WIEN2k, PBE+DFT-D3`*`	| —					| —				| −0.186 	| 3.450 			|
-| QE PBE + DFT-D4		| −15470.993331		| −15470.776218 | −0.217 	| 3.346 			|
-| MACE 					| −15470.983697 	| −15470.821109 | −0.163 	| 3.350 			|
-| ALIGNN 				| −164.635507 		| −164.452497 	| −0.183 	| 3.418 			|
-| NequIP				| −15471.040392 	| −15470.864320 | −0.176 	| 3.345 			|
+| Method 				| E_hollow (eV) 	| E_far (eV) 	| E_ads (eV)| d_eq @ hollow (Å) | Training Weights (force:energy)	|
+|---					|---				|---			|---		|---				| ---								|
+| WIEN2k, PBE+DFT-D3`*`	| —					| —				| −0.186 	| 3.450 			| —									|
+| QE PBE + DFT-D4		| −15470.993331		| −15470.776218 | −0.217 	| 3.346 			| —									|
+| MACE 					| −15470.983697 	| −15470.821109 | −0.163 	| 3.350 			| 100:1 -> 100:10 (2 phase)			|
+| ALIGNN 				| −164.635507 		| −164.452497 	| −0.183 	| 3.418 			| 100:10							|
+| NequIP				| −15471.040392 	| −15470.864320 | −0.176 	| 3.345 			| 50:50								|
