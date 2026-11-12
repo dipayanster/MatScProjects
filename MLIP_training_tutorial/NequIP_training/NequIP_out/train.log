@@ -1,29 +1,28 @@
-[2026-11-11 14:43:37,520][nequip.scripts.train][INFO] - [rank: 0] Starting fresh training ...
-[2026-11-11 14:43:37,523][nequip.utils.versions.package_versions][INFO] - [rank: 0] Version Information:
-[2026-11-11 14:43:37,523][nequip.utils.versions.package_versions][INFO] - [rank: 0] torch 2.14.1+cu126
-[2026-11-11 14:43:37,524][nequip.utils.versions.package_versions][INFO] - [rank: 0] e3nn 0.6.0
-[2026-11-11 14:43:37,524][nequip.utils.versions.package_versions][INFO] - [rank: 0] nequip 0.19.1
-[2026-11-11 14:43:37,525][nequip.scripts.train][INFO] - [rank: 0] This `nequip-train` run will perform the following tasks: ['train', 'val']
-[2026-11-11 14:43:37,525][nequip.scripts.train][INFO] - [rank: 0] and use the output directory provided by Hydra: /mnt/e/MLIP_training_tutorial/NequIP_training2/NequIP_out
-[2026-11-11 14:43:37,714][nequip.scripts.train][INFO] - [rank: 0] Building datamodule ...
-[2026-11-11 14:43:37,718][nequip.data.datamodule._base_datamodule][INFO] - [rank: 0] Found 1 training dataset(s), 1 validation dataset(s), 0 test dataset(s), and 0 predict dataset(s).
-[2026-11-11 14:43:37,760][pytorch_lightning.utilities.rank_zero][INFO] - GPU available: True (cuda), using: 1 GPU (cuda)
-[2026-11-11 14:43:37,760][pytorch_lightning.utilities.rank_zero][INFO] - TPU available: False, using: 0 TPU cores
-[2026-11-11 14:43:37,761][pytorch_lightning.utilities.rank_zero][INFO] - HPU available: False, using: 0 HPUs
-[2026-11-11 14:43:37,762][pytorch_lightning.utilities.rank_zero][INFO] - 💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
-[2026-11-11 14:43:38,134][nequip.data.stats_manager][INFO] - [rank: 0] Computed data statistics:
-[2026-11-11 14:43:38,134][nequip.data.stats_manager][INFO] - [rank: 0] num_neighbors_mean: 40.040485829959515
-[2026-11-11 14:43:38,135][nequip.data.stats_manager][INFO] - [rank: 0] per_type_num_neighbors_mean_C: 40.63247863247862
-[2026-11-11 14:43:38,136][nequip.data.stats_manager][INFO] - [rank: 0] per_type_num_neighbors_mean_Hg: 29.384615384615394
-[2026-11-11 14:43:38,137][nequip.data.stats_manager][INFO] - [rank: 0] per_atom_energy_mean: -814.2549780071033
-[2026-11-11 14:43:38,137][nequip.data.stats_manager][INFO] - [rank: 0] forces_rms: 0.20990222288214702
-[2026-11-11 14:43:38,138][nequip.data.stats_manager][INFO] - [rank: 0] per_type_forces_rms_C: 0.11545178947764694
-[2026-11-11 14:43:38,139][nequip.data.stats_manager][INFO] - [rank: 0] per_type_forces_rms_Hg: 0.7727844704455613
-[2026-11-11 14:43:38,141][nequip.scripts.train][INFO] - [rank: 0] Building model and training_module from scratch ...
-[2026-11-11 14:43:38,720][nequip.scripts.train][INFO] - [rank: 0] TRAIN RUN START
-[2026-11-11 14:43:38,753][pytorch_lightning.utilities.rank_zero][INFO] - 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
-[2026-11-11 14:57:24,873][nequip.scripts.train][INFO] - [rank: 0] TRAIN RUN END
-[2026-11-11 14:57:24,874][nequip.scripts.train][INFO] - [rank: 0] VAL RUN START
-[2026-11-11 14:57:24,983][pytorch_lightning.utilities.rank_zero][INFO] - Restoring states from the checkpoint path at /mnt/e/MLIP_training_tutorial/NequIP_training2/lightning_logs/version_0/checkpoints/epoch=139-step=9100.ckpt
-[2026-11-11 14:57:26,245][pytorch_lightning.utilities.rank_zero][INFO] - Loaded model weights from the checkpoint at /mnt/e/MLIP_training_tutorial/NequIP_training2/lightning_logs/version_0/checkpoints/epoch=139-step=9100.ckpt
-[2026-11-11 14:57:26,876][nequip.scripts.train][INFO] - [rank: 0] VAL RUN END
+[2026-11-12 11:26:57,277][nequip.scripts.train][INFO] - [rank: 0] Starting fresh training ...
+[2026-11-12 11:26:57,279][nequip.utils.versions.package_versions][INFO] - [rank: 0] Version Information:
+[2026-11-12 11:26:57,280][nequip.utils.versions.package_versions][INFO] - [rank: 0] torch 2.14.1+cu126
+[2026-11-12 11:26:57,281][nequip.utils.versions.package_versions][INFO] - [rank: 0] e3nn 0.6.0
+[2026-11-12 11:26:57,281][nequip.utils.versions.package_versions][INFO] - [rank: 0] nequip 0.19.1
+[2026-11-12 11:26:57,282][nequip.scripts.train][INFO] - [rank: 0] This `nequip-train` run will perform the following tasks: ['train', 'val']
+[2026-11-12 11:26:57,282][nequip.scripts.train][INFO] - [rank: 0] and use the output directory provided by Hydra: /mnt/e/NequIP_training/NequIP_out
+[2026-11-12 11:26:57,530][nequip.scripts.train][INFO] - [rank: 0] Building datamodule ...
+[2026-11-12 11:26:57,534][nequip.data.datamodule._base_datamodule][INFO] - [rank: 0] Found 1 training dataset(s), 1 validation dataset(s), 0 test dataset(s), and 0 predict dataset(s).
+[2026-11-12 11:26:57,579][pytorch_lightning.utilities.rank_zero][INFO] - GPU available: True (cuda), using: 1 GPU (cuda)
+[2026-11-12 11:26:57,580][pytorch_lightning.utilities.rank_zero][INFO] - TPU available: False, using: 0 TPU cores
+[2026-11-12 11:26:57,580][pytorch_lightning.utilities.rank_zero][INFO] - HPU available: False, using: 0 HPUs
+[2026-11-12 11:26:57,582][pytorch_lightning.utilities.rank_zero][INFO] - 💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+[2026-11-12 11:26:57,982][nequip.data.stats_manager][INFO] - [rank: 0] Computed data statistics:
+[2026-11-12 11:26:57,983][nequip.data.stats_manager][INFO] - [rank: 0] num_neighbors_mean: 40.040485829959515
+[2026-11-12 11:26:57,984][nequip.data.stats_manager][INFO] - [rank: 0] per_type_num_neighbors_mean_C: 40.63247863247862
+[2026-11-12 11:26:57,985][nequip.data.stats_manager][INFO] - [rank: 0] per_type_num_neighbors_mean_Hg: 29.384615384615394
+[2026-11-12 11:26:57,986][nequip.data.stats_manager][INFO] - [rank: 0] per_atom_energy_mean: -814.2549780071033
+[2026-11-12 11:26:57,987][nequip.data.stats_manager][INFO] - [rank: 0] forces_rms: 0.20990222288214702
+[2026-11-12 11:26:57,987][nequip.data.stats_manager][INFO] - [rank: 0] per_type_forces_rms_C: 0.11545178947764694
+[2026-11-12 11:26:57,988][nequip.data.stats_manager][INFO] - [rank: 0] per_type_forces_rms_Hg: 0.7727844704455613
+[2026-11-12 11:26:57,990][nequip.scripts.train][INFO] - [rank: 0] Building model and training_module from scratch ...
+[2026-11-12 11:26:58,558][nequip.scripts.train][INFO] - [rank: 0] TRAIN RUN START
+[2026-11-12 11:34:33,898][nequip.scripts.train][INFO] - [rank: 0] TRAIN RUN END
+[2026-11-12 11:34:33,898][nequip.scripts.train][INFO] - [rank: 0] VAL RUN START
+[2026-11-12 11:34:33,993][pytorch_lightning.utilities.rank_zero][INFO] - Restoring states from the checkpoint path at /mnt/e/NequIP_training/lightning_logs/version_0/checkpoints/best.ckpt
+[2026-11-12 11:34:34,074][pytorch_lightning.utilities.rank_zero][INFO] - Loaded model weights from the checkpoint at /mnt/e/NequIP_training/lightning_logs/version_0/checkpoints/best.ckpt
+[2026-11-12 11:34:34,622][nequip.scripts.train][INFO] - [rank: 0] VAL RUN END

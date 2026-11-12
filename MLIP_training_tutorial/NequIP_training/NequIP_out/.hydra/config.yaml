@@ -51,14 +51,22 @@ training_module:
   val_metrics:
     _target_: nequip.train.EnergyForceMetrics
     coeffs:
-      total_energy_rmse: 1.0
+      per_atom_energy_rmse: 1.0
       forces_rmse: 1.0
 trainer:
   _target_: lightning.Trainer
   accelerator: gpu
   max_epochs: 2000
   callbacks:
+  - _target_: lightning.pytorch.callbacks.ModelCheckpoint
+    monitor: val0_epoch/weighted_sum
+    mode: min
+    save_top_k: 1
+    save_last: true
+    filename: best
+    auto_insert_metric_name: false
   - _target_: lightning.pytorch.callbacks.EarlyStopping
     monitor: val0_epoch/weighted_sum
-    patience: 100
-    min_delta: 0.001
+    mode: min
+    patience: 30
+    min_delta: 0.0001
