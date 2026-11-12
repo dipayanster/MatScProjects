@@ -101,9 +101,8 @@ Summary of procedures:
 
 ### Notes
 
-- **Custom headers for MACE:** the custom `REF_energy`, `REF_forces`, and `REF_stress` headers are used separately from the ASE default headers, which are redundant and not used in training.
-- **Patience bug in MACE 0.3.17:** patience does not terminate training — the log reaches "Stopping optimization after XYZ epochs without improvement" but the loop continues to `max_num_epochs`. Phase switching works correctly, but termination does not occur as expected (known bug, GitHub issue #1384: https://github.com/ACEsuit/mace/issues/1384; expected to be fixed in a future MACE release).
-- **Launcher script:** some workflows need further processing to prepare the inputs; in that case we use a Python launcher script. For ALIGNN, the provided script merges per-site JSON files into a single `id_prop.json`, subtracts the isolated-atom reference energies (E0), and then invokes `train_alignn.py`. The E0 correction is done explicitly here because ALIGNN, unlike MACE, does not handle it internally.
+- In extended XYZ files, custom `REF_energy`, `REF_forces`, and `REF_stress` headers are used. These are separate from the ASE default headers, which are redundant and not used in training.
+- In MACE, patience does not terminate training. Phase switching works correctly, but termination does not occur (known bug, GitHub issue #1384: https://github.com/ACEsuit/mace/issues/1384).
 
 ---
 
