@@ -119,7 +119,7 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 
 | Method 				| E_hollow (eV) 	| E_far (eV) 	| E_ads (eV)| d_eq @ hollow (Å) |
 |---					|---				|---			|---		|---				|
-| WIEN2k, PBE+DFT-D3`*`	| —					| —				| −0.186 	| 3.350 			|
+| WIEN2k, PBE+DFT-D3`*`	| —					| —				| −0.186 	| 3.450 			|
 | QE PBE + DFT-D4		| −15470.993331		| −15470.776218 | −0.217 	| 3.348 			|
 | MACE 					| −15470.983697 	| −15470.821109 | −0.163 	| 3.343 			|
 | ALIGNN 				| −164.635507 		| −164.452497 	| −0.183 	| 3.416 			|
