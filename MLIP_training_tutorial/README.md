@@ -75,8 +75,9 @@ E_far = -15470.776218 eV
 
 ## 4. Training MLIPs (in separate directories, e.g. /MACE_training)
 
-- We will use ASE-driven Quantum ESPRESSO (QE) relaxation trajectories (`*.traj files`) with DFT-D4 dispersion as MLIP training data. Export them with the supplied conversion scripts — for example, `python traj2xyz.py DFT_calculations/atop/` exports extended XYZ format for MACE.
-- Move the converted files into a `training_dataset` directory under each training directory. The config files read training data directly from that location and also store the input settings for training.
+- We will use ASE-driven QE+DFT-D4 relaxation trajectories (`*.traj files`, you can visualize them with `ase gui *.traj`) as MLIP training data. Export them with the supplied conversion scripts — for example, `python traj2xyz.py DFT_calculations/atop/` exports extended XYZ format for MACE.
+- Move the converted files into a `training_dataset` directory under each training directory.
+- The config files store all training input settings and read the training data directly from the `training_dataset` directory. 
 - Training can be launched immediately for some MLIPs, such as MACE, because it reads multiple training files directly from the config, saves the final model from the checkpoint, and writes stdout logs automatically.
 - For other MLIPs that do not handle these steps automatically, we use a launcher script that performs them, so the workflow can be re-run for different training parameters by changing only the config files.
 - A percentage of the data is held out for validation (and testing if needed) using a random split, so held-out frames are never used for training. A seed value can be set for reproducibility wherever the MLIP supports it.
