@@ -62,12 +62,12 @@ Following Fenta et al., the adsorption energy is evaluated as E_ads = E_total �
 
 E_far = -15470.776218 eV
 
-| Site      | E_total (eV)    | E_far (eV)     | E_ads (eV) | E_ads (eV)* | d_eq (Å) | d_eq (Å)* |
-|-----------|-----------------|----------------|----------------------|--------------------------|--------------------|------------------------|
-| atop      | -15470.986356   | -15470.776218  | -0.210               | -0.178                   | 3.378              | 3.46                   |
-| bridge    | -15470.986916   | -15470.776218  | -0.211               | -0.180                   | 3.369              | 3.49                   |
-| hollow    | -15470.993331   | -15470.776218  | -0.217               | -0.186                   | 3.348              | 3.45                   |
-| offcenter | -15470.988640   | -15470.776218  | -0.212               | —                        | 3.359              | —                      |
+| Site      | E_total (eV)    | E_far (eV)     | E_ads (eV) 			| E_ads (eV)*				| d_eq (Å) 			| d_eq (Å)* 			 |
+|-----------|-----------------|----------------|----------------------	|--------------------------|--------------------|------------------------|
+| atop      | -15470.986356   | -15470.776218  | -0.210               	| -0.178                   | 3.378              | 3.46                   |
+| bridge    | -15470.986916   | -15470.776218  | -0.211               	| -0.180                   | 3.371              | 3.49                   |
+| hollow    | -15470.993331   | -15470.776218  | -0.217               	| -0.186                   | 3.346              | 3.45                   |
+| offcenter | -15470.988640   | -15470.776218  | -0.212               	| —                        | 3.363              | —                      |
 
 **Note:** *Reference values are from Fenta et al. using all electron LAPW method in WIEN2k and PBE+DFT-D3. This work uses Quantum Espresso PBE+DFT-D4, so differences in absolute adsorption energy are expected. Consistently stronger binding in this work is reflected in the more negative adsorption energies and correspondingly shorter equilibrium distances, attributable to the DFT-D4 versus DFT-D3 dispersion correction. The site ordering (hollow most stable) remains consistent.
 
@@ -120,7 +120,7 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 | Method 				| E_hollow (eV) 	| E_far (eV) 	| E_ads (eV)| d_eq @ hollow (Å) |
 |---					|---				|---			|---		|---				|
 | WIEN2k, PBE+DFT-D3`*`	| —					| —				| −0.186 	| 3.450 			|
-| QE PBE + DFT-D4		| −15470.993331		| −15470.776218 | −0.217 	| 3.348 			|
+| QE PBE + DFT-D4		| −15470.993331		| −15470.776218 | −0.217 	| 3.346 			|
 | MACE 					| −15470.983697 	| −15470.821109 | −0.163 	| 3.343 			|
 | ALIGNN 				| −164.635507 		| −164.452497 	| −0.183 	| 3.416 			|
 | NequIP				| −15471.040392 	| −15470.864320 | −0.176 	| 3.272 			|
