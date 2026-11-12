@@ -79,7 +79,7 @@ E_far = -15470.776218 eV
 - Move the converted files into a `training_dataset` directory under each training directory.
 - The config files store all training input settings 
 - Training can be launched immediately for some MLIPs, such as MACE, because it reads multiple training files directly from its config file, compiles the best model, and writes stdout logs automatically.
-- For other MLIPs that do not handle these steps automatically, we use a launcher script for convenience. So the workflow can be re-run for different training parameters by changing only the config files.
+- For other MLIPs that don't automate these steps (e.g., those needing a single merged training file), we use a launcher script, so the workflow can be re-run with different training parameters by changing only the config files.
 - A percentage of the data is held out for validation (and testing if needed) using a random split, so held-out frames are never used for training. A seed value can be set for reproducibility wherever the MLIP supports it.
 
 Activate the required environment(s) 
@@ -103,7 +103,7 @@ Summary of procedures:
 ### Notes
 
 - In extended XYZ files, custom `REF_energy`, `REF_forces`, and `REF_stress` headers are used. These are separate from the ASE default headers, which are redundant and not used in training.
-- In MACE, patience does not terminate training. Phase switching works correctly, but termination does not occur (known bug, GitHub issue #1384: https://github.com/ACEsuit/mace/issues/1384).
+- In MACE patience does not terminate training. Phase switching works correctly, but termination does not occur (known bug, GitHub issue #1384: https://github.com/ACEsuit/mace/issues/1384). 
 
 ---
 
