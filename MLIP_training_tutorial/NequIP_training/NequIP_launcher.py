@@ -4,30 +4,29 @@ import subprocess
 import sys
 from pathlib import Path
 
-# --- paths -------------------------------------------------------------------
-root_dir = Path("training_dataset")
-merged_xyz = root_dir / "merged_for_nequip.xyz"
-config = "NequIP_config.yaml"
-out_dir = Path("NequIP_out")
-log_file = Path("NequIP_run.log")
-best_ckpt = Path("lightning_logs/version_0/checkpoints/best.ckpt")
-project_dir = Path(__file__).resolve().parent
+# paths
+BASE_DIR = Path(__file__).resolve().parent
 
-# compile targets
-# Each entry is (device, output_path).
-# To also compile for GPU later, just uncomment the "cuda" line below.
+root_dir   = BASE_DIR / "training_dataset"
+merged_xyz = root_dir / "merged_for_nequip.xyz"
+config     = BASE_DIR / "NequIP_config.yaml"
+out_dir    = BASE_DIR / "NequIP_out"
+log_file   = BASE_DIR / "NequIP_run.log"
+project_dir = BASE_DIR
+
+# for GPU, uncomment the "cuda" line below.
 compile_targets = [
     ("cpu",  project_dir / "compiled_model_cpu.nequip.pt2"),
 #    ("cuda", project_dir / "compiled_model_gpu.nequip.pt2"),
 ]
 
 # cleanup
-shutil.rmtree("lightning_logs", ignore_errors=True)
+shutil.rmtree(BASE_DIR / "lightning_logs", ignore_errors=True)
 shutil.rmtree(out_dir, ignore_errors=True)
 for _, out_path in compile_targets:
     out_path.unlink(missing_ok=True)
 
-# 1. merge per-site xyz files into one multi-frame extxyz
+# 1. merge per-site xyz files
 with open(merged_xyz, "w") as fout:
     for f in sorted(root_dir.glob("*.xyz")):
         if f.name == merged_xyz.name:
@@ -38,11 +37,11 @@ with open(merged_xyz, "w") as fout:
             fout.write("\n")
 print(f"Merged xyz files -> {merged_xyz}")
 
-# 2. launch NequIP training 
+# 2. launch NequIP training
 cmd = [
     "nequip-train",
     "-cp", str(project_dir),
-    "-cn", config,
+    "-cn", config.name,
     f"data.split_dataset.file_path={merged_xyz}",
     f"hydra.run.dir={out_dir}",
 ]
@@ -61,6 +60,7 @@ with open(log_file, "w", buffering=1) as log:
         text=True,
         bufsize=1,
         env=env,
+        cwd=BASE_DIR,
     )
     for line in proc.stdout:
         sys.stdout.write(line)
@@ -68,15 +68,20 @@ with open(log_file, "w", buffering=1) as log:
         log.write(line)
     proc.wait()
 
-
 if proc.returncode != 0:
     sys.exit(proc.returncode)
 
 # 4. compile the best checkpoint
-if not best_ckpt.exists():
-    sys.exit(f"ERROR: ModelCheckpoint did not produce {best_ckpt}. "
+search_roots = [out_dir, BASE_DIR / "lightning_logs"]
+ckpts = []
+for root in search_roots:
+    ckpts.extend(root.glob("**/checkpoints/best.ckpt"))
+ckpts = sorted(ckpts)
+if not ckpts:
+    sys.exit(f"ERROR: no best.ckpt found under {search_roots}. "
              f"Check the ModelCheckpoint config and {log_file}.")
-print(f"Best checkpoint: {best_ckpt}")
+best_ckpt = ckpts[0]
+print(f"Found best checkpoint: {best_ckpt}")
 
 for device, out_path in compile_targets:
     print(f"Compiling for {device}: {best_ckpt} -> {out_path}")
@@ -87,7 +92,7 @@ for device, out_path in compile_targets:
         "--device", device,
         "--mode",   "aotinductor",
         "--target", "ase",
-    ], env=env).returncode
+    ], env=env, cwd=BASE_DIR).returncode
     if rc != 0:
         sys.exit(f"Compilation for {device} failed with return code {rc}")
 

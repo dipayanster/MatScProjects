@@ -4,7 +4,7 @@ Starting atom relaxation with NequIP forces via ASE...
 === Final Relaxation Results ===
 
 Energy Components:
-  NequIP Total Energy:     -15471.040392 eV
+  NequIP Total Energy:     -15471.040401 eV
 
 Final forces
   ASE-style max force (norm)    : 0.002410 eV/Å

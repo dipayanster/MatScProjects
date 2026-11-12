@@ -54,7 +54,7 @@
     "use_ema": false,
     "ema_decay": 0.999,
     "torch_seed": null,
-    "output_dir": "ALIGNN_out",
+    "output_dir": "/mnt/e/MLIP_training_tutorial/ALIGNN_training/ALIGNN_out",
     "use_lmdb": true,
     "read_existing": false,
     "model": {

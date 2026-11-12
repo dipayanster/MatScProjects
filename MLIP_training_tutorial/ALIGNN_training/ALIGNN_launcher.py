@@ -4,18 +4,22 @@ import subprocess
 import sys
 from pathlib import Path
 
-root_dir = Path("training_dataset")   # folder with per-site *.json
-config   = "ALIGNN_config.json"       # ALIGNN config (pre-written)
-out_dir  = "ALIGNN_out"               # ALIGNN training output folder
-log_file = Path("ALIGNN_run.log")     # stdout+stderr tee
+# paths
+BASE_DIR = Path(__file__).resolve().parent
+
+root_dir = BASE_DIR / "training_dataset"   # folder with per-site *.json
+config   = BASE_DIR / "ALIGNN_config.json" # ALIGNN config (pre-written)
+out_dir  = BASE_DIR / "ALIGNN_out"         # ALIGNN training output folder
+log_file = BASE_DIR / "ALIGNN_run.log"     # stdout+stderr tee
 
 # isolated-atom reference energies (eV), keyed by element symbol
+# E0-subtraction done while merging
 E0 = {
     "C":  -241.907386,
     "Hg": -10952.046782,
 }
 
-# 1. merge per-site JSONs, subtract E0, write id_prop.json
+# 1. merge per-site JSONs
 entries = []
 for f in sorted(root_dir.glob("*.json")):
     if f.name == "id_prop.json":
@@ -36,8 +40,8 @@ print(f"Merged {len(entries)} frames (E0-subtracted) -> {root_dir / 'id_prop.jso
 cmd = [
     "train_alignn.py",
     "--root_dir", str(root_dir),
-    "--config", config,
-    "--output_dir", out_dir,
+    "--config", str(config),
+    "--output_dir", str(out_dir),
     "--target_key", "energy_per_atom",
     "--force_key", "forces",
     "--id_key", "jid",
@@ -45,7 +49,7 @@ cmd = [
 print(f"Running: {' '.join(cmd)}")
 print(f"Logging to: {log_file.resolve()}")
 
-# 3. stream stdout+stderr to terminal and log file
+# 3. logging
 env = os.environ.copy()
 env["PYTHONUNBUFFERED"] = "1"
 
@@ -57,6 +61,7 @@ with open(log_file, "w", buffering=1) as log:
         text=True,
         bufsize=1,
         env=env,
+        cwd=BASE_DIR,
     )
     for line in proc.stdout:
         sys.stdout.write(line)

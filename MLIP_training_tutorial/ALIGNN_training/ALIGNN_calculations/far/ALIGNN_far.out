@@ -5,7 +5,7 @@ Starting atom relaxation with ALIGNN forces via ASE...
 === Final Relaxation Results ===
 
 Energy Components:
-  ALIGNN Total Energy:      -164.452497 eV
+  ALIGNN Total Energy:      -164.429031 eV
 
 Final forces
   ASE-style max force (norm)    : 0.000000 eV/Å
