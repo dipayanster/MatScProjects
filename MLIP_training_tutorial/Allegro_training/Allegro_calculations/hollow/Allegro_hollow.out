@@ -1,0 +1,12 @@
+Successfully read 19 atoms from hollow.vasp
+Starting atom relaxation with Allegro forces via ASE...
+
+=== Final Relaxation Results ===
+
+Energy Components:
+  Allegro Total Energy:     -15470.997893 eV
+
+Final forces
+  ASE-style max force (norm)    : 0.006201 eV/Å
+
+=== Final structure saved to: 'relaxed_hollow_Allegro.vasp' ===

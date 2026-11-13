@@ -94,11 +94,12 @@ On a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-sm
 
 Summary of procedures:
 
-| MLIP   	| Conversion Script | Input File		    | Launch Command/ Script                        | Generated Model                  	| ASE Calculator             |
-| :---------| :---------------- | :-------------------- | :---------------------------------------------| :---------------------------------| :------------------------- |
-| MACE   	| `traj2xyz.py`     | `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` 	| `MACECalculator`           |
-| ALIGNN-FF	| `traj2json.py`    | `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           	| `AlignnAtomwiseCalculator` |
-| NequIP 	| `traj2xyz.py`     | `NequIP_config.yaml`  | `python NequIP_launcher.py`					| `compiled_model_cpu.nequip.pt2` 	| `NequIPCalculator`           |
+| MLIP   	| Conversion Script | Input File		    | Launch Command/ Script                        | Generated Model                  			| ASE Calculator             |
+| :---------| :---------------- | :-------------------- | :---------------------------------------------| :-----------------------------------------| :------------------------- |
+| MACE   	| `traj2xyz.py`     | `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` 			| `MACECalculator`           |
+| ALIGNN-FF	| `traj2json.py`    | `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           			| `AlignnAtomwiseCalculator` |
+| NequIP 	| `traj2xyz.py`     | `NequIP_config.yaml`  | `python NequIP_launcher.py`					| `compiled_model_cpu.nequip.pt2` 			| `NequIPCalculator`         |
+| Allegro  	| `traj2xyz.py`     | `Allegro_config.yaml` | `python Allegro_launcher.py`					| `compiled_allegro_model_cpu.nequip.pt2` 	| `NequIPCalculator`         |
 
 ### Notes
 
@@ -125,3 +126,4 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 | MACE 					| −15470.983697 	| −15470.821109 | −0.163 	| 3.350 			| 100:1 → 100:10 (2 phase)			|
 | ALIGNN-FF				| −164.621772 		| −164.429031 	| −0.193 	| 3.381 			| 100:10							|
 | NequIP				| −15471.040401 	| −15470.864325 | −0.176 	| 3.345 			| 50:50								|
+| Allegro				| −15470.997893 	| −15470.778992 | −0.219 	| 3.341 			| 50:50								|
