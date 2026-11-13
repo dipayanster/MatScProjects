@@ -80,7 +80,7 @@ E_far = -15470.776218 eV
 - The config files store all training input settings 
 - Training can be launched immediately for some MLIPs, such as MACE, because it reads multiple training files directly from its config file, compiles the best model, and writes stdout logs automatically.
 - For other MLIPs that don't automate these steps (e.g., those needing a single merged training file), we use a launcher script, so the workflow can be re-run with different training parameters by changing only the config files.
-- A percentage of the data is held out for validation (and testing if needed) using a random split, so held-out frames are never used for training. A seed value can be set for reproducibility wherever the MLIP supports it.
+- A percentage of the data is held out for validation (and testing if needed), held-out frames are never used for training. A seed value can be set for reproducibility wherever the MLIP supports it.
 
 Activate the required environment(s) 
 
@@ -97,7 +97,7 @@ Summary of procedures:
 | MLIP   	| Conversion Script | Input File		    | Launch Command/ Script                        | Generated Model                  	| ASE Calculator             |
 | :---------| :---------------- | :-------------------- | :---------------------------------------------| :---------------------------------| :------------------------- |
 | MACE   	| `traj2xyz.py`     | `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` 	| `MACECalculator`           |
-| ALIGNN 	| `traj2json.py`    | `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           	| `AlignnAtomwiseCalculator` |
+| ALIGNN-FF	| `traj2json.py`    | `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           	| `AlignnAtomwiseCalculator` |
 | NequIP 	| `traj2xyz.py`     | `NequIP_config.yaml`  | `python NequIP_launcher.py`					| `compiled_model_cpu.nequip.pt2` 	| `NequIPCalculator`           |
 
 ### Notes
@@ -123,5 +123,5 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 | WIEN2k, PBE+DFT-D3`*`	| —					| —				| −0.186 	| 3.450 			| —									|
 | QE PBE + DFT-D4		| −15470.993331		| −15470.776218 | −0.217 	| 3.346 			| —									|
 | MACE 					| −15470.983697 	| −15470.821109 | −0.163 	| 3.350 			| 100:1 → 100:10 (2 phase)			|
-| ALIGNN 				| −164.621772 		| −164.429031 	| −0.193 	| 3.381 			| 100:10							|
+| ALIGNN-FF				| −164.621772 		| −164.429031 	| −0.193 	| 3.381 			| 100:10							|
 | NequIP				| −15471.040401 	| −15470.864325 | −0.176 	| 3.345 			| 50:50								|
