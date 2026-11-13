@@ -1,6 +1,20 @@
 {
   "random_seed": 123,
   "atom_features": "cgcnn",
+  "neighbor_strategy": "pure_torch",
+  "optimizer": "adamw",
+  "learning_rate": 0.001,
+  "weight_decay": 0.00001,
+  "batch_size": 16,
+  "epochs": 500,
+  "warmup_steps": 200,
+  "scheduler": "onecycle",
+  "train_ratio": 0.7,
+  "val_ratio": 0.2,
+  "test_ratio": 0.1,
+  "keep_data_order": true,
+  "n_early_stopping": 50,
+  "eval_best_checkpoint": true,
   "model": {
     "name": "alignn_atomwise_pure",
     "alignn_layers": 2,
@@ -12,17 +26,5 @@
     "graphwise_weight": 10.0,
     "gradwise_weight": 100.0,
     "stresswise_weight": 0.0
-  },
-  "neighbor_strategy": "pure_torch",
-  "optimizer": "adamw",
-  "learning_rate": 0.001,
-  "weight_decay": 0.00001,
-  "batch_size": 16,
-  "epochs": 500,
-  "scheduler": "onecycle",
-  "train_ratio": 0.7,
-  "val_ratio": 0.2,
-  "test_ratio": 0.1,
-  "keep_data_order": true,
-  "n_early_stopping": 50
+  }
 }
