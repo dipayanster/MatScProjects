@@ -1,8 +1,6 @@
 # Training Machine-learned interatomic potentials (MLIPs) from DFT Data
 
-**Single Hg Adatom Adsorption on Monolayer Graphene**
-
-This tutorial demonstrates how to train several machine-learned interatomic potentials (MLIPs) from DFT data. The workflow is laptop-friendly, but the full procedure may take several hours depending on the hardware and GPU availability.
+This tutorial demonstrates how to train several machine-learned interatomic potentials (MLIPs) from scratch using DFT data for **single Hg adatom adsorption on monolayer graphene**. All models are built entirely from scratch — **no foundation models or pretrained components are used at any stage**. The workflow is laptop-friendly, but the full procedure may take several hours depending on the hardware and GPU availability.
 
 ---
 
