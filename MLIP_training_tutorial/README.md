@@ -1,6 +1,6 @@
 # Training Machine-learned interatomic potentials (MLIPs) from DFT Data
 
-This tutorial demonstrates how to train several machine-learned interatomic potentials (MLIPs) from scratch using DFT data for **single Hg adatom adsorption on monolayer graphene**. All models are built entirely from scratch — **no foundation models or pretrained components are used at any stage**. The workflow is laptop-friendly, but the full procedure may take several hours depending on the hardware and GPU availability.
+This tutorial demonstrates how to train several machine-learned interatomic potentials (MLIPs) using DFT data. We chose a suitably small Hg adatom adsorbed graphene system (fewer than 20 atoms) for this purpose. All models are built entirely from scratch — **no foundation models or pretrained components are used at any stage**. The workflow is laptop-friendly, but the full procedure may take several hours depending on the hardware and GPU availability.
 
 ---
 
@@ -129,3 +129,7 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 | NequIP				| −15471.040401 	| −15470.864325 | −0.176 	| 3.345 			| 50:50								|
 | Allegro				| −15470.997893 	| −15470.778992 | −0.219 	| 3.341 			| 50:50								|
 | DeePMD				| −15470.990700 	| −15470.816395 | −0.174 	| 3.342 			| 1000:0.02 → 1:1 (2 phase)			|
+
+### How to interpret this table: 
+
+It is not a ranking of which MLIP performs best. Every model was trained on minimal configurations with limited data, and each could be improved with more data, larger models, opptimized training settings or longer training. The tutorial is meant to just demonstrate the workflows and show that even models trained with limited data can capture the atomic interactions.
