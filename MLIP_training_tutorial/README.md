@@ -75,7 +75,7 @@ E_far = -15470.776218 eV
 
 ## 4. Training MLIPs (in separate directories, e.g. /MACE_training)
 
-- We will use ASE-driven QE+DFT-D4 relaxation trajectories (`*.traj files`, you can visualize them with `ase gui *.traj`) as MLIP training data. Export them with the supplied conversion scripts — for example, `python traj2xyz.py DFT_calculations/atop/` exports extended XYZ format for MACE.
+- We will use ASE-driven QE+DFT-D4 relaxation trajectories (`*.traj files`, you can visualize them with `ase gui *.traj`) as MLIP training data. Export them with the supplied conversion scripts — for example, `python traj2xyz.py DFT_calculations/atop/` exports extended XYZ format.
 - Move the converted files into a `training_dataset` directory under each training directory.
 - The config files store all training input settings 
 - Training can be launched immediately for some MLIPs, such as MACE, because it reads multiple training files directly from its config file, compiles the best model, and writes stdout logs automatically.
