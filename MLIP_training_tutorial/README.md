@@ -74,7 +74,7 @@ E_far = -15470.776218 eV
 ## 4. Training MLIPs (in separate directories, e.g. /MACE_training)
 
 - We will use ASE-driven QE+DFT-D4 relaxation trajectories (`*.traj files`, you can visualize them with `ase gui *.traj`) as MLIP training data. Export them with the supplied conversion scripts — for example, `python traj2xyz.py DFT_calculations/atop/` exports extended XYZ format.
-- Move the converted files into a `training_dataset` directory under each training directory.
+- Move the converted files (or directories e.g. DeePMD) into a `training_dataset` directory under each training directory.
 - The config files store all training input settings 
 - Training can be launched immediately for some MLIPs, such as MACE, because it reads multiple training files directly from its config file, compiles the best model, and writes stdout logs automatically.
 - For other MLIPs that don't automate these steps (e.g., those needing a single merged training file), we use a launcher script, so the workflow can be re-run with different training parameters by changing only the config files.
@@ -92,19 +92,20 @@ On a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-sm
 
 Summary of procedures:
 
-| MLIP   	| Conversion Script | Input File		    | Launch Command/ Script                        | Generated Model                  			| ASE Calculator             |
-| :---------| :---------------- | :-------------------- | :---------------------------------------------| :-----------------------------------------| :------------------------- |
-| MACE   	| `traj2xyz.py`     | `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` 			| `MACECalculator`           |
-| ALIGNN-FF	| `traj2json.py`    | `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           			| `AlignnAtomwiseCalculator` |
-| NequIP 	| `traj2xyz.py`     | `NequIP_config.yaml`  | `python NequIP_launcher.py`					| `compiled_model_cpu.nequip.pt2` 			| `NequIPCalculator`         |
-| Allegro  	| `traj2xyz.py`     | `Allegro_config.yaml` | `python Allegro_launcher.py`					| `compiled_allegro_model_cpu.nequip.pt2` 	| `NequIPCalculator`         |
+| MLIP   	| Conversion Script 		 | Input File			    | Launch Command/ Script                        | Generated Model                  			| ASE Calculator             |
+| :---------| :--------------------------| :-------------------- | :---------------------------------------------| :-----------------------------------------| :------------------------- |
+| MACE   	| `traj2xyz.py`     		 | `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` 			| `MACECalculator`           |
+| ALIGNN-FF	| `traj2json.py`    		 | `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           			| `AlignnAtomwiseCalculator` |
+| NequIP 	| `traj2xyz.py`     		 | `NequIP_config.yaml`  | `python NequIP_launcher.py`					| `compiled_model_cpu.nequip.pt2` 			| `NequIPCalculator`         |
+| Allegro  	| `traj2xyz.py`     		 | `Allegro_config.yaml` | `python Allegro_launcher.py`					| `compiled_allegro_model_cpu.nequip.pt2` 	| `NequIPCalculator`         |
+| DeePMD  	| `traj2npy.py` <br> (directories)| `DeePMD_config.json` | `python DeePMD_launcher.py`					| `final_model.pb` 	| `DP`         |
 
 ### Notes
 
 - In extended XYZ files, custom `REF_energy`, `REF_forces`, and `REF_stress` headers are used. These are separate from the ASE default headers, which are redundant and not used in training.
 - In MACE 0.3.17 patience does not terminate training. Phase switching works correctly, but termination does not occur (known bug, GitHub issue #1384: https://github.com/ACEsuit/mace/issues/1384). 
 - Early stopping is not implemented in ALIGNN 2026.11.1's train.py — the n_early_stopping config field is inert
-- For DeepMD, the conversion script generates a npy directory, each must be moved under `training_dataset/<composition>`. DeePMD does not shuffle or split frames into train and validation sets, so that has to be done manually. The CPU TensorFlow build does not auto-save the best checkpoint, so the launcher freezes the last model.
+- For DeePMD, the conversion script generates a npy directory, each must be moved under `training_dataset/<composition>`. DeePMD does not shuffle or split frames into train and validation sets, so that has to be done manually. The CPU TensorFlow build does not auto-save the best checkpoint, so the launcher is set to freeze the last model.
 
 ---
 
