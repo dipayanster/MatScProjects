@@ -104,7 +104,7 @@ Summary of procedures:
 - In extended XYZ files, custom `REF_energy`, `REF_forces`, and `REF_stress` headers are used. These are separate from the ASE default headers, which are redundant and not used in training.
 - In MACE 0.3.17 patience does not terminate training. Phase switching works correctly, but termination does not occur (known bug, GitHub issue #1384: https://github.com/ACEsuit/mace/issues/1384). 
 - Early stopping is not implemented in ALIGNN 2026.11.1's train.py — the n_early_stopping config field is inert
-- For DeepMD, the conversion script generates a npy directory, each must be moved under 'training_dataset/composition'. DeePMD does not shuffle or split frames into train and validation sets, so that has to be done manually. The CPU TensorFlow build does not auto-save the best checkpoint, so the launcher freezes the last model.
+- For DeepMD, the conversion script generates a npy directory, each must be moved under `training_dataset/<composition>`. DeePMD does not shuffle or split frames into train and validation sets, so that has to be done manually. The CPU TensorFlow build does not auto-save the best checkpoint, so the launcher freezes the last model.
 
 ---
 
