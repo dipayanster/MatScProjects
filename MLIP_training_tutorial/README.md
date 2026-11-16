@@ -132,4 +132,4 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 
 ### How to interpret this table: 
 
-It is not a ranking of which MLIP performs best. Every model was trained on minimal configurations with limited data, and each could be improved with more data, larger models, opptimized training settings or longer training. The tutorial is meant to just demonstrate the workflows and show that even models trained with limited data can capture the atomic interactions.
+This is not a ranking of which MLIP performs best. Every model was trained on minimal configurations with limited data, and each could be improved with more data, larger models, optimized training settings, or longer training. The tutorial is meant only to demonstrate the workflows and show that even models trained with limited data can capture the atomic interactions.
