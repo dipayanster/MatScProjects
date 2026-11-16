@@ -93,13 +93,13 @@ On a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-sm
 
 Summary of procedures:
 
-| MLIP   	| Conversion Script 		 		| Input File			    | Launch Command/ Script                        | Generated Model                  			| ASE Calculator             |
-| :---------| :---------------------------------| :-------------------- | :---------------------------------------------| :-----------------------------------------| :------------------------- |
-| MACE   	| `traj2xyz.py`	<br> (extended XYZ)	| `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` 			| `MACECalculator`           |
-| ALIGNN-FF	| `traj2json.py` <br> (json)		| `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           			| `AlignnAtomwiseCalculator` |
-| NequIP 	| `traj2xyz.py`	<br> (extended XYZ)	| `NequIP_config.yaml`  | `python NequIP_launcher.py`					| `compiled_model_cpu.nequip.pt2` 			| `NequIPCalculator`         |
-| Allegro  	| `traj2xyz.py` <br> (extended XYZ)	| `Allegro_config.yaml` | `python Allegro_launcher.py`					| `compiled_allegro_model_cpu.nequip.pt2` 	| `NequIPCalculator`         |
-| DeePMD  	| `traj2npy.py` <br> (directories)	| `DeePMD_config.json` | `python DeePMD_launcher.py`					| `final_model.pb` 	| `DP`         |
+| MLIP   	| Conversion Script 		 		| Input File			| Launch Command/ Script                        | Generated Model                  			| ASE Calculator             	|
+| :---------| :---------------------------------| :---------------------| :---------------------------------------------| :-----------------------------------------| :-----------------------------|
+| MACE   	| `traj2xyz.py`	<br> (extended XYZ)	| `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` 			| `MACECalculator`				|
+| ALIGNN-FF	| `traj2json.py` <br> (JSON)		| `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           			| `AlignnAtomwiseCalculator`	|
+| NequIP 	| `traj2xyz.py`	<br> (extended XYZ)	| `NequIP_config.yaml`  | `python NequIP_launcher.py`					| `compiled_model_cpu.nequip.pt2` 			| `NequIPCalculator`			|
+| Allegro  	| `traj2xyz.py` <br> (extended XYZ)	| `Allegro_config.yaml` | `python Allegro_launcher.py`					| `compiled_allegro_model_cpu.nequip.pt2` 	| `NequIPCalculator`			|
+| DeePMD  	| `traj2npy.py` <br> (directories)	| `DeePMD_config.json`	| `python DeePMD_launcher.py`					| `final_model.pb` 							| `DP`							|
 
 ### Notes
 
@@ -128,3 +128,4 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 | ALIGNN-FF				| −164.606008 		| −164.397648 	| −0.208 	| 3.395 			| 100:10							|
 | NequIP				| −15471.040401 	| −15470.864325 | −0.176 	| 3.345 			| 50:50								|
 | Allegro				| −15470.997893 	| −15470.778992 | −0.219 	| 3.341 			| 50:50								|
+| DeePMD				| −15470.990700 	| −15470.816395 | −0.174 	| 3.342 			| 1000:0.02 → 1:1 (2 phase)			|
