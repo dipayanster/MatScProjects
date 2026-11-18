@@ -1,19 +1,21 @@
+import json
 import os
 import shutil
 import subprocess
 import sys
 from pathlib import Path
+
 import numpy as np
 import dpdata
 
-# Each subdirectory of training_dataset/ is one composition group. All DeepMD systems inside it are merged.
-# Merging enforces matching atom names and counts, so mixed compositions fail loudly. (The directory name can be anything.)
+# Each subdirectory of training_dataset/ is one composition group. All DeepMD systems inside it are merged. Merging enforces matching atom names and counts, so mixed compositions fail loudly. (The directory name can be anything.) The template config has no data paths; a runtime config with generated paths is written under dpdata/ each run. dpdata/ is wiped and rebuilt every run
 
-# Paths and settings
+# Paths
 BASE_DIR = Path(__file__).resolve().parent
 root_dir = BASE_DIR / "training_dataset"
-config   = BASE_DIR / "DeePMD_config.json"
+template_config = BASE_DIR / "DeePMD_config.json"
 data_dir = BASE_DIR / "dpdata"
+runtime_config = data_dir / "runtime_config.json"
 log_file = BASE_DIR / "deepmd_run.log"
 frozen_model = BASE_DIR / "final_model.pb"
 
@@ -21,8 +23,6 @@ VAL_FRAC = 0.1
 SEED     = 123
 
 # A composition group with only ONE frame is placed entirely in "train" or "val".
-# The "systems" field in the config lists the training directories. Since the single-frame C group is sent to train,
-# it must be listed as ./dpdata/train/C alongside C_Hg, or it will be silently skipped.
 SINGLE_FRAME_SPLIT = "train"
 
 if SINGLE_FRAME_SPLIT not in ("train", "val"):
@@ -38,6 +38,7 @@ for d in comp_dirs:
     print(f"  {d.name}")
 
 # Merge and split each composition group (DeepMD does not do this internally).
+# Wipe dpdata/ first so only fresh output remains.
 if data_dir.exists():
     shutil.rmtree(data_dir)
 
@@ -98,20 +99,34 @@ for comp_dir in comp_dirs:
         parts.append(f"val: {val.get_nframes()}")
     print("  " + ", ".join(parts))
 
-# Report written systems
-train_systems = sorted(p.name for p in split_dirs["train"].iterdir() if p.is_dir())
-val_systems   = sorted(p.name for p in split_dirs["val"].iterdir()   if p.is_dir())
+# Collect written systems and build the runtime config.
+train_systems = sorted(
+    f"./dpdata/train/{p.name}" for p in split_dirs["train"].iterdir() if p.is_dir()
+)
+val_systems = sorted(
+    f"./dpdata/val/{p.name}" for p in split_dirs["val"].iterdir() if p.is_dir()
+)
 
 print("\nTrain systems:")
 for s in train_systems:
-    print(f"  ./dpdata/train/{s}")
+    print(f"  {s}")
 print("Val systems:")
 for s in val_systems:
-    print(f"  ./dpdata/val/{s}")
-print("\nMake sure DeePMD_config.json lists exactly these systems.")
+    print(f"  {s}")
 
-# Run DeePMD training
-cmd = ["dp", "--tf", "train", str(config)]
+with open(template_config) as f:
+    config = json.load(f)
+
+config["training"]["training_data"]["systems"] = train_systems
+config["training"]["validation_data"]["systems"] = val_systems
+
+# Write fresh runtime config under dpdata/ (overwrites any stale copy).
+with open(runtime_config, "w") as f:
+    json.dump(config, f, indent=2)
+print(f"\nRuntime config written: {runtime_config}")
+
+# Run DeePMD training with the runtime config.
+cmd = ["dp", "--tf", "train", str(runtime_config)]
 print(f"\nRunning: {' '.join(cmd)}")
 print(f"Logging to: {log_file.resolve()}")
 

@@ -74,7 +74,7 @@ E_far = -15470.776218 eV
 ## 4. Training MLIPs (in separate directories, e.g. /MACE_training)
 
 - We will use ASE-driven QE+DFT-D4 relaxation trajectories (`*.traj files`, you can visualize them with `ase gui *.traj`) as MLIP training data. Export them with the supplied conversion scripts — for example, `python traj2xyz.py DFT_calculations/atop/` exports extended XYZ format.
-- Move the converted files (or directories e.g. DeePMD) into a `training_dataset` directory (or composition specific subdirectories e.g. DeePMD) under each training directory.
+- Move the converted files into a `training_dataset` directory under each training directory.
 - The config files store all training input settings 
 - Training can be launched immediately for some MLIPs, such as MACE, because it reads multiple training files directly from its config file, compiles the best model, and writes stdout logs automatically.
 - For other MLIPs that don't automate these steps (e.g., those needing a single merged training file), we use a launcher script, so the workflow can be re-run with different training parameters by changing only the config files.
@@ -104,9 +104,10 @@ Summary of procedures:
 ### Notes
 
 - In extended XYZ files, custom `REF_energy`, `REF_forces`, and `REF_stress` headers are used. These are separate from the ASE default headers, which are redundant and not used in training.
-- In MACE 0.3.17 patience does not terminate training. Phase switching works correctly, but termination does not occur (known bug, GitHub issue #1384: https://github.com/ACEsuit/mace/issues/1384). 
-- Early stopping is not implemented in ALIGNN 2026.11.1's train.py — the n_early_stopping config field is inert
-- For DeePMD, the conversion script generates a npy directory, each must be moved under `training_dataset/<composition>`. DeePMD does not shuffle or split frames into train and validation sets, so that has to be done manually. The CPU TensorFlow build does not auto-save the best checkpoint, so the launcher is set to freeze the last model.
+- MACE: In v0.3.17 patience does not terminate training. Phase switching works correctly, but termination does not occur (known bug, GitHub issue #1384: https://github.com/ACEsuit/mace/issues/1384). 
+- ALIGNN-FF: In v2026.11.1's train.py, early stopping is not implemented yet
+- DeePMD: (1) the conversion script generates npy directories, which must be grouped in `training_dataset` by composition; (2) it does not shuffle or split frames into train and validation sets, so the launcher has to do it manually; (3) the CPU TensorFlow build does not auto-save the best checkpoint, so the launcher freezes the last model; (4) single-atom energies are not needed.
+
 
 ---
 

@@ -4,7 +4,7 @@ Starting atom relaxation with DeePMD forces via ASE...
 === Final Relaxation Results ===
 
 Energy Components:
-  DeePMD Total Energy:     -15470.816395 eV
+  DeePMD Total Energy:     -15470.813438 eV
 
 Final forces
   ASE-style max force (norm)    : 0.000022 eV/Å
