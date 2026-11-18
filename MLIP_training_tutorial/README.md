@@ -129,7 +129,7 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 | ALIGNN-FF				| −164.606008 		| −164.397648 	| −0.208 	| 3.395 			| 100:10							|
 | NequIP				| −15471.040401 	| −15470.864325 | −0.176 	| 3.345 			| 50:50								|
 | Allegro				| −15470.997893 	| −15470.778992 | −0.219 	| 3.341 			| 50:50								|
-| DeePMD				| −15470.990700 	| −15470.816395 | −0.174 	| 3.342 			| 1000:0.02 → 1:1 (2 phase)			|
+| DeePMD				| −15470.990323 	| −15470.813438 | −0.177 	| 3.338 			| 1000:0.02 → 1:2 (2 phase)			|
 
 ### How to interpret this table: 
 
