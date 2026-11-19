@@ -87,6 +87,7 @@ source ~/mace_cuda/bin/activate
 source ~/alignn_cuda/bin/activate
 source ~/nequip_env/bin/activate
 source ~/deepmd_env/bin/activate
+source ~/gap_env/bin/activate
 ```
 
 On a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-smi`. 
