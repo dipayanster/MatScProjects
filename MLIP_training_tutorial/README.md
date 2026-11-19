@@ -133,7 +133,7 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 | Allegro				|E(3)-equivariant local				| −15470.997893 	| −15470.778992 | −0.219 	| 3.341 			| 50:50								|
 | DeePMD				|Descriptor-based deep potential	| −15470.990323 	| −15470.813438 | −0.177 	| 3.338 			| 1000:0.02 → 1:2 (2 phase)			|
 | GAP					|Gaussian process regression		| −15470.993428 	| −15470.776217 | −0.217 	| 3.347 			| 0.05: 0.0005 (`default_sigma`)	|
-
+`*`A S Fenta et al 2020 J. Phys. Mater. 4 015002
 ### How to interpret this table: 
 
 This is not a ranking of which MLIP performs best. Every model was trained on minimal configurations with limited data, and each could be improved with more data, larger models, optimized training settings, or longer training. This tutorial is only meant to demonstrate the workflows and help you set up your own training pipeline.
