@@ -78,7 +78,7 @@ E_far = -15470.776218 eV
 - The config files store all training input settings 
 - Training can be launched immediately for some MLIPs, such as MACE, because it reads multiple training files directly from its config file, compiles the best model, and writes stdout logs automatically.
 - For other MLIPs that don't automate these steps (e.g., those needing a single merged training file), we use a launcher script, so the workflow can be re-run with different training parameters by changing only the config files.
-- A percentage of the data is held out for validation (and testing if needed), held-out frames are never used for training. A seed value can be set for reproducibility wherever the MLIP supports it.
+- A percentage of the data is held out for validation/ testing (if supported), held-out frames are never used for training. A seed value can be set for reproducibility wherever the MLIP supports it.
 
 Activate the required environment(s) 
 
