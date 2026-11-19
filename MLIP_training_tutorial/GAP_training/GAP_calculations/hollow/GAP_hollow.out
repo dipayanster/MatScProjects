@@ -1,0 +1,12 @@
+Successfully read 19 atoms from hollow.vasp
+Starting atom relaxation with GAP forces via ASE...
+
+=== Final Relaxation Results ===
+
+Energy Components:
+  GAP Total Energy:        -15470.993428 eV
+
+Final forces
+  ASE-style max force (norm)    : 0.009895 eV/Å
+
+=== Final structure saved to: 'relaxed_hollow_GAP.vasp' ===

@@ -96,10 +96,11 @@ Summary of procedures:
 | MLIP   	| Conversion Script 		 		| Input File			| Launch Command/ Script                        | Generated Model                  			| ASE Calculator             	|
 | :---------| :---------------------------------| :---------------------| :---------------------------------------------| :-----------------------------------------| :-----------------------------|
 | MACE   	| `traj2xyz.py`	<br> (extended XYZ)	| `mace_config.yaml`    | `mace_run_train --config="mace_config.yaml"`  | `MACE_GrapheneHg_stagetwo.model` 			| `MACECalculator`				|
-| ALIGNN-FF	| `traj2json.py` <br> (JSON)		| `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` directory           			| `AlignnAtomwiseCalculator`	|
+| ALIGNN-FF	| `traj2json.py` <br> (JSON)		| `ALIGNN_config.json`  | `python ALIGNN_launcher.py`                   | `ALIGNN_out` <br> (directory)        		| `AlignnAtomwiseCalculator`	|
 | NequIP 	| `traj2xyz.py`	<br> (extended XYZ)	| `NequIP_config.yaml`  | `python NequIP_launcher.py`					| `compiled_model_cpu.nequip.pt2` 			| `NequIPCalculator`			|
 | Allegro  	| `traj2xyz.py` <br> (extended XYZ)	| `Allegro_config.yaml` | `python Allegro_launcher.py`					| `compiled_allegro_model_cpu.nequip.pt2` 	| `NequIPCalculator`			|
-| DeePMD  	| `traj2npy.py` <br> (directories)	| `DeePMD_config.json`	| `python DeePMD_launcher.py`					| `final_model.pb` 							| `DP`							|
+| DeePMD  	| `traj2npy.py` <br> (directories)	| `DeePMD_config.json`	| `python DeePMD_launcher.py`					| `final_model.pb` 							| `DP` (deepmd.calculator)		|
+| GAP	  	| `traj2xyz.py`	<br> (extended XYZ)	| `GAP_config.json`		| `python GAP_launcher.py`						| `GAP_model.xml` <br> (and sparseX files)	| `Potential` (quippy.potential)|
 
 ### Notes
 
@@ -107,7 +108,7 @@ Summary of procedures:
 - MACE: In v0.3.17 patience does not terminate training. Phase switching works correctly, but termination does not occur (known bug, GitHub issue #1384: https://github.com/ACEsuit/mace/issues/1384). 
 - ALIGNN-FF: In v2026.11.1's train.py, early stopping is not implemented yet
 - DeePMD: (1) the conversion script generates npy directories, which must be grouped in `training_dataset` by composition; (2) it does not shuffle or split frames into train and validation sets, so the launcher has to do it manually; (3) the CPU TensorFlow build does not auto-save the best checkpoint, so the launcher freezes the last model; (4) single-atom energies are not needed.
-
+- GAP: CPU-only and is a one-shot kernel regression (Gaussian Process regression) solver, not iterative training like neural networks. So there are no "epochs" and no validation loss curve to monitor, hence the entire dataset is utilized for training.
 
 ---
 
@@ -130,6 +131,7 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 | NequIP				| −15471.040401 	| −15470.864325 | −0.176 	| 3.345 			| 50:50								|
 | Allegro				| −15470.997893 	| −15470.778992 | −0.219 	| 3.341 			| 50:50								|
 | DeePMD				| −15470.990323 	| −15470.813438 | −0.177 	| 3.338 			| 1000:0.02 → 1:2 (2 phase)			|
+| GAP					| −15470.993428 	| −15470.776217 | −0.217 	| 3.347 			| 0.05: 0.0005 (`default_sigma`)	|
 
 ### How to interpret this table: 
 

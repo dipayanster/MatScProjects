@@ -1,0 +1,14 @@
+{
+  "gap_fit": {
+    "gap": "{soap cutoff=6.0 cutoff_transition_width=0.5 l_max=6 n_max=12 atom_sigma=0.5 delta=1.0 n_sparse=1200 sparse_method=cur_points covariance_type=dot_product zeta=4}",
+    "default_sigma": "{0.0005 0.05 0.0 0.0}",
+    "e0": "{C:-241.907386:Hg:-10952.046782}"
+  },
+  "keys": {
+    "energy": "REF_energy",
+    "forces": "REF_forces"
+  },
+  "output": {
+    "gp_file": "GAP_model.xml"
+  }
+}

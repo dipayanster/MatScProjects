@@ -1,0 +1,12 @@
+Successfully read 19 atoms from far.vasp
+Starting atom relaxation with GAP forces via ASE...
+
+=== Final Relaxation Results ===
+
+Energy Components:
+  GAP Total Energy:      -15470.776217 eV
+
+Final forces
+  ASE-style max force (norm)    : 0.000017 eV/Å
+
+=== Final structure saved to: 'relaxed_far_GAP.vasp' ===
