@@ -67,7 +67,7 @@ E_far = -15470.776218 eV
 | hollow    | -15470.993331   | -15470.776218  | -0.217               	| -0.186                   | 3.346              | 3.45                   |
 | offcenter | -15470.988640   | -15470.776218  | -0.212               	| —                        | 3.363              | —                      |
 
-**Note:** `*`Reference values are from Fenta et al. using all electron LAPW method in WIEN2k and PBE+DFT-D3. This work uses Quantum Espresso PBE+DFT-D4, so differences in absolute adsorption energy are expected. Consistently stronger binding in this work is reflected in the more negative adsorption energies and correspondingly shorter equilibrium distances, attributable to the DFT-D4 versus DFT-D3 dispersion correction. The site ordering (hollow most stable) remains consistent. the supplied script `deq.py` can be used to quickly calculate d_eq from the relaxed structures `python deq.py MACE_training/MACE_calculations/hollow/relaxed_hollow_MACE.vasp`.
+**Note:** `*`Reference values are from Fenta et al. using all electron LAPW method in WIEN2k and PBE+DFT-D3. This work uses Quantum Espresso PBE+DFT-D4, so differences in absolute adsorption energy are expected. Consistently stronger binding in this work is reflected in the more negative adsorption energies and correspondingly shorter equilibrium distances, attributable to the DFT-D4 versus DFT-D3 dispersion correction. The site ordering (hollow most stable) remains consistent. The supplied script `deq.py` can be used to quickly calculate d_eq from the relaxed structures. For example, `python deq.py MACE_training/MACE_calculations/hollow/relaxed_hollow_MACE.vasp`.
 
 ---
 
