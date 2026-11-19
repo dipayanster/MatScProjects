@@ -88,6 +88,7 @@ source ~/alignn_cuda/bin/activate
 source ~/nequip_env/bin/activate
 source ~/deepmd_env/bin/activate
 source ~/gap_env/bin/activate
+source ~/sevennet_cuda/bin/activate
 ```
 
 On a GPU, you can monitor utilization with `nvidia-smi` or `watch -n 1 nvidia-smi`. 
@@ -102,6 +103,7 @@ Summary of procedures:
 | Allegro  	| `traj2xyz.py` <br> (extended XYZ)	| `Allegro_config.yaml` | `python Allegro_launcher.py`					| `compiled_allegro_model_cpu.nequip.pt2` 	| `NequIPCalculator`			|
 | DeePMD  	| `traj2npy.py` <br> (directories)	| `DeePMD_config.json`	| `python DeePMD_launcher.py`					| `final_model.pb` 							| `DP` (deepmd.calculator)		|
 | GAP	  	| `traj2xyz.py`	<br> (extended XYZ)	| `GAP_config.json`		| `python GAP_launcher.py`						| `GAP_model.xml` <br> (and sparseX files)	| `Potential` (quippy.potential)|
+| SevenNet 	| `traj2xyz.py`	<br> (extended XYZ)	| `SevenNet_config.yaml`| `python SevenNet_launcher.py`					| `checkpoint_best.pth`						| `SevenNetCalculator`			|
 
 ### Notes
 
@@ -133,6 +135,7 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 | Allegro				|E(3)-equivariant local				| −15470.997893 	| −15470.778992 | −0.219 	| 3.341 			| 50:50								|
 | DeePMD				|Descriptor-based deep potential	| −15470.990323 	| −15470.813438 | −0.177 	| 3.338 			| 1000:0.02 → 1:2 (2 phase)			|
 | GAP					|Gaussian process regression		| −15470.993428 	| −15470.776217 | −0.217 	| 3.347 			| 0.05: 0.0005 (`default_sigma`)	|
+| SevenNet				|E(3)-equivariant message passing	| −15470.996094 	| −15470.816406 | −0.180 	| 3.330 			| 50:1								|
 
 `*`A S Fenta et al 2020 J. Phys. Mater. 4 015002
 

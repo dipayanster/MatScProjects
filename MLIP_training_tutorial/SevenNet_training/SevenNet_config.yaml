@@ -1,0 +1,32 @@
+model:
+    chemical_species: ['C', 'Hg']
+    cutoff: 6.0
+
+train:
+    is_train_stress: False
+    epoch: 1000
+    per_epoch: 999999
+    optimizer: 'adam'
+    optim_param:
+        lr: 0.01
+    scheduler: 'exponentiallr'
+    scheduler_param:
+        gamma: 0.99
+    force_loss_weight: 50.0
+    error_record:
+        - ['Energy', 'RMSE']
+        - ['Force', 'RMSE']
+        - ['TotalLoss', 'None']
+
+data:
+    batch_size: 4
+    # Ordered to match chemical_species: ['C', 'Hg'] (Z=6, Z=80)
+    shift: [-241.907386, -10952.046782]
+    scale: 1.0
+    data_format_args:
+        index: ':'
+        format: 'extxyz'
+        energy_key: 'REF_energy'
+        force_key: 'REF_forces'
+    load_trainset_path: ['training_dataset/train_split.xyz']
+    load_validset_path: ['training_dataset/val_split.xyz']

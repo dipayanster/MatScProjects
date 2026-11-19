@@ -1,0 +1,12 @@
+Successfully read 19 atoms from hollow.vasp
+Starting atom relaxation with SevenNet forces via ASE...
+
+=== Final Relaxation Results ===
+
+Energy Components:
+  SevenNet Total Energy:   -15470.996094 eV
+
+Final forces
+  ASE-style max force (norm)    : 0.007685 eV/Å
+
+=== Final structure saved to: 'relaxed_hollow_SevenNet.vasp' ===

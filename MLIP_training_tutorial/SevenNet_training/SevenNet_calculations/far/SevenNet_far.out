@@ -1,0 +1,12 @@
+Successfully read 19 atoms from far.vasp
+Starting atom relaxation with SevenNet forces via ASE...
+
+=== Final Relaxation Results ===
+
+Energy Components:
+  SevenNet Total Energy: -15470.816406 eV
+
+Final forces
+  ASE-style max force (norm)    : 0.000024 eV/Å
+
+=== Final structure saved to: 'relaxed_far_SevenNet.vasp' ===
