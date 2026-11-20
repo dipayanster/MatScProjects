@@ -129,13 +129,13 @@ Examples are provided in the subdirectories under the training directory, e.g. `
 |---					|---								|---				|---			|---		|---				| ---								|
 | WIEN2k, PBE+DFT-D3`*`	|All electron						| —					| —				| −0.186 	| 3.450 			| —									|
 | QE PBE + DFT-D4		|Pseudopotential based DFT			| −15470.993331		| −15470.776218 | −0.217 	| 3.346 			| —									|
-| MACE 					|E(3)-Equivariant message passing	| −15470.983697 	| −15470.821109 | −0.163 	| 3.350 			| 100:1 → 100:10 (2 phase)			|
+| MACE 					|E(3)-Equivariant, many-body		| −15470.983697 	| −15470.821109 | −0.163 	| 3.350 			| 100:1 → 100:10 (2 phase)			|
 | ALIGNN-FF				|Graph neural network				| −164.606008 		| −164.397648 	| −0.208 	| 3.395 			| 100:10							|
-| NequIP				|E(3)-equivariant neural network	| −15471.040401 	| −15470.864325 | −0.176 	| 3.345 			| 50:50								|
-| Allegro				|E(3)-equivariant local				| −15470.997893 	| −15470.778992 | −0.219 	| 3.341 			| 50:50								|
+| NequIP				|E(3)-equivariant 					| −15471.040401 	| −15470.864325 | −0.176 	| 3.345 			| 50:50								|
+| Allegro				|E(3)-equivariant, local			| −15470.997893 	| −15470.778992 | −0.219 	| 3.341 			| 50:50								|
 | DeePMD				|Descriptor-based deep potential	| −15470.990323 	| −15470.813438 | −0.177 	| 3.338 			| 1000:0.02 → 1:2 (2 phase)			|
 | GAP					|Gaussian process regression		| −15470.993428 	| −15470.776217 | −0.217 	| 3.347 			| 0.05: 0.0005 (`default_sigma`)	|
-| SevenNet				|E(3)-equivariant message passing	| −15470.996094 	| −15470.816406 | −0.180 	| 3.330 			| 50:1								|
+| SevenNet				|E(3)-equivariant 					| −15470.996094 	| −15470.816406 | −0.180 	| 3.330 			| 50:1								|
 
 `*`A S Fenta et al 2020 J. Phys. Mater. 4 015002
 
